@@ -1,11 +1,16 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Anton } from 'next/font/google'
 
 import './globals.css'
 
 const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
+const anton = Anton({ 
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-anton'
+})
 
 export const metadata: Metadata = {
   title: 'CloudSite - Scalable SaaS Products for Modern Businesses',
@@ -20,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+      <body className={`font-sans antialiased ${anton.variable}`}>{children}</body>
     </html>
   )
 }
