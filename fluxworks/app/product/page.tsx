@@ -66,78 +66,78 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="relative">
-        <div className="bg-[#e8f0f0] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <Link href="/" className="text-base font-bold text-gray-900">CloudSite</Link>
-            <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-              <Link href="/" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Home</Link>
-              <Link href="/product" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Product</Link>
-              <Link href="/about" className="text-sm text-gray-900 hover:text-gray-700 font-medium">About</Link>
-              <Link href="/contact" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Contact</Link>
-            </nav>
-            <div className="flex items-center gap-2.5">
-              <div className="relative">
-                <button 
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="text-sm text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
-                >
-                  Log In
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-                  </svg>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pb-20" style={{
+        background: 'linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)',
+      }}>
+        {/* Header */}
+        <header className="relative mx-6">
+          <div className="bg-[#dbf4ff] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+              <Link href="/" className="text-base font-bold text-gray-900">FluxWorks</Link>
+              <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
+                <Link href="/" className="text-[12px] text-gray-900 hover:text-gray-700 font-medium">Home</Link>
+                <Link href="/product" className="text-[12px] text-gray-900 hover:text-gray-700 font-medium">Product</Link>
+                <Link href="/about" className="text-[12px] text-gray-900 hover:text-gray-700 font-medium">About</Link>
+                <Link href="/contact" className="text-[12px] text-gray-900 hover:text-gray-700 font-medium">Contact</Link>
+              </nav>
+              <div className="flex items-center gap-2.5">
+                <div className="relative">
+                  <button 
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    className="text-[12px] border border-[#80A4A9] text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
+                  >
+                    Log In
+                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
+                    </svg>
+                  </button>
+                  {showDropdown && (
+                    <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                        Log In
+                      </button>
+                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                        Sign Up
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <button className="bg-[#95C4DC] text-[12px] px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
+                  Book a Demo
                 </button>
-                {showDropdown && (
-                  <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                    <button className="w-full text-left px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors font-medium">
-                      Log In
-                    </button>
-                    <button className="w-full text-left px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors font-medium">
-                      Sign Up
-                    </button>
-                  </div>
-                )}
               </div>
-              <button className="bg-[#4a90a4] text-white text-sm px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
-                Book a Demo
-              </button>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* Hero Section */}
-      <section className="py-16" style={{
-        background: 'linear-gradient(180deg, #d4e8eb 0%, #e8f4f6 100%)',
-      }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-6 px-8 pt-10 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#fef3c7] px-3 py-1.5 rounded-full text-sm mb-6">
-                <span className="text-yellow-600">🍊</span>
-                <span className="text-yellow-800 font-medium">Available Now</span>
+              <div className="inline-flex items-center gap-0.5 bg-[#0070A015] px-2 py-1 rounded-full text-sm mb-6">
+                <span className="text-yellow-600 inline-block" style={{ transform: 'rotate(270deg)' }}>💊</span>
+                <span className="text-[#0070A0] text-[11px]">Available Now</span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl -mt-4 md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                 Pharmacy<br/>Management Suite
               </h1>
               
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-8 text-[14px]">
                 Complete pharmacy management solution with POS, inventory, online ordering, and delivery management. Streamline your pharmacy operations with our all-in-one platform.
               </p>
               
               <div className="flex gap-3">
-                <button className="bg-[#4a90a4] text-white px-5 py-3 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
+                <button className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
                   Request Demo
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </button>
-                <button className="bg-transparent border border-gray-300 text-gray-700 px-5 py-3 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="bg-white text-[12px] border border-gray-300 text-[#0070A0] px-5 py-1.5 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="#0070A0" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                   Contact Sales
@@ -147,49 +147,55 @@ export default function ProductPage() {
 
             {/* Right Content - Dashboard Preview */}
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl p-6">
+              <div className="bg-white rounded-2xl shadow-xl">
                 {/* Browser Dots */}
-                <div className="flex gap-2 mb-4">
-                  <div className="w-3 h-3 bg-[#4a90a4] rounded-full"></div>
-                  <div className="w-3 h-3 bg-[#4a90a4] rounded-full"></div>
-                  <div className="w-3 h-3 bg-[#4a90a4] rounded-full"></div>
+                <div className="flex gap-1 p-3 bg-[#0070A0] rounded-t-2xl">
+                  <div className="w-2 h-2 bg-white/30 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white/30 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white/30 rounded-full"></div>
                 </div>
                 
-                {/* Stats Row */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">2,847</div>
-                    <div className="text-xs text-gray-500">Orders</div>
+                <div className="p-6">
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
+                      <div className="text-xl font-bold text-gray-900">2,847</div>
+                      <div className="text-xs text-gray-500">Orders</div>
+                    </div>
+                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
+                      <div className="text-xl font-bold text-gray-900">$84.2K</div>
+                      <div className="text-xs text-gray-500">Revenue</div>
+                    </div>
+                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
+                      <div className="text-xl font-bold text-gray-900">1,234</div>
+                      <div className="text-xs text-gray-500">Customers</div>
+                    </div>
                   </div>
-                  <div className="text-center border-x border-gray-100">
-                    <div className="text-2xl font-bold text-gray-900">$84.2K</div>
-                    <div className="text-xs text-gray-500">Revenue</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">1,234</div>
-                    <div className="text-xs text-gray-500">Customers</div>
+
+                  {/* Chart */}
+                  <div className="h-32 flex items-end bg-[#E8F5FA] p-3 rounded-lg gap-2">
+                    {[40, 55, 45, 60, 50, 70, 65, 80, 75, 90].map((height, i) => (
+                      <div 
+                        key={i}
+                        className="flex-1 bg-[#0070A0] rounded-t"
+                        style={{ height: `${height}%` }}
+                      ></div>
+                    ))}
                   </div>
                 </div>
-
-                {/* Chart */}
-                <div className="h-32 flex items-end gap-2 mb-4">
-                  {[40, 55, 45, 60, 50, 70, 65, 80, 75, 90].map((height, i) => (
-                    <div 
-                      key={i}
-                      className="flex-1 bg-[#4a90a4] rounded-t"
-                      style={{ height: `${height}%` }}
-                    ></div>
-                  ))}
-                </div>
-
-                {/* Real-time Sync Badge */}
-                <div className="flex items-center justify-end gap-2 text-sm text-gray-600">
-                  <svg className="w-4 h-4 text-[#4a90a4]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
+              </div>
+              
+              {/* Real-time Sync Badge - Positioned absolutely to overflow */}
+              <div className="absolute bottom-3 -right-4">
+                <div className="flex items-center gap-2 bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-100">
+                  <div className="bg-[#0070A0] p-1.5 rounded">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z" />
+                    </svg>
+                  </div>
                   <div>
-                    <div className="font-medium text-gray-900">Real-time Sync</div>
-                    <div className="text-xs text-gray-500">Across all devices</div>
+                    <div className="font-medium text-[13px] text-gray-900">Real-time Sync</div>
+                    <div className="text-[10px] -mt-0.5 text-gray-500">Across all devices</div>
                   </div>
                 </div>
               </div>
@@ -200,20 +206,20 @@ export default function ProductPage() {
 
       {/* Modules Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">Modules Included</h2>
           <p className="text-center text-gray-600 mb-12">Everything you need to run your business, all in one place.</p>
 
           <div className="grid md:grid-cols-3 gap-4">
             {modules.map((module, index) => (
-              <div key={index} className="border border-gray-200 rounded-xl p-5 hover:border-[#4a90a4] transition-colors">
+              <div key={index} className="border border-[#F7F9FA] bg-[#F7F9FA] rounded-xl p-4 hover:border-[#4a90a4] transition-colors">
                 <div className="flex items-start gap-3">
-                  <div className="text-[#4a90a4]">
+                  <div className="text-[#4a90a4] bg-[#CCEFF633] p-2 rounded-lg">
                     {getIcon(module.icon)}
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{module.name}</h3>
-                    <p className="text-gray-500 text-sm">{module.description}</p>
+                    <h5 className="font-semibold text-[13px] text-gray-900 -mt-0.5">{module.name}</h5>
+                    <p className="text-gray-500 text-[11px]">{module.description}</p>
                   </div>
                 </div>
               </div>
@@ -223,10 +229,10 @@ export default function ProductPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-[#f5f9fa]">
+      <section className="py-16 bg-[#DCE1FF]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">How It Works</h2>
-          <p className="text-center text-gray-600 mb-12">Get started in minutes with our simple onboarding process.</p>
+          <h2 className="text-3xl font-semibold text-center text-gray-900 mb-3">How It Works</h2>
+          <p className="text-center text-[14px] text-gray-600 mb-12">Get started in minutes with our simple onboarding process.</p>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
@@ -236,11 +242,11 @@ export default function ProductPage() {
               { step: "4", title: "Grow", description: "Start using all modules and scale as you grow." },
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-[#1a2a3a] text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                <div className="w-12 h-12 bg-[#0070A0] text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <h3 className="font-semibold text-[13px] text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-[12px]">{item.description}</p>
               </div>
             ))}
           </div>
@@ -248,23 +254,23 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">Simple, Transparent Pricing</h2>
-          <p className="text-center text-gray-600 mb-12">Choose the plan that works best for your business.</p>
+      <section className="py-16 mb-12 bg-white">
+        <div className="max-w-6xl mx-auto px-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-1">Simple, Transparent Pricing</h2>
+          <p className="text-center text-gray-600 mb-16">Choose the plan that works best for your business.</p>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Starter Plan */}
-            <div className="border border-gray-200 rounded-2xl p-6">
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Starter</h3>
-              <p className="text-gray-600 text-sm mb-4">Perfect for small businesses getting started</p>
+            <div className="bg-[#F7F9FA] rounded-2xl p-6">
+              <h3 className="font-bold text-xl text-gray-900 mb-1">Starter</h3>
+              <p className="text-gray-600 text-[10px] mb-4">Perfect for small businesses getting started</p>
               <div className="mb-6">
-                <span className="text-3xl font-bold text-gray-900">Contact Us</span>
+                <span className="text-2xl font-bold text-gray-900">Contact Us</span>
                 <span className="text-gray-500 text-sm"> /per month</span>
               </div>
-              <div className="space-y-3 mb-6">
+              <div className="space-y-1.5 mb-6">
                 {["Up to 3 users", "Core modules included", "Email support", "Basic analytics", "Standard integrations"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                  <div key={i} className="flex items-center gap-2 text-[12px] text-gray-700">
                     <svg className="w-4 h-4 text-[#4a90a4]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
@@ -272,48 +278,48 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-[#4a90a4] text-white py-3 rounded-full font-medium hover:bg-[#3d7a8a]">
+              <button className="w-full bg-[#0070A0] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a]">
                 Get Started
               </button>
             </div>
 
             {/* Growth Plan */}
-            <div className="border-2 border-[#4a90a4] rounded-2xl p-6 relative bg-[#f8fcfd]">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#4a90a4] text-white text-xs font-medium px-3 py-1 rounded-full">
+            <div className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F]">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0070A0] text-white text-xs font-medium px-3 py-1 rounded-full">
                 Most Popular
               </div>
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Growth</h3>
-              <p className="text-gray-600 text-sm mb-4">For growing businesses with expanding needs</p>
+              <h3 className="font-bold text-xl text-white mb-1">Growth</h3>
+              <p className="text-[#9CA3AF] text-[10px] mb-4">For growing businesses with expanding needs</p>
               <div className="mb-6">
-                <span className="text-3xl font-bold text-gray-900">Contact Us</span>
-                <span className="text-gray-500 text-sm"> /per month</span>
+                <span className="text-2xl font-bold text-white">Contact Us</span>
+                <span className="text-[#9CA3AF] text-sm"> /per month</span>
               </div>
-              <div className="space-y-3 mb-6">
+              <div className="space-y-1.5 mb-6">
                 {["Up to 15 users", "All modules included", "Priority support", "Advanced analytics", "Custom integrations", "API access"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                    <svg className="w-4 h-4 text-[#4a90a4]" fill="currentColor" viewBox="0 0 20 20">
+                  <div key={i} className="flex items-center gap-2 text-[12px] text-[#D1D5DB]">
+                    <svg className="w-4 h-4 text-[#D1D5DB]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
                     {feature}
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-gray-900 text-white py-3 rounded-full font-medium hover:bg-gray-800">
+              <button className="w-full bg-white py-1.5 text-sm rounded-lg font-medium hover:bg-gray-800">
                 Most Popular
               </button>
             </div>
 
             {/* Enterprise Plan */}
-            <div className="border border-gray-200 rounded-2xl p-6">
-              <h3 className="font-bold text-xl text-gray-900 mb-2">Enterprise</h3>
-              <p className="text-gray-600 text-sm mb-4">Custom solutions for large organizations</p>
+            <div className="bg-[#F7F9FA] rounded-2xl p-6">
+              <h3 className="font-bold text-xl text-gray-900 mb-1">Enterprise</h3>
+              <p className="text-gray-600 text-[10px] mb-4">Custom solutions for large organizations</p>
               <div className="mb-6">
-                <span className="text-3xl font-bold text-gray-900">Contact Us</span>
+                <span className="text-2xl font-bold text-gray-900">Contact Us</span>
                 <span className="text-gray-500 text-sm"> /custom</span>
               </div>
-              <div className="space-y-3 mb-6">
+              <div className="space-y-1.5 mb-6">
                 {["Unlimited users", "Custom modules", "24/7 dedicated support", "White-label options", "On-premise deployment", "SLA guarantee"].map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                  <div key={i} className="flex items-center gap-2 text-[12px] text-gray-700">
                     <svg className="w-4 h-4 text-[#4a90a4]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                     </svg>
@@ -321,7 +327,7 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-[#4a90a4] text-white py-3 rounded-full font-medium hover:bg-[#3d7a8a]">
+              <button className="w-full bg-[#0070A0] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a]">
                 Contact Sales
               </button>
             </div>
@@ -330,7 +336,20 @@ export default function ProductPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white py-16 px-6 border-t border-gray-100">
+      <footer className="bg-[#FAFAFA] py-16 px-6 border-t border-gray-100 relative">
+        {/* Wave Top */}
+        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
+          <svg
+            className="relative block w-full h-15"
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,60 Q24,0 48,60 T96,60 T144,60 T192,60 T240,60 T288,60 T336,60 T384,60 T432,60 T480,60 T528,60 T576,60 T624,60 T672,60 T720,60 T768,60 T816,60 T864,60 T912,60 T960,60 T1008,60 T1056,60 T1104,60 T1152,60 T1200,60 T1248,60 T1296,60 T1344,60 T1392,60 T1440,60 L1440,120 L0,120 Z"
+              fill="#FAFAFA"
+            />
+          </svg>
+        </div>
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
             {/* Newsletter Column */}

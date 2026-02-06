@@ -9,29 +9,63 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section - Contains Header */}
-      <section className="relative overflow-hidden pb-20" style={{
-        background: 'linear-gradient(180deg, #5b9aa0 0%, #7ba8d4 50%, #a8d4c8 100%)',
-      }}>
+      <section
+        className="relative overflow-hidden pb-20"
+        style={{
+          background:
+            "linear-gradient(180deg, #5b9aa0 0%, #7ba8d4 50%, #a8d4c8 100%)",
+        }}
+      >
         {/* Header */}
         <header className="relative mx-6">
           <div className="bg-[#b8c8b8]/90 backdrop-blur-sm mx-6 mt-4 rounded-full px-5 py-2.5 shadow-lg">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <Link href="/" className="text-base font-bold text-gray-900">CloudSite</Link>
+              <Link href="/" className="text-base font-bold text-gray-900">
+                FluxWorks
+              </Link>
               <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-                <Link href="/" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Home</Link>
-                <Link href="/product" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Product</Link>
-                <Link href="/about" className="text-sm text-gray-900 hover:text-gray-700 font-medium">About</Link>
-                <Link href="/contact" className="text-sm text-gray-900 hover:text-gray-700 font-medium">Contact</Link>
+                <Link
+                  href="/"
+                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/product"
+                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Product
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                >
+                  Contact
+                </Link>
               </nav>
               <div className="flex items-center gap-2.5">
                 <div className="relative">
-                  <button 
+                  <button
                     onClick={() => setShowDropdown(!showDropdown)}
                     className="text-sm text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
                   >
                     Log In
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
+                    <svg
+                      className="w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </button>
                   {showDropdown && (
@@ -59,18 +93,25 @@ export default function Home() {
             <div className="space-y-6">
               {/* Blue Server Icon */}
               <div className="bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 ml-[460px]">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
-                  <circle cx="7" cy="7" r="1" fill="white"/>
-                  <circle cx="7" cy="12" r="1" fill="white"/>
-                  <circle cx="7" cy="17" r="1" fill="white"/>
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+                  <circle cx="7" cy="7" r="1" fill="white" />
+                  <circle cx="7" cy="12" r="1" fill="white" />
+                  <circle cx="7" cy="17" r="1" fill="white" />
                 </svg>
               </div>
-              
+
               <h1 className="text-5xl lg:text-5xl -mt-12 font-extrabold text-gray-900 leading-none">
-                We build scalable<br />
-                SaaS products<br />
-                for modern<br />
+                We build scalable
+                <br />
+                SaaS products
+                <br />
+                for modern
+                <br />
                 businesses
               </h1>
               <div className="flex gap-3 pt-2">
@@ -96,9 +137,9 @@ export default function Home() {
               {/* Person Image */}
               <div className="absolute top-52 left-40 -translate-x-1/2 -translate-y-1/2 z-20">
                 <div className="w-[280px] h-[350px] flex items-center justify-center relative">
-                  <img 
+                  <img
                     src="/Person.png"
-                    alt="Person smiling" 
+                    alt="Person smiling"
                     className="w-full h-full object-cover rounded-b-full"
                   />
                 </div>
@@ -107,14 +148,20 @@ export default function Home() {
               {/* 5 Star Rating */}
               <div className="absolute bottom-58 -left-12 bg-white px-4 py-2 rounded-xl shadow-xl z-30">
                 <div className="flex gap-0.5 text-yellow-400 text-lg">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
                 </div>
               </div>
 
               {/* Total Projects Card */}
               <div className="absolute top-2 bg-white p-2 right-8 rounded-2xl shadow-xl w-36 z-30">
                 <div className="space-y-2">
-                  <div className="text-[12px] text-gray-600 font-medium">Total Projects</div>
+                  <div className="text-[12px] text-gray-600 font-medium">
+                    Total Projects
+                  </div>
                   <div className="flex items-baseline gap-2">
                     <div className="text-1xl font-bold text-gray-900">38</div>
                     <div className="flex gap-1">
@@ -122,51 +169,97 @@ export default function Home() {
                       <div className="w-1 h-1 -mt-1 bg-yellow-400 rounded-full"></div>
                     </div>
                   </div>
-                  <div className="text-[10px] -mt-3 text-gray-500"><p>Views</p></div>
+                  <div className="text-[10px] -mt-3 text-gray-500">
+                    <p>Views</p>
+                  </div>
                   <div className="flex gap-1 h-12 items-end pt-2">
-                    <div className="w-4 bg-blue-600 rounded-t" style={{height: '35%'}}></div>
-                    <div className="w-4 bg-blue-400 rounded-t" style={{height: '55%'}}></div>
-                    <div className="w-4 bg-blue-600 rounded-t" style={{height: '25%'}}></div>
-                    <div className="w-4 bg-blue-600 rounded-t" style={{height: '75%'}}></div>
-                    <div className="w-4 bg-blue-400 rounded-t" style={{height: '45%'}}></div>
-                    <div className="w-4 bg-blue-600 rounded-t" style={{height: '65%'}}></div>
+                    <div
+                      className="w-4 bg-blue-600 rounded-t"
+                      style={{ height: "35%" }}
+                    ></div>
+                    <div
+                      className="w-4 bg-blue-400 rounded-t"
+                      style={{ height: "55%" }}
+                    ></div>
+                    <div
+                      className="w-4 bg-blue-600 rounded-t"
+                      style={{ height: "25%" }}
+                    ></div>
+                    <div
+                      className="w-4 bg-blue-600 rounded-t"
+                      style={{ height: "75%" }}
+                    ></div>
+                    <div
+                      className="w-4 bg-blue-400 rounded-t"
+                      style={{ height: "45%" }}
+                    ></div>
+                    <div
+                      className="w-4 bg-blue-600 rounded-t"
+                      style={{ height: "65%" }}
+                    ></div>
                   </div>
                   <div className="text-xs text-gray-700 flex items-center gap-1.5 pt-1 border-t border-gray-100">
-                    <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                      <rect x="3" y="3" width="7" height="7" rx="1"/>
-                      <rect x="3" y="14" width="7" height="7" rx="1"/>
-                      <rect x="14" y="3" width="7" height="7" rx="1"/>
-                      <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    <svg
+                      className="w-3 h-3 text-blue-600"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
                     </svg>
-                    <span className="font-medium text-[10px]">Projects Management</span>
+                    <span className="font-medium text-[10px]">
+                      Projects Management
+                    </span>
                   </div>
                 </div>
               </div>
 
               {/* Growth Chart Card */}
               <div className="absolute bottom-4 right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30">
-                <div className="text-sm font-bold mb-2 text-gray-900">Growth</div>
+                <div className="text-sm font-bold mb-2 text-gray-900">
+                  Growth
+                </div>
                 <div className="h-16 relative mb-2">
-                  <svg className="w-full h-full" viewBox="0 0 200 64" preserveAspectRatio="none">
+                  <svg
+                    className="w-full h-full"
+                    viewBox="0 0 200 64"
+                    preserveAspectRatio="none"
+                  >
                     <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.3"/>
-                        <stop offset="100%" stopColor="#93c5fd" stopOpacity="0"/>
+                      <linearGradient
+                        id="gradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="0%"
+                        y2="100%"
+                      >
+                        <stop
+                          offset="0%"
+                          stopColor="#93c5fd"
+                          stopOpacity="0.3"
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#93c5fd"
+                          stopOpacity="0"
+                        />
                       </linearGradient>
                     </defs>
-                    <path 
-                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12 L 200 64 L 0 64 Z" 
+                    <path
+                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12 L 200 64 L 0 64 Z"
                       fill="url(#gradient)"
                     />
-                    <path 
-                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12" 
-                      fill="none" 
-                      stroke="#3b82f6" 
+                    <path
+                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12"
+                      fill="none"
+                      stroke="#3b82f6"
                       strokeWidth="2"
                       strokeLinecap="round"
                     />
-                    <circle cx="120" cy="28" r="3" fill="#3b82f6"/>
-                    <circle cx="180" cy="15" r="3" fill="#3b82f6"/>
+                    <circle cx="120" cy="28" r="3" fill="#3b82f6" />
+                    <circle cx="180" cy="15" r="3" fill="#3b82f6" />
                   </svg>
                 </div>
                 <div className="flex items-center gap-2 mb-2">
@@ -193,52 +286,91 @@ export default function Home() {
       </section>
 
       {/* WE BUILD Section */}
-      <section className="bg-gradient-to-b from-[#7ba8d4] to-[#5b9aa0] py-20 relative">
+      <section className=" relative" style={{
+        background: "linear-gradient(180deg, #a8d4c8 0%, #7ba8d4 50%, #b8dce8 100%)",
+      }}>
         {/* Wave Top */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -mt-1">
-          <svg className="relative block w-full h-12" viewBox="0 0 1200 60" preserveAspectRatio="none">
-            <path d="M0,0 Q300,40 600,20 T1200,0 L1200,0 L0,0 Z" fill="#a8d4c8"></path>
+        {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -mt-1">
+          <svg
+            className="relative block w-full h-12"
+            viewBox="0 0 1200 60"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 Q300,40 600,20 T1200,0 L1200,0 L0,0 Z"
+              fill="#a8d4c8"
+            ></path>
           </svg>
-        </div>
+        </div> */}
 
-        <div className="w-[94%] ml-auto bg-white rounded-tl-[100px] px-6 pt-6 pb-8">
+        <div
+          className="w-[94%] ml-auto rounded-tl-[100px] px-6 pt-6 pb-24 relative"
+          style={{
+            background: "linear-gradient(to bottom, #ffffff 0%, #b8dce8 100%)",
+          }}
+        >
           <div className="flex justify-center">
-            <h2 style={{
-              fontFamily: 'var(--font-anton)',
-              fontStyle: 'normal',
-              fontWeight: 400,
-              fontSize: '100px',
-              lineHeight: '158px',
-              WebkitTextStroke: '1.75px #8591FF',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-            }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-anton)",
+                fontStyle: "normal",
+                fontWeight: 400,
+                fontSize: "100px",
+                lineHeight: "158px",
+                WebkitTextStroke: "1.75px #8591FF",
+                WebkitTextFillColor: "transparent",
+                color: "transparent",
+              }}
+            >
               WE BUILD
             </h2>
           </div>
+
+          {/* Blur fade effect at bottom extending into wave */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 0%, rgba(184, 220, 232, 0.6) 50%, rgba(123, 168, 212, 0.9) 100%)",
+              filter: "blur(24px)",
+            }}
+          ></div>
 
           <div className="grid md:grid-cols-4 -mt-18">
             {/* POS & Billing Systems */}
             <div className="p-6 text-center space-y-4">
               <div className="flex justify-center mb-4">
-                <div className="w-full h-52 bg-gray-300 flex items-center justify-center rounded-xl">
-                  <span className="text-gray-500 text-sm">Image Placeholder</span>
-                </div>
+                <img
+                  src="/we_build_1.png"
+                  alt="POS & Billing Systems"
+                  className="w-full h-52 object-cover rounded-xl"
+                />
               </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">POS & Billing<br/>Systems</h3>
+              <h3 className="text-sm font-bold text-gray-900 leading-4">
+                POS & Billing
+                <br />
+                Systems
+              </h3>
               <p className="text-[10px] text-gray-700">
-                Complete point-of-sale solutions with integrated billing and invoicing
+                Complete point-of-sale solutions with integrated billing and
+                invoicing
               </p>
             </div>
 
             {/* Inventory Management */}
             <div className="p-6 text-center space-y-4">
               <div className="flex justify-center mb-4">
-                <div className="w-full h-52 bg-gray-300 flex items-center justify-center rounded-xl">
-                  <span className="text-gray-500 text-sm">Image Placeholder</span>
-                </div>
+                <img
+                  src="/we_build_2.png"
+                  alt="Inventory Management"
+                  className="w-full h-52 object-cover rounded-xl"
+                />
               </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">Inventory<br/>Management</h3>
+              <h3 className="text-sm font-bold text-gray-900 leading-4">
+                Inventory
+                <br />
+                Management
+              </h3>
               <p className="text-[10px] text-gray-700">
                 Real-time stock tracking and automated reordering systems
               </p>
@@ -247,11 +379,17 @@ export default function Home() {
             {/* Online Ordering */}
             <div className="p-6 text-center space-y-4">
               <div className="flex justify-center mb-4">
-                <div className="w-full h-52 bg-gray-300 flex items-center justify-center rounded-xl">
-                  <span className="text-gray-500 text-sm">Image Placeholder</span>
-                </div>
+                <img
+                  src="/we_build_3.png"
+                  alt="Online Ordering"
+                  className="w-full h-52 object-cover rounded-xl"
+                />
               </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">Online<br/>Ordering</h3>
+              <h3 className="text-sm font-bold text-gray-900 leading-4">
+                Online
+                <br />
+                Ordering
+              </h3>
               <p className="text-[10px] text-gray-700">
                 E-commerce integration with web and mobile ordering platforms
               </p>
@@ -260,11 +398,17 @@ export default function Home() {
             {/* HRM's and User Management */}
             <div className="p-6 text-center space-y-4">
               <div className="flex justify-center mb-4">
-                <div className="w-full h-52 bg-gray-300 flex items-center justify-center rounded-xl">
-                  <span className="text-gray-500 text-sm">Image Placeholder</span>
-                </div>
+                <img
+                  src="/we_build_4.png"
+                  alt="HRM's and User Management"
+                  className="w-full h-52 object-cover rounded-xl"
+                />
               </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">{"HRM's and User"}<br/>Management</h3>
+              <h3 className="text-sm font-bold text-gray-900 leading-4">
+                {"HRM's and User"}
+                <br />
+                Management
+              </h3>
               <p className="text-[10px] text-gray-700">
                 Employee management, attendance, and role-based access control
               </p>
@@ -272,39 +416,63 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wave Bottom */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-15" viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <path d="M0,60 Q24,0 48,60 T96,60 T144,60 T192,60 T240,60 T288,60 T336,60 T384,60 T432,60 T480,60 T528,60 T576,60 T624,60 T672,60 T720,60 T768,60 T816,60 T864,60 T912,60 T960,60 T1008,60 T1056,60 T1104,60 T1152,60 T1200,60 T1248,60 T1296,60 T1344,60 T1392,60 T1440,60 L1440,120 L0,120 Z" fill="#06181E"/>
-          </svg>
-        </div>
       </section>
 
       {/* Our Products Section */}
-      <section className="bg-[#06181E] py-16">
+      <section className="bg-[#06181E] py-16 relative">
+        {/* Wave Top */}
+        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
+          <svg
+            className="relative block w-full h-15"
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,60 Q24,0 48,60 T96,60 T144,60 T192,60 T240,60 T288,60 T336,60 T384,60 T432,60 T480,60 T528,60 T576,60 T624,60 T672,60 T720,60 T768,60 T816,60 T864,60 T912,60 T960,60 T1008,60 T1056,60 T1104,60 T1152,60 T1200,60 T1248,60 T1296,60 T1344,60 T1392,60 T1440,60 L1440,120 L0,120 Z"
+              fill="#06181E"
+            />
+          </svg>
+        </div>
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-medium text-center text-white mb-12" style={{fontFamily: 'var(--font-anton)'}}>Our Products</h2>
+          <h2
+            className="text-4xl font-medium text-center text-white mb-12"
+            style={{ fontFamily: "var(--font-anton)" }}
+          >
+            Our Products
+          </h2>
 
           {/* First Row - 2 Cards */}
           <div className="flex justify-center gap-6 mb-6">
             {/* Pharmacy Management Suite */}
-            <div className="bg-[#A6CAFE] rounded-lg" style={{width: '460px', padding: '24px'}}>
+            <div
+              className="bg-[#A6CAFE] rounded-lg"
+              style={{ width: "460px", padding: "24px" }}
+            >
               <div className="flex gap-4">
-                <div className="flex flex-col" style={{width: '65%'}}>
+                <div className="flex flex-col" style={{ width: "65%" }}>
                   <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
                     Active
                   </div>
-                  <h3 className="text-2xl text-gray-900 mb-2 leading-tight" style={{fontFamily: 'var(--font-anton)'}}>
-                    Pharmacy<br/>Management Suite
+                  <h3
+                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    style={{ fontFamily: "var(--font-anton)" }}
+                  >
+                    Pharmacy
+                    <br />
+                    Management Suite
                   </h3>
                   <p className="text-xs text-gray-700 mb-6">
-                    Complete pharmacy solution with POS, inventory, online ordering, and delivery
+                    Complete pharmacy solution with POS, inventory, online
+                    ordering, and delivery
                   </p>
                   <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
                     View Product
                   </button>
                 </div>
-                <div className="flex flex-col justify-center" style={{width: '35%'}}>
+                <div
+                  className="flex flex-col justify-center"
+                  style={{ width: "35%" }}
+                >
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-1.5 text-xs">
                       <span className="text-blue-600">✓</span>
@@ -336,23 +504,35 @@ export default function Home() {
             </div>
 
             {/* Retail Suite */}
-            <div className="bg-[#A6CAFE] rounded-lg" style={{width: '460px', padding: '24px'}}>
+            <div
+              className="bg-[#A6CAFE] rounded-lg"
+              style={{ width: "460px", padding: "24px" }}
+            >
               <div className="flex gap-4">
-                <div className="flex flex-col" style={{width: '65%'}}>
+                <div className="flex flex-col" style={{ width: "65%" }}>
                   <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
                     Soon
                   </div>
-                  <h3 className="text-2xl text-gray-900 mb-2 leading-tight" style={{fontFamily: 'var(--font-anton)'}}>
-                    Retail<br/>Suite
+                  <h3
+                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    style={{ fontFamily: "var(--font-anton)" }}
+                  >
+                    Retail
+                    <br />
+                    Suite
                   </h3>
                   <p className="text-xs text-gray-700 mb-6">
-                    Multi-store retail management with inventory sync and customer analytics
+                    Multi-store retail management with inventory sync and
+                    customer analytics
                   </p>
                   <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
                     Coming soon
                   </button>
                 </div>
-                <div className="flex flex-col justify-center" style={{width: '35%'}}>
+                <div
+                  className="flex flex-col justify-center"
+                  style={{ width: "35%" }}
+                >
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-1.5 text-xs">
                       <span className="text-blue-600">✓</span>
@@ -386,23 +566,35 @@ export default function Home() {
 
           {/* Second Row - 1 Card */}
           <div className="flex justify-center">
-            <div className="bg-[#A6CAFE] rounded-lg" style={{width: '460px', padding: '24px'}}>
+            <div
+              className="bg-[#A6CAFE] rounded-lg"
+              style={{ width: "460px", padding: "24px" }}
+            >
               <div className="flex gap-4">
-                <div className="flex flex-col" style={{width: '65%'}}>
+                <div className="flex flex-col" style={{ width: "65%" }}>
                   <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
                     Active
                   </div>
-                  <h3 className="text-2xl text-gray-900 mb-2 leading-tight" style={{fontFamily: 'var(--font-anton)'}}>
-                    Clinic Management<br/>Suite
+                  <h3
+                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    style={{ fontFamily: "var(--font-anton)" }}
+                  >
+                    Clinic Management
+                    <br />
+                    Suite
                   </h3>
                   <p className="text-xs text-gray-700 mb-6">
-                    Healthcare practice management with appointments and patient records
+                    Healthcare practice management with appointments and patient
+                    records
                   </p>
                   <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
                     View Product
                   </button>
                 </div>
-                <div className="flex flex-col justify-center" style={{width: '35%'}}>
+                <div
+                  className="flex flex-col justify-center"
+                  style={{ width: "35%" }}
+                >
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2 text-xs">
                       <span className="text-blue-600">✓</span>
@@ -447,21 +639,49 @@ export default function Home() {
           }
         `}</style>
         <div className="flex items-center gap-12 opacity-60 animate-scroll">
-          <div className="text-sm font-semibold text-white whitespace-nowrap">NYU Langone Health</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Dana-Farber Brigham</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Cleveland Clinic</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Mass General</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Stanford Medicine</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Cedars Sinai</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Mayo Clinic</div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            NYU Langone Health
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Dana-Farber Brigham
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Cleveland Clinic
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Mass General
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Stanford Medicine
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Cedars Sinai
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Mayo Clinic
+          </div>
           {/* Duplicate for seamless loop */}
-          <div className="text-sm font-semibold text-white whitespace-nowrap">NYU Langone Health</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Dana-Farber Brigham</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Cleveland Clinic</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Mass General</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Stanford Medicine</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Cedars Sinai</div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">Mayo Clinic</div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            NYU Langone Health
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Dana-Farber Brigham
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Cleveland Clinic
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Mass General
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Stanford Medicine
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Cedars Sinai
+          </div>
+          <div className="text-sm font-semibold text-white whitespace-nowrap">
+            Mayo Clinic
+          </div>
         </div>
       </section>
 
@@ -469,10 +689,14 @@ export default function Home() {
       <section className="bg-[#06181E] py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-white text-2xl mb-3">
-            Trusted By Many Organizations and<br/>Businesses
+            Trusted By Many Organizations and
+            <br />
+            Businesses
           </h2>
           <p className="text-gray-400 text-sm mb-12">
-            Join over 800 institutions and Organizations<br/>and optimize your Software.
+            Join over 800 institutions and Organizations
+            <br />
+            and optimize your Software.
           </p>
 
           <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -495,80 +719,117 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="bg-[#06181E] py-16">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">Why Choose Us</h2>
-          <p className="text-center text-gray-600 text-sm mb-12">
-            {"We don't just build software—we build partnerships. Our platform is designed"}<br/>
+          <h2 className="text-3xl font-bold text-center text-white mb-3">
+            Why Choose Us
+          </h2>
+          <p className="text-center text-gray-400 text-sm mb-12">
+            {
+              "We don't just build software—we build partnerships. Our platform is designed"
+            }
+            <br />
             with your growth in mind.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             {/* Modular Product Architecture */}
-            <div className="bg-gray-900 text-white p-5 rounded-2xl">
+            <div className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-gray-700 p-2 rounded-lg">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="7" height="7" rx="1"/>
-                    <rect x="3" y="14" width="7" height="7" rx="1"/>
-                    <rect x="14" y="3" width="7" height="7" rx="1"/>
-                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                <div className="bg-blue-50 p-2 rounded-lg">
+                  <svg
+                    className="w-5 h-5 text-sky-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">Modular Product Architecture</h3>
-                  <p className="text-gray-400 text-xs">
-                    Pick and choose the modules you need. Scale up as your business grows without disrupting existing workflows.
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                    Modular Product Architecture
+                  </h3>
+                  <p className="text-gray-600 text-xs">
+                    Pick and choose the modules you need. Scale up as your
+                    business grows without disrupting existing workflows.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Centralized Billing & Subscriptions */}
-            <div className="bg-gray-900 text-white p-5 rounded-2xl">
+            <div className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-gray-700 p-2 rounded-lg">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="18" height="18" rx="2"/>
-                    <path d="M7 8h10M7 12h10M7 16h6" stroke="white" strokeWidth="1.5"/>
+                <div className="bg-blue-50 p-2 rounded-lg">
+                  <svg
+                    className="w-5 h-5 text-sky-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path
+                      d="M7 8h10M7 12h10M7 16h6"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">Centralized Billing & Subscriptions</h3>
-                  <p className="text-gray-400 text-xs">
-                    One dashboard to manage all your subscriptions, payments, and invoices across all products.
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                    Centralized Billing & Subscriptions
+                  </h3>
+                  <p className="text-gray-600 text-xs">
+                    One dashboard to manage all your subscriptions, payments,
+                    and invoices across all products.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Activation-Based Access Control */}
-            <div className="bg-gray-900 text-white p-5 rounded-2xl">
+            <div className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-gray-700 p-2 rounded-lg">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                <div className="bg-blue-50 p-2 rounded-lg">
+                  <svg
+                    className="w-5 h-5 text-sky-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">Activation-Based Access Control</h3>
-                  <p className="text-gray-400 text-xs">
-                    Secure, role-based access system that puts you in control of who can use what and when.
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                    Activation-Based Access Control
+                  </h3>
+                  <p className="text-gray-600 text-xs">
+                    Secure, role-based access system that puts you in control of
+                    who can use what and when.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Scalable & Future-Ready */}
-            <div className="bg-gray-900 text-white p-5 rounded-2xl">
+            <div className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-gray-700 p-2 rounded-lg">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                <div className="bg-blue-50 p-2 rounded-lg">
+                  <svg
+                    className="w-5 h-5 text-sky-500"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1">Scalable & Future-Ready</h3>
-                  <p className="text-gray-400 text-xs">
-                    Built on modern cloud infrastructure that grows with your business, ensuring 99.9% uptime.
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                    Scalable & Future-Ready
+                  </h3>
+                  <p className="text-gray-600 text-xs">
+                    Built on modern cloud infrastructure that grows with your
+                    business, ensuring 99.9% uptime.
                   </p>
                 </div>
               </div>
@@ -586,7 +847,9 @@ export default function Home() {
               <div className="text-gray-500 text-xs">Uptime SLA</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-amber-500 mb-1">{'<'}2min</div>
+              <div className="text-3xl font-bold text-amber-500 mb-1">
+                {"<"}2min
+              </div>
               <div className="text-gray-500 text-xs">Avg. Response Time</div>
             </div>
             <div>
@@ -598,89 +861,177 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden" style={{
+        background: "linear-gradient(180deg, #06181E 0%, #1a2a3a 100%)",
+      }}>
         {/* Gradient Background */}
-        <div 
-          className="py-20 px-6"
+        <div
+          className="w-[94%] mr-auto rounded-tr-[100px] py-20 px-6 pb-16"
           style={{
-            background: "linear-gradient(180deg, #87CEEB 0%, #4169E1 50%, #8B5CF6 100%)",
+            background:
+              "linear-gradient(180deg, #7DB9E8 0%, #8B94E8 50%, #C4A5E8 100%)",
           }}
         >
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl ml-10 mx-auto">
             <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
-              Ready to go? Start<br/>Building together.
+              Ready to go? Start
+              <br />
+              Building together.
             </h2>
             <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-colors">
               <span className="font-semibold text-sm">Request Demo</span>
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-                <path d="M1 1L7 7L1 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M1 1L7 7L1 13"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
           </div>
-        </div>
 
-        {/* Footer */}
-        <div className="bg-white py-16 px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-12 md:gap-16">
-              {/* Newsletter Column */}
-              <div className="md:w-1/3">
-                <h3 className="font-semibold text-sm text-black mb-3">Newsletter</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {"We'd love to share our love for engineering with you in our monthly newsletter."}
-                </p>
-                <div className="flex">
-                  <input
-                    type="email"
-                    placeholder="jane@domain.com"
-                    className="flex-1 px-3 py-2 bg-gray-100 rounded-l-lg text-sm placeholder:text-gray-400 focus:outline-none"
-                  />
-                  <button className="px-3 py-2 bg-gray-100 rounded-r-lg text-sm font-semibold hover:bg-gray-200">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-
-              {/* Other Footer Columns */}
-              <div className="flex-1 grid ml-12 grid-cols-2 md:grid-cols-4 gap-8">
-                {/* Company Column */}
-                <div>
-                  <h3 className="font-semibold text-sm text-black mb-3">Company</h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Blog</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Careers</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Privacy</a>
+          {/* Footer */}
+          <div className="py-16 px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col md:flex-row gap-12 md:gap-16">
+                {/* Newsletter Column */}
+                <div className="md:w-1/3">
+                  <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                    Newsletter
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-4">
+                    {
+                      "We'd love to share our love for engineering with you in our monthly newsletter."
+                    }
+                  </p>
+                  <div className="flex">
+                    <input
+                      type="email"
+                      placeholder="jane@domain.com"
+                      className="flex-1 px-3 py-2 bg-gray-800/20 rounded-l-lg text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none"
+                    />
+                    <button className="px-3 py-2 bg-gray-800/20 rounded-r-lg text-sm font-semibold text-gray-900 hover:bg-gray-800/30">
+                      Subscribe
+                    </button>
                   </div>
                 </div>
 
-                {/* Social Column */}
-                <div>
-                  <h3 className="font-semibold text-sm text-black mb-3">Social</h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Twitter</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Discord</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">LinkedIn</a>
+                {/* Other Footer Columns */}
+                <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-8">
+                  {/* Company Column */}
+                  <div>
+                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                      Company
+                    </h3>
+                    <div className="space-y-2">
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Blog
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Careers
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Privacy
+                      </a>
+                    </div>
                   </div>
-                </div>
 
-                {/* Product Column */}
-                <div>
-                  <h3 className="font-semibold text-sm text-black mb-3">Product</h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Overview</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Roadmap</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Changelog</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Book a demo</a>
+                  {/* Social Column */}
+                  <div>
+                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                      Social
+                    </h3>
+                    <div className="space-y-2">
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Twitter
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Discord
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
                   </div>
-                </div>
 
-                {/* Resources Column */}
-                <div>
-                  <h3 className="font-semibold text-sm text-black mb-3">Resources</h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Documentation</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">GitHub</a>
-                    <a href="#" className="block text-sm text-gray-600 hover:text-black">Contact us</a>
+                  {/* Product Column */}
+                  <div>
+                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                      Product
+                    </h3>
+                    <div className="space-y-2">
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Overview
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Roadmap
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Changelog
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Book a demo
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Resources Column */}
+                  <div>
+                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                      Resources
+                    </h3>
+                    <div className="space-y-2">
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Documentation
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        GitHub
+                      </a>
+                      <a
+                        href="#"
+                        className="block text-sm text-gray-700 hover:text-gray-900"
+                      >
+                        Contact us
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
