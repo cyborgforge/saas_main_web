@@ -336,7 +336,7 @@ export default function ProductPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#FAFAFA] py-16 px-6 border-t border-gray-100 relative">
+      <footer className="bg-[#f4f2ef] py-16 px-20 border-t border-gray-100 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <svg
@@ -346,68 +346,68 @@ export default function ProductPage() {
           >
             <path
               d="M0,60 Q24,0 48,60 T96,60 T144,60 T192,60 T240,60 T288,60 T336,60 T384,60 T432,60 T480,60 T528,60 T576,60 T624,60 T672,60 T720,60 T768,60 T816,60 T864,60 T912,60 T960,60 T1008,60 T1056,60 T1104,60 T1152,60 T1200,60 T1248,60 T1296,60 T1344,60 T1392,60 T1440,60 L1440,120 L0,120 Z"
-              fill="#FAFAFA"
+              fill="#f4f2ef"
             />
           </svg>
         </div>
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-16">
             {/* Newsletter Column */}
             <div className="col-span-2">
-              <h3 className="font-semibold text-sm text-black mb-3">Newsletter</h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <h3 className="font-semibold text-[14px] text-black mb-3">Newsletter</h3>
+              <p className="text-[12px] text-gray-600 mb-4">
                 {"We'd love to share our love for engineering with you in our monthly newsletter."}
               </p>
               <div className="flex">
                 <input
                   type="email"
                   placeholder="jane@domain.com"
-                  className="flex-1 px-3 py-2 bg-gray-100 rounded-l-lg text-sm placeholder:text-gray-400 focus:outline-none"
+                  className="flex-1 px-3 py-2 bg-[#ebeae9] rounded-l-lg text-[12px] placeholder:text-gray-400 focus:outline-none"
                 />
-                <button className="px-3 py-2 bg-gray-100 rounded-r-lg text-sm font-semibold hover:bg-gray-200">
+                <button className="px-3 py-2 ml-1 bg-[#ebeae9] rounded-r-lg text-[12px] font-semibold hover:bg-gray-200">
                   Subscribe
                 </button>
               </div>
             </div>
-
+      
             {/* Company Column */}
             <div>
-              <h3 className="font-semibold text-sm text-black mb-3">Company</h3>
+              <h3 className="font-semibold text-[14px] text-black mb-3">Company</h3>
               <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Blog</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Careers</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Privacy</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Blog</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Careers</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Privacy</a>
               </div>
             </div>
 
             {/* Social Column */}
             <div>
-              <h3 className="font-semibold text-sm text-black mb-3">Social</h3>
+              <h3 className="font-semibold text-[14px] text-black mb-3">Social</h3>
               <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Twitter</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Discord</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">LinkedIn</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Twitter</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Discord</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">LinkedIn</a>
               </div>
             </div>
 
             {/* Product Column */}
             <div>
-              <h3 className="font-semibold text-sm text-black mb-3">Product</h3>
+              <h3 className="font-semibold text-[14px] text-black mb-3">Product</h3>
               <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Overview</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Roadmap</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Changelog</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Book a demo</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Overview</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Roadmap</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Changelog</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Book a demo</a>
               </div>
             </div>
 
             {/* Resources Column */}
             <div>
-              <h3 className="font-semibold text-sm text-black mb-3">Resources</h3>
+              <h3 className="font-semibold text-[14px] text-black mb-3">Resources</h3>
               <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Documentation</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">GitHub</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-black">Contact us</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Documentation</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">GitHub</a>
+                <a href="#" className="block text-[12px] text-gray-600 hover:text-black">Contact us</a>
               </div>
             </div>
           </div>
