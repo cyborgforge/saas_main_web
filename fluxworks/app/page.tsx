@@ -18,7 +18,7 @@ export default function Home() {
       >
         {/* Header */}
         <header className="relative mx-6">
-          <div className="bg-[#b8c8b8]/90 backdrop-blur-sm mx-6 mt-4 rounded-full px-5 py-2.5 shadow-lg">
+          <div className="bg-[#dbf4ff] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
               <Link href="/" className="text-base font-bold text-gray-900">
                 FluxWorks
@@ -26,25 +26,25 @@ export default function Home() {
               <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
                 <Link
                   href="/"
-                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
                 >
                   Home
                 </Link>
                 <Link
                   href="/product"
-                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
                 >
                   Product
                 </Link>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
                 >
                   About
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-sm text-gray-900 hover:text-gray-700 font-medium"
+                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
                 >
                   Contact
                 </Link>
@@ -53,7 +53,7 @@ export default function Home() {
                 <div className="relative">
                   <button
                     onClick={() => setShowDropdown(!showDropdown)}
-                    className="text-sm text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
+                    className="text-[12px] border border-[#80A4A9] text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
                   >
                     Log In
                     <svg
@@ -70,16 +70,16 @@ export default function Home() {
                   </button>
                   {showDropdown && (
                     <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <button className="w-full text-left px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
                         Log In
                       </button>
-                      <button className="w-full text-left px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
                         Sign Up
                       </button>
                     </div>
                   )}
                 </div>
-                <button className="bg-[#4a90a4] text-white text-sm px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
+                <button className="bg-[#95C4DC] text-[12px] px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
                   Book a Demo
                 </button>
               </div>
@@ -115,10 +115,10 @@ export default function Home() {
                 businesses
               </h1>
               <div className="flex gap-3 pt-2">
-                <button className="bg-white text-gray-900 text-sm px-5 py-2.5 rounded-lg font-medium hover:bg-gray-100 shadow-md border border-gray-200">
+                <button className="bg-white text-gray-900 text-sm px-5 py-1.5 rounded-lg font-medium hover:bg-gray-100 shadow-md border border-gray-200">
                   View Products
                 </button>
-                <button className="bg-transparent text-gray-900 text-sm px-5 py-2.5 rounded-lg font-medium hover:bg-black/5 border border-gray-400">
+                <button className="bg-transparent text-gray-900 text-sm px-5 py-1.5 rounded-lg font-medium hover:bg-black/5 border border-gray-400">
                   Book a Demo
                 </button>
               </div>
@@ -638,49 +638,37 @@ export default function Home() {
             animation-play-state: paused;
           }
         `}</style>
-        <div className="flex items-center gap-12 opacity-60 animate-scroll">
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            NYU Langone Health
+        <div className="flex items-center gap-16 animate-scroll">
+          <div className="flex-shrink-0">
+            <img src="/item_1.png" alt="Partner 1" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Dana-Farber Brigham
+          <div className="flex-shrink-0">
+            <img src="/item_2.png" alt="Partner 2" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Cleveland Clinic
+          <div className="flex-shrink-0">
+            <img src="/item_3.png" alt="Partner 3" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Mass General
+          <div className="flex-shrink-0">
+            <img src="/item_4.png" alt="Partner 4" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Stanford Medicine
-          </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Cedars Sinai
-          </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Mayo Clinic
+          <div className="flex-shrink-0">
+            <img src="/item_5.png" alt="Partner 5" className="h-8 w-auto" />
           </div>
           {/* Duplicate for seamless loop */}
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            NYU Langone Health
+          <div className="flex-shrink-0">
+            <img src="/item_1.png" alt="Partner 1" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Dana-Farber Brigham
+          <div className="flex-shrink-0">
+            <img src="/item_2.png" alt="Partner 2" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Cleveland Clinic
+          <div className="flex-shrink-0">
+            <img src="/item_3.png" alt="Partner 3" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Mass General
+          <div className="flex-shrink-0">
+            <img src="/item_4.png" alt="Partner 4" className="h-8 w-auto" />
           </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Stanford Medicine
-          </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Cedars Sinai
-          </div>
-          <div className="text-sm font-semibold text-white whitespace-nowrap">
-            Mayo Clinic
+          <div className="flex-shrink-0">
+            <img src="/item_5.png" alt="Partner 5" className="h-8 w-auto" />
           </div>
         </div>
       </section>
@@ -840,21 +828,21 @@ export default function Home() {
           <div className="grid grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-teal-500 mb-1">50+</div>
-              <div className="text-gray-500 text-xs">Modules Available</div>
+              <div className="text-gray-500 text-[12px]">Modules Available</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-teal-500 mb-1">99.9%</div>
-              <div className="text-gray-500 text-xs">Uptime SLA</div>
+              <div className="text-gray-500 text-[12px]">Uptime SLA</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-amber-500 mb-1">
                 {"<"}2min
               </div>
-              <div className="text-gray-500 text-xs">Avg. Response Time</div>
+              <div className="text-gray-500 text-[12px]">Avg. Response Time</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-amber-500 mb-1">24/7</div>
-              <div className="text-gray-500 text-xs">Expert Support</div>
+              <div className="text-gray-500 text-[12px]">Expert Support</div>
             </div>
           </div>
         </div>
@@ -872,14 +860,14 @@ export default function Home() {
               "linear-gradient(180deg, #7DB9E8 0%, #8B94E8 50%, #C4A5E8 100%)",
           }}
         >
-          <div className="max-w-4xl ml-10 mx-auto">
+          <div className="max-w-4xl ml-10 px-8 mx-auto">
             <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
               Ready to go? Start
               <br />
               Building together.
             </h2>
-            <button className="flex items-center gap-2 bg-black text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-colors">
-              <span className="font-semibold text-sm">Request Demo</span>
+            <button className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
+              <span className="font-semibold text-[14px]">Request Demo</span>
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
                 <path
                   d="M1 1L7 7L1 13"
@@ -893,145 +881,142 @@ export default function Home() {
           </div>
 
           {/* Footer */}
-          <div className="py-16 px-6">
+          <div className="py-16 px-20">
             <div className="max-w-4xl mx-auto">
-              <div className="flex flex-col md:flex-row gap-12 md:gap-16">
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
                 {/* Newsletter Column */}
-                <div className="md:w-1/3">
-                  <h3 className="font-semibold text-sm text-gray-900 mb-3">
+                <div className="col-span-2">
+                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
                     Newsletter
                   </h3>
-                  <p className="text-sm text-gray-700 mb-4">
+                  <p className="text-[12px] text-gray-700 mb-4">
                     {
                       "We'd love to share our love for engineering with you in our monthly newsletter."
                     }
                   </p>
-                  <div className="flex">
+                  <div className="flex items-center gap-0.5">
                     <input
                       type="email"
                       placeholder="jane@domain.com"
-                      className="flex-1 px-3 py-2 bg-gray-800/20 rounded-l-lg text-sm text-gray-900 placeholder:text-gray-600 focus:outline-none"
+                      className="flex-1 pl-2 py-1.5 bg-gray-800/20 rounded-l-md text-[11px] text-gray-900 placeholder:text-gray-600 focus:outline-none"
                     />
-                    <button className="px-3 py-2 bg-gray-800/20 rounded-r-lg text-sm font-semibold text-gray-900 hover:bg-gray-800/30">
+                    <button className="px-1 py-1.5 bg-gray-800/20 rounded-r-md text-[11px] font-semibold text-gray-900 hover:bg-gray-800/30">
                       Subscribe
                     </button>
                   </div>
                 </div>
 
-                {/* Other Footer Columns */}
-                <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {/* Company Column */}
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
-                      Company
-                    </h3>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Blog
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Careers
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Privacy
-                      </a>
-                    </div>
+                {/* Company Column */}
+                <div>
+                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
+                    Company
+                  </h3>
+                  <div className="space-y-2">
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Blog
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Careers
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Privacy
+                    </a>
                   </div>
+                </div>
 
-                  {/* Social Column */}
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
-                      Social
-                    </h3>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Twitter
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Discord
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        LinkedIn
-                      </a>
-                    </div>
+                {/* Social Column */}
+                <div>
+                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
+                    Social
+                  </h3>
+                  <div className="space-y-2">
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Twitter
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Discord
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      LinkedIn
+                    </a>
                   </div>
+                </div>
 
-                  {/* Product Column */}
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
-                      Product
-                    </h3>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Overview
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Roadmap
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Changelog
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Book a demo
-                      </a>
-                    </div>
+                {/* Product Column */}
+                <div>
+                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
+                    Product
+                  </h3>
+                  <div className="space-y-2">
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Overview
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Roadmap
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Changelog
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Book a demo
+                    </a>
                   </div>
+                </div>
 
-                  {/* Resources Column */}
-                  <div>
-                    <h3 className="font-semibold text-sm text-gray-900 mb-3">
-                      Resources
-                    </h3>
-                    <div className="space-y-2">
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Documentation
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        GitHub
-                      </a>
-                      <a
-                        href="#"
-                        className="block text-sm text-gray-700 hover:text-gray-900"
-                      >
-                        Contact us
-                      </a>
-                    </div>
+                {/* Resources Column */}
+                <div>
+                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
+                    Resources
+                  </h3>
+                  <div className="space-y-2">
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Documentation
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-[12px] text-gray-700 hover:text-gray-900"
+                    >
+                      Contact us
+                    </a>
                   </div>
                 </div>
               </div>
