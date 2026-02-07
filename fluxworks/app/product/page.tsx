@@ -278,7 +278,7 @@ export default function ProductPage() {
               </div>
 
               <h1
-                className="text-3xl -mt-4 md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-anton)" }}
               >
                 Pharmacy
