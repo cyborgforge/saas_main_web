@@ -13,7 +13,7 @@ const anton = Anton({
 })
 
 export const metadata: Metadata = {
-  title: 'CloudSite - Scalable SaaS Products for Modern Businesses',
+  title: 'FluxWorks',
   description: 'We build scalable SaaS products for modern businesses. Pharmacy Management, Retail Suite, and Clinic Management solutions.',
   generator: 'v0.app',
 }

@@ -13,7 +13,7 @@ export default function Home() {
         className="relative overflow-hidden pb-20"
         style={{
           background:
-            "linear-gradient(180deg, #5b9aa0 0%, #7ba8d4 50%, #a8d4c8 100%)",
+            "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
         }}
       >
         {/* Header */}
@@ -70,12 +70,12 @@ export default function Home() {
                   </button>
                   {showDropdown && (
                     <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      <Link href="/login" className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
                         Log In
-                      </button>
-                      <button className="w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      </Link>
+                      <Link href="/register" className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
                         Sign Up
-                      </button>
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -287,7 +287,7 @@ export default function Home() {
 
       {/* WE BUILD Section */}
       <section className=" relative" style={{
-        background: "linear-gradient(180deg, #a8d4c8 0%, #7ba8d4 50%, #b8dce8 100%)",
+        background: "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
       }}>
         {/* Wave Top */}
         {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -mt-1">
@@ -306,7 +306,7 @@ export default function Home() {
         <div
           className="w-[94%] ml-auto rounded-tl-[100px] px-6 pt-6 pb-24 relative"
           style={{
-            background: "linear-gradient(to bottom, #ffffff 0%, #b8dce8 100%)",
+            background: "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
           }}
         >
           <div className="flex justify-center">
@@ -850,38 +850,51 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="relative overflow-hidden" style={{
-        background: "linear-gradient(180deg, #06181E 0%, #1a2a3a 100%)",
+        background: "linear-gradient(180deg, #06181E 0%, #0E2A35 100%)",
       }}>
-        {/* Gradient Background */}
+        {/* Gradient Background - only covers CTA heading area */}
         <div
-          className="w-[94%] mr-auto rounded-tr-[100px] py-20 px-6 pb-16"
-          style={{
-            background:
-              "linear-gradient(180deg, #7DB9E8 0%, #8B94E8 50%, #C4A5E8 100%)",
-          }}
+          className="w-[94%] mr-auto rounded-tr-[100px] relative overflow-hidden"
         >
-          <div className="max-w-4xl ml-10 px-8 mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
-              Ready to go? Start
-              <br />
-              Building together.
-            </h2>
-            <button className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
-              <span className="font-semibold text-[14px]">Request Demo</span>
-              <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
-                <path
-                  d="M1 1L7 7L1 13"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+          {/* Gradient area with heading and button */}
+          <div
+            className="relative py-20 px-6 pb-16 overflow-hidden"
+            style={{
+              background:
+                "linear-gradient(150deg, #3A7A8C 0%, #4A78A8 25%, #6B6EBC 50%, #9B6EB8 75%, #C490C8 100%)",
+            }}
+          >
+            {/* Purple/pink glow in bottom-right */}
+            <div
+              className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none"
+              style={{
+                background: "radial-gradient(circle at 70% 70%, #D4A0D8 0%, #B87AD4 30%, transparent 65%)",
+                opacity: 0.5,
+              }}
+            />
+            <div className="max-w-4xl ml-10 px-8 mx-auto relative z-10">
+              <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
+                Ready to go? Start
+                <br />
+                Building together.
+              </h2>
+              <button className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
+                <span className="font-semibold text-[14px]">Request Demo</span>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
+                  <path
+                    d="M1 1L7 7L1 13"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          {/* Footer */}
-          <div className="py-16 px-20">
+          {/* Footer - white background */}
+          <div className="bg-white py-16 px-20">
             <div className="max-w-4xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
                 {/* Newsletter Column */}

@@ -409,7 +409,7 @@ export default function ProductPage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
             Modules Included
           </h2>
-          <p className="text-center text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-gray-600 mb-12">
             Everything you need to run your business, all in one place.
           </p>
 
