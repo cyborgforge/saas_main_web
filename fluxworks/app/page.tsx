@@ -70,10 +70,18 @@ export default function Home() {
                   </button>
                   {showDropdown && (
                     <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <Link href="/login" className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      <Link 
+                        href="/login" 
+                        onClick={() => setShowDropdown(false)}
+                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+                      >
                         Log In
                       </Link>
-                      <Link href="/register" className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium">
+                      <Link 
+                        href="/register" 
+                        onClick={() => setShowDropdown(false)}
+                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+                      >
                         Sign Up
                       </Link>
                     </div>
