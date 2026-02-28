@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { JSX } from "react/jsx-runtime"; // Import JSX to resolve undeclared variable error
+import { motion } from "framer-motion";
 
 export default function ProductPage() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -185,94 +186,19 @@ export default function ProductPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
-        {/* Header */}
-        <header className="relative mx-6">
-          <div className="bg-[#dbf4ff] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <Link href="/" className="text-base font-bold text-gray-900">
-                FluxWorks
-              </Link>
-              <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-                <Link
-                  href="/"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/product"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Product
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Contact
-                </Link>
-              </nav>
-              <div className="flex items-center gap-2.5">
-                <div className="relative">
-                  <button
-                    onClick={() => setShowDropdown(!showDropdown)}
-                    className="text-[12px] border border-[#80A4A9] text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
-                  >
-                    Log In
-                    <svg
-                      className="w-3 h-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                  {showDropdown && (
-                    <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <Link
-                        href="/login"
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Log In
-                      </Link>
-                      <Link
-                        href="/register"
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Sign Up
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <button className="bg-[#95C4DC] text-[12px] px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
-                  Book a Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div className="max-w-7xl mx-6 px-8 pt-10 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="inline-flex items-center gap-0.5 bg-[#0070A015] px-2 py-1 rounded-full text-sm mb-6">
                 <span
                   className="text-yellow-600 inline-block"
@@ -334,10 +260,15 @@ export default function ProductPage() {
                   Contact Sales
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Content - Dashboard Preview */}
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <div className="bg-white rounded-2xl shadow-xl">
                 {/* Browser Dots */}
                 <div className="flex gap-1 p-3 bg-[#0070A0] rounded-t-2xl">
@@ -406,7 +337,7 @@ export default function ProductPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -423,9 +354,13 @@ export default function ProductPage() {
 
           <div className="grid md:grid-cols-3 gap-4">
             {modules.map((module, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="border border-[#F7F9FA] bg-[#F7F9FA] rounded-xl p-4 hover:border-[#4a90a4] transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
               >
                 <div className="flex items-start gap-3">
                   <div className="text-[#4a90a4] bg-[#CCEFF633] p-2 rounded-lg">
@@ -440,7 +375,7 @@ export default function ProductPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -482,7 +417,14 @@ export default function ProductPage() {
                 description: "Start using all modules and scale as you grow.",
               },
             ].map((item, index) => (
-              <div key={index} className="text-center relative">
+              <motion.div
+                key={index}
+                className="text-center relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
                 <div className="w-12 h-12 bg-[#0070A0] text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
                   {item.step}
                 </div>
@@ -501,7 +443,7 @@ export default function ProductPage() {
                   {item.title}
                 </h3>
                 <p className="text-gray-600 text-[12px]">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -519,7 +461,13 @@ export default function ProductPage() {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Starter Plan */}
-            <div className="bg-[#F7F9FA] rounded-2xl p-6">
+            <motion.div
+              className="bg-[#F7F9FA] rounded-2xl p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="font-bold text-xl text-gray-900 mb-1">Starter</h3>
               <p className="text-gray-600 text-[10px] mb-4">
                 Perfect for small businesses getting started
@@ -560,10 +508,16 @@ export default function ProductPage() {
               <button className="w-full bg-[#0070A0] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a]">
                 Get Started
               </button>
-            </div>
+            </motion.div>
 
             {/* Growth Plan */}
-            <div className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F]">
+            <motion.div
+              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F]"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0070A0] text-white text-xs font-medium px-3 py-1 rounded-full">
                 Most Popular
               </div>
@@ -608,10 +562,16 @@ export default function ProductPage() {
               <button className="w-full bg-white py-1.5 text-sm rounded-lg font-medium hover:bg-gray-800">
                 Most Popular
               </button>
-            </div>
+            </motion.div>
 
             {/* Enterprise Plan */}
-            <div className="bg-[#F7F9FA] rounded-2xl p-6">
+            <motion.div
+              className="bg-[#F7F9FA] rounded-2xl p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <h3 className="font-bold text-xl text-gray-900 mb-1">
                 Enterprise
               </h3>
@@ -655,7 +615,7 @@ export default function ProductPage() {
               <button className="w-full bg-[#0070A0] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a]">
                 Contact Sales
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

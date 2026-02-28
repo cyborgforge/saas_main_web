@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -20,9 +21,19 @@ export default function LoginPage() {
       <div className="absolute top-0 right-0 w-[30%] h-full bg-[#7b8cde] z-0" />
       <div className="absolute -bottom-10 left-25 w-[80px] h-[200px] bg-[#7b8cde] rounded-t-full rotate-[40deg] translate-y-[40px] -translate-x-[20px] z-0" />
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4">
+      <motion.div
+        className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4"
+        initial={{ opacity: 0, y: 24, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Left side - Login Form */}
-        <div className="w-full md:w-1/2 max-w-[280px]">
+        <motion.div
+          className="w-full md:w-1/2 max-w-[280px]"
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <h1 className="text-base font-bold text-gray-800 mb-2.5 text-center">
             Welcome Back!
           </h1>
@@ -89,21 +100,26 @@ export default function LoginPage() {
               </svg>
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right side - Laptop Image */}
-        <div className="w-full md:w-1/2 flex items-center justify-center">
+        <motion.div
+          className="w-full md:w-1/2 flex items-center justify-center"
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
           <Image
             src="/laptop.png"
             alt="Laptop illustration"
             width={360}
             height={0}
-            style={{ height: 'auto' }}
+            style={{ height: "auto" }}
             className="object-contain drop-shadow-lg"
             priority
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
