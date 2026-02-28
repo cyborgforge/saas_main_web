@@ -1,0 +1,33 @@
+
+> fluxworks@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.5.12
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./app/about/page.tsx
+Error:   x Expected '</', got 'jsx text (
+  |
+  |         )'
+     ,-[D:\saas_main_web\fluxworks\app\about\page.tsx:344:1]
+ 341 |                       </p>
+ 342 |                     </div>
+ 343 |                   </div>
+ 344 | ,->           </div>
+ 345 | |   
+ 346 | `->         </motion.div>
+ 347 |     
+ 348 |             {/* Team Images Grid */}
+ 348 |             <motion.div
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/about/page.tsx
+
+
+> Build failed because of webpack errors

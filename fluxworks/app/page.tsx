@@ -1,104 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  const [showDropdown, setShowDropdown] = useState(false);
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Contains Header */}
+      {/* Hero Section */}
       <section
-        className="relative overflow-hidden pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
           background:
             "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
         }}
       >
-        {/* Header */}
-        <header className="relative mx-6">
-          <div className="bg-[#dbf4ff] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <Link href="/" className="text-base font-bold text-gray-900">
-                FluxWorks
-              </Link>
-              <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-                <Link
-                  href="/"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/product"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Product
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Contact
-                </Link>
-              </nav>
-              <div className="flex items-center gap-2.5">
-                <div className="relative">
-                  <button
-                    onClick={() => setShowDropdown(!showDropdown)}
-                    className="text-[12px] border border-[#80A4A9] text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
-                  >
-                    Log In
-                    <svg
-                      className="w-3 h-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                  {showDropdown && (
-                    <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <Link 
-                        href="/login" 
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Log In
-                      </Link>
-                      <Link 
-                        href="/register" 
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Sign Up
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <button className="bg-[#95C4DC] text-[12px] px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
-                  Book a Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div className="max-w-7xl mx-6 px-8 pt-10 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
               {/* Blue Server Icon */}
               <div className="bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 ml-[460px]">
                 <svg
@@ -130,10 +53,15 @@ export default function Home() {
                   Book a Demo
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Content - Hero Image and Stats */}
-            <div className="relative h-[450px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative h-[450px]"
+            >
               {/* Yellow/Teal Striped Background Circle */}
               {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] overflow-hidden rounded-full">
                 <div className="absolute inset-0" style={{
@@ -154,7 +82,11 @@ export default function Home() {
               </div>
 
               {/* 5 Star Rating */}
-              <div className="absolute bottom-58 -left-12 bg-white px-4 py-2 rounded-xl shadow-xl z-30">
+              <motion.div
+                className="absolute bottom-58 -left-12 bg-white px-4 py-2 rounded-xl shadow-xl z-30"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
                 <div className="flex gap-0.5 text-yellow-400 text-lg">
                   <span>★</span>
                   <span>★</span>
@@ -162,10 +94,14 @@ export default function Home() {
                   <span>★</span>
                   <span>★</span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Total Projects Card */}
-              <div className="absolute top-2 bg-white p-2 right-8 rounded-2xl shadow-xl w-36 z-30">
+              <motion.div
+                className="absolute top-2 bg-white p-2 right-8 rounded-2xl shadow-xl w-36 z-30"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
                 <div className="space-y-2">
                   <div className="text-[12px] text-gray-600 font-medium">
                     Total Projects
@@ -222,10 +158,14 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Growth Chart Card */}
-              <div className="absolute bottom-4 right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30">
+              <motion.div
+                className="absolute bottom-4 right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
                 <div className="text-sm font-bold mb-2 text-gray-900">
                   Growth
                 </div>
@@ -287,16 +227,20 @@ export default function Home() {
                   <span>39</span>
                   <span>27</span>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* WE BUILD Section */}
-      <section className=" relative" style={{
-        background: "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
-      }}>
+      <section
+        className=" relative"
+        style={{
+          background:
+            "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
+        }}
+      >
         {/* Wave Top */}
         {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -mt-1">
           <svg
@@ -314,7 +258,8 @@ export default function Home() {
         <div
           className="w-[94%] ml-auto rounded-tl-[100px] px-6 pt-6 pb-24 relative"
           style={{
-            background: "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
+            background:
+              "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
           }}
         >
           <div className="flex justify-center">
@@ -346,7 +291,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-4 -mt-18">
             {/* POS & Billing Systems */}
-            <div className="p-6 text-center space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="p-6 text-center space-y-4"
+            >
               <div className="flex justify-center mb-4">
                 <img
                   src="/we_build_1.png"
@@ -363,10 +314,16 @@ export default function Home() {
                 Complete point-of-sale solutions with integrated billing and
                 invoicing
               </p>
-            </div>
+            </motion.div>
 
             {/* Inventory Management */}
-            <div className="p-6 text-center space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="p-6 text-center space-y-4"
+            >
               <div className="flex justify-center mb-4">
                 <img
                   src="/we_build_2.png"
@@ -382,10 +339,16 @@ export default function Home() {
               <p className="text-[10px] text-gray-700">
                 Real-time stock tracking and automated reordering systems
               </p>
-            </div>
+            </motion.div>
 
             {/* Online Ordering */}
-            <div className="p-6 text-center space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="p-6 text-center space-y-4"
+            >
               <div className="flex justify-center mb-4">
                 <img
                   src="/we_build_3.png"
@@ -401,10 +364,16 @@ export default function Home() {
               <p className="text-[10px] text-gray-700">
                 E-commerce integration with web and mobile ordering platforms
               </p>
-            </div>
+            </motion.div>
 
             {/* HRM's and User Management */}
-            <div className="p-6 text-center space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="p-6 text-center space-y-4"
+            >
               <div className="flex justify-center mb-4">
                 <img
                   src="/we_build_4.png"
@@ -420,7 +389,7 @@ export default function Home() {
               <p className="text-[10px] text-gray-700">
                 Employee management, attendance, and role-based access control
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -452,7 +421,11 @@ export default function Home() {
           {/* First Row - 2 Cards */}
           <div className="flex justify-center gap-6 mb-6">
             {/* Pharmacy Management Suite */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-[#A6CAFE] rounded-lg"
               style={{ width: "460px", padding: "24px" }}
             >
@@ -509,10 +482,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Retail Suite */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-[#A6CAFE] rounded-lg"
               style={{ width: "460px", padding: "24px" }}
             >
@@ -569,12 +546,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Second Row - 1 Card */}
           <div className="flex justify-center">
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-[#A6CAFE] rounded-lg"
               style={{ width: "460px", padding: "24px" }}
             >
@@ -623,7 +604,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -696,18 +677,18 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-2xl text-center">
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white p-8 rounded-2xl text-center">
               <div className="text-5xl font-bold text-gray-900 mb-2">450+</div>
               <div className="text-gray-600 text-sm">Clients</div>
-            </div>
-            <div className="bg-white p-8 rounded-2xl text-center">
+            </motion.div>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white p-8 rounded-2xl text-center">
               <div className="text-5xl font-bold text-gray-900 mb-2">45k+</div>
               <div className="text-gray-600 text-sm">users</div>
-            </div>
-            <div className="bg-white p-8 rounded-2xl text-center">
+            </motion.div>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white p-8 rounded-2xl text-center">
               <div className="text-5xl font-bold text-gray-900 mb-2">100+</div>
               <div className="text-gray-600 text-sm">Softwares shipped</div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -728,7 +709,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             {/* Modular Product Architecture */}
-            <div className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 p-2 rounded-lg">
                   <svg
@@ -752,10 +733,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Centralized Billing & Subscriptions */}
-            <div className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 p-2 rounded-lg">
                   <svg
@@ -781,10 +762,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Activation-Based Access Control */}
-            <div className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 p-2 rounded-lg">
                   <svg
@@ -805,10 +786,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Scalable & Future-Ready */}
-            <div className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 p-2 rounded-lg">
                   <svg
@@ -829,41 +810,43 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Stats Row */}
           <div className="grid grid-cols-4 gap-6 text-center">
-            <div>
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
               <div className="text-3xl font-bold text-teal-500 mb-1">50+</div>
               <div className="text-gray-500 text-[12px]">Modules Available</div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
               <div className="text-3xl font-bold text-teal-500 mb-1">99.9%</div>
               <div className="text-gray-500 text-[12px]">Uptime SLA</div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
               <div className="text-3xl font-bold text-amber-500 mb-1">
                 {"<"}2min
               </div>
               <div className="text-gray-500 text-[12px]">Avg. Response Time</div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
               <div className="text-3xl font-bold text-amber-500 mb-1">24/7</div>
               <div className="text-gray-500 text-[12px]">Expert Support</div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden" style={{
-        background: "linear-gradient(180deg, #06181E 0%, #0E2A35 100%)",
-      }}>
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, #06181E 0%, #FFFFFF 100%)",
+        }}
+      >
         {/* Gradient Background - only covers CTA heading area */}
-        <div
-          className="w-[94%] mr-auto rounded-tr-[100px] relative overflow-hidden"
-        >
+        <div className="w-[94%] mr-auto rounded-tr-[100px] relative overflow-hidden">
           {/* Gradient area with heading and button */}
           <div
             className="relative py-20 px-6 pb-16 overflow-hidden"
@@ -880,6 +863,9 @@ export default function Home() {
                 opacity: 0.5,
               }}
             />
+            {/* White gradient at the bottom to merge seamlessly with the footer */}
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
             <div className="max-w-4xl ml-10 px-8 mx-auto relative z-10">
               <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
                 Ready to go? Start

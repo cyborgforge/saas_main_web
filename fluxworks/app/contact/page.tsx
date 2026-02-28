@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -10,90 +11,11 @@ export default function ContactPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
-        {/* Header */}
-        <header className="relative mx-6">
-          <div className="bg-[#dbf4ff] mx-6 mt-4 rounded-full px-5 py-2.5 shadow-sm">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <Link href="/" className="text-base font-bold text-gray-900">
-                FluxWorks
-              </Link>
-              <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
-                <Link
-                  href="/"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/product"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Product
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-[12px] text-gray-900 hover:text-gray-700 font-medium"
-                >
-                  Contact
-                </Link>
-              </nav>
-              <div className="flex items-center gap-2.5">
-                <div className="relative">
-                  <button
-                    onClick={() => setShowDropdown(!showDropdown)}
-                    className="text-[12px] border border-[#80A4A9] text-gray-900 hover:text-gray-700 flex items-center gap-1 px-4 py-1.5 hover:bg-black/5 rounded-full transition-colors font-medium"
-                  >
-                    Log In
-                    <svg
-                      className="w-3 h-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                  {showDropdown && (
-                    <div className="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
-                      <Link
-                        href="/login"
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Log In
-                      </Link>
-                      <Link
-                        href="/register"
-                        onClick={() => setShowDropdown(false)}
-                        className="block w-full text-left px-4 py-2 text-[12px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
-                      >
-                        Sign Up
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <button className="bg-[#95C4DC] text-[12px] px-5 py-2 rounded-full hover:bg-[#3d7a8a] font-medium">
-                  Book a Demo
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <div className="max-w-7xl mx-6 py-16 text-center">
           <h1
             className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
@@ -114,7 +36,12 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-12 px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <h2 className="font-serif text-2xl font-normal text-gray-900 mb-2">
                 Contact Information
               </h2>
@@ -226,10 +153,16 @@ export default function ContactPage() {
                   <p>Sunday: Closed</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Contact Form */}
-            <div className="bg-white p-5 rounded-2xl shadow-sm">
+            <motion.div
+              className="bg-white p-5 rounded-2xl shadow-sm"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div className="grid md:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
@@ -327,7 +260,7 @@ export default function ContactPage() {
                 </a>
                 .
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function RegisterPage() {
   const [fullName, setFullName] = useState("");
@@ -44,9 +45,19 @@ export default function RegisterPage() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4">
+      <motion.div
+        className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4"
+        initial={{ opacity: 0, y: 24, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Left side - System Image */}
-        <div className="w-full mt-20 ml-10 md:w-1/2 flex items-center justify-center">
+        <motion.div
+          className="w-full mt-20 ml-10 md:w-1/2 flex items-center justify-center"
+          initial={{ opacity: 0, x: -16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <Image
             src="/system.png"
             alt="System illustration"
@@ -56,10 +67,15 @@ export default function RegisterPage() {
             className="object-contain drop-shadow-lg"
             priority
           />
-        </div>
+        </motion.div>
 
         {/* Right side - Register Form */}
-        <div className="w-full md:w-1/2 max-w-[280px]">
+        <motion.div
+          className="w-full md:w-1/2 max-w-[280px]"
+          initial={{ opacity: 0, x: 16 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
           <h1 className="text-sm font-bold text-gray-800 mb-2 text-center">
             Please Fill out form to Register!
           </h1>
@@ -196,8 +212,8 @@ export default function RegisterPage() {
               </svg>
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

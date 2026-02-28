@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -27,11 +28,10 @@ export default function DashboardPage() {
         <nav className="flex-1 p-3">
           <button
             onClick={() => setActiveTab("Overview")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "Overview"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "Overview"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -41,11 +41,10 @@ export default function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("My Products")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "My Products"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "My Products"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -55,11 +54,10 @@ export default function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("Billing")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "Billing"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "Billing"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
@@ -69,11 +67,10 @@ export default function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("Activation Codes")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "Activation Codes"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "Activation Codes"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
@@ -83,11 +80,10 @@ export default function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("Invoices")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "Invoices"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "Invoices"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -97,11 +93,10 @@ export default function DashboardPage() {
 
           <button
             onClick={() => setActiveTab("Settings")}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${
-              activeTab === "Settings"
+            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[12px] font-medium transition-colors mb-1 ${activeTab === "Settings"
                 ? "bg-blue-600 text-white"
                 : "text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -124,7 +119,12 @@ export default function DashboardPage() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 px-8">
+      <motion.main
+        className="flex-1 px-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Welcome Banner */}
         <div className="bg-gradient-to-r from-blue-600 to-cyan-400 rounded-xl p-6 mb-6">
           <h1 className="text-[14px] font-bold text-white mb-1">Welcome back, John!</h1>
@@ -184,7 +184,7 @@ export default function DashboardPage() {
               Add Product
             </button>
           </div>
-          
+
           <div className="p-5">
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-4">
@@ -238,7 +238,7 @@ export default function DashboardPage() {
               </svg>
             </button>
           </div>
-          
+
           <div className="p-5 space-y-3">
             {[
               { id: "INV-001", date: "2024-10-01", amount: "$298.00", status: "Paid" },
@@ -280,7 +280,7 @@ export default function DashboardPage() {
           <div className="p-5 border-b border-gray-200">
             <h2 className="text-[14px] font-semibold text-gray-900">Activation Code History</h2>
           </div>
-          
+
           <div className="p-5 space-y-3">
             {[
               { code: "N65-PHR-2024-ABCD-1234", product: "Pharmacy Management Suite", date: "2024-01-15" },
@@ -301,7 +301,7 @@ export default function DashboardPage() {
             ))}
           </div>
         </div>
-      </main>
+      </motion.main>
     </div>
   );
 }
