@@ -16,20 +16,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#d6eaf8] flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen w-full bg-[#d6eaf8] flex items-center justify-center relative overflow-hidden px-4">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-[30%] h-full bg-[#7b8cde] z-0" />
-      <div className="absolute -bottom-10 left-25 w-[80px] h-[200px] bg-[#7b8cde] rounded-t-full rotate-[40deg] translate-y-[40px] -translate-x-[20px] z-0" />
+      <div className="absolute top-0 right-0 w-[40%] sm:w-[30%] h-full bg-[#7b8cde] z-0" />
+      <div className="absolute -bottom-10 left-10 sm:left-25 w-[80px] h-[200px] bg-[#7b8cde] rounded-t-full rotate-[40deg] translate-y-[40px] -translate-x-[20px] z-0" />
 
       <motion.div
-        className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4"
+        className="relative z-10 w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-6 md:py-8 gap-6"
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         {/* Left side - Login Form */}
         <motion.div
-          className="w-full md:w-1/2 max-w-[280px]"
+          className="w-full md:w-1/2 max-w-sm"
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -104,20 +104,22 @@ export default function LoginPage() {
 
         {/* Right side - Laptop Image */}
         <motion.div
-          className="w-full md:w-1/2 flex items-center justify-center"
+          className="w-full md:w-1/2 flex items-center justify-center mt-6 md:mt-0"
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <Image
-            src="/laptop.png"
-            alt="Laptop illustration"
-            width={360}
-            height={0}
-            style={{ height: "auto" }}
-            className="object-contain drop-shadow-lg"
-            priority
-          />
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
+            <Image
+              src="/laptop.png"
+              alt="Laptop illustration"
+              width={360}
+              height={0}
+              style={{ height: "auto" }}
+              className="object-contain drop-shadow-lg w-full h-auto"
+              priority
+            />
+          </div>
         </motion.div>
       </motion.div>
     </div>

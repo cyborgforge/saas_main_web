@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
     <div className="min-h-screen">
@@ -16,7 +17,7 @@ export default function ContactPage() {
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
-        <div className="max-w-7xl mx-6 py-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
           <h1
             className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
             style={{ fontFamily: "var(--font-anton)" }}
@@ -33,8 +34,8 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <section className="py-16 bg-[#f5f9fa]">
-        <div className="max-w-7xl mx-12 px-6">
-          <div className="grid md:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -156,8 +157,38 @@ export default function ContactPage() {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div
-              className="bg-white p-5 rounded-2xl shadow-sm"
+            {/* Contact Form */}
+            <motion.form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                setStatus('submitting');
+
+                try {
+                  const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                  });
+
+                  if (res.ok) {
+                    setStatus('success');
+                    form.reset();
+                    setTimeout(() => setStatus('idle'), 5000);
+                  } else {
+                    setStatus('error');
+                    setTimeout(() => setStatus('idle'), 5000);
+                  }
+                } catch (error) {
+                  console.error(error);
+                  setStatus('error');
+                  setTimeout(() => setStatus('idle'), 5000);
+                }
+              }}
+              className="bg-white p-5 rounded-2xl shadow-sm relative"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -170,6 +201,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     placeholder="John Doe"
                     className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
@@ -180,6 +213,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    name="businessName"
+                    required
                     placeholder="Acme Inc."
                     className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
@@ -193,6 +228,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="+1 (555) 000-0000"
                     className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
@@ -203,6 +239,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="john@company.com"
                     className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
@@ -213,11 +251,11 @@ export default function ContactPage() {
                 <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
                   Product Interested In
                 </label>
-                <select className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
-                  <option>Select a product</option>
-                  <option>Pharmacy Management Suite</option>
-                  <option>Retail Suite</option>
-                  <option>Clinic Management Suite</option>
+                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
+                  <option value="">Select a product</option>
+                  <option value="Pharmacy Management Suite">Pharmacy Management Suite</option>
+                  <option value="Retail Suite">Retail Suite</option>
+                  <option value="Clinic Management Suite">Clinic Management Suite</option>
                 </select>
               </div>
 
@@ -226,27 +264,45 @@ export default function ContactPage() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   rows={3}
+                  required
                   placeholder="Tell us about your business and what you're looking for..."
                   className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
                 />
               </div>
 
-              <button className="w-full mt-4 bg-[#4a90a4] text-[12px] text-white py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center justify-center gap-2">
-                Send Message
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
+              {status === 'success' && (
+                <div className="mt-4 p-3 bg-green-50 text-green-700 text-[12px] rounded-lg border border-green-200 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  Message sent successfully! We'll be in touch soon.
+                </div>
+              )}
+
+              {status === 'error' && (
+                <div className="mt-4 p-3 bg-red-50 text-red-700 text-[12px] rounded-lg border border-red-200 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                  Failed to send message. Please try again later.
+                </div>
+              )}
+
+              <button disabled={status === 'submitting'} type="submit" className="w-full mt-4 bg-[#4a90a4] text-[12px] text-white py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] disabled:bg-[#4a90a4]/70 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors">
+                {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                {status !== 'submitting' && (
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
+                  </svg>
+                )}
               </button>
 
               <p className="text-center text-[11px] text-gray-500 mt-3">
@@ -260,13 +316,13 @@ export default function ContactPage() {
                 </a>
                 .
               </p>
-            </motion.div>
+            </motion.form>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#f4f2ef] py-16 px-20 border-t border-gray-100 relative">
+      <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <svg
@@ -280,8 +336,8 @@ export default function ContactPage() {
             />
           </svg>
         </div>
-        <div className="max-w-4xl px-20 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+        <div className="max-w-4xl px-0 md:px-20 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
             {/* Newsletter Column */}
             <div className="col-span-2">
               <h3 className="font-semibold text-[14px] text-black mb-3">

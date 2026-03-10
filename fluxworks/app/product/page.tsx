@@ -191,15 +191,15 @@ export default function ProductPage() {
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
-        <div className="max-w-7xl mx-6 px-8 pt-10 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-0.5 bg-[#0070A015] px-2 py-1 rounded-full text-sm mb-6">
+              <div className="inline-flex items-center gap-0.5 bg-[#0070A015] px-2 py-1 rounded-full text-xs mb-6">
                 <span
                   className="text-yellow-600 inline-block"
                   style={{ transform: "rotate(270deg)" }}
@@ -226,7 +226,7 @@ export default function ProductPage() {
                 pharmacy operations with our all-in-one platform.
               </p>
 
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 <button className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
                   Request Demo
                   <svg
@@ -264,7 +264,7 @@ export default function ProductPage() {
 
             {/* Right Content - Dashboard Preview */}
             <motion.div
-              className="relative"
+              className="relative mt-10 md:mt-0"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -301,7 +301,7 @@ export default function ProductPage() {
                   </div>
 
                   {/* Chart */}
-                  <div className="h-32 flex items-end bg-[#E8F5FA] p-3 rounded-lg gap-2">
+                  <div className="h-32 flex items-end bg-[#E8F5FA] p-3 rounded-lg gap-1.5 sm:gap-2">
                     {[40, 55, 45, 60, 50, 70, 65, 80, 75, 90].map(
                       (height, i) => (
                         <div
@@ -316,7 +316,7 @@ export default function ProductPage() {
               </div>
 
               {/* Real-time Sync Badge - Positioned absolutely to overflow */}
-              <div className="absolute bottom-3 -right-4">
+                  <div className="absolute bottom-3 right-0 sm:-right-4">
                 <div className="flex items-center gap-2 bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-100">
                   <div className="bg-[#0070A0] p-1.5 rounded">
                     <svg
@@ -344,7 +344,7 @@ export default function ProductPage() {
 
       {/* Modules Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
             Modules Included
           </h2>
@@ -352,7 +352,7 @@ export default function ProductPage() {
             Everything you need to run your business, all in one place.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {modules.map((module, index) => (
               <motion.div
                 key={index}
@@ -383,7 +383,7 @@ export default function ProductPage() {
 
       {/* How It Works Section */}
       <section className="py-16 bg-[#DCE1FF]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-3">
             How It Works
           </h2>
@@ -391,7 +391,7 @@ export default function ProductPage() {
             Get started in minutes with our simple onboarding process.
           </p>
 
-          <div className="grid md:grid-cols-4 gap-8 relative">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 relative">
             {[
               {
                 step: "1",
@@ -451,7 +451,7 @@ export default function ProductPage() {
 
       {/* Pricing Section */}
       <section className="py-16 mb-12 bg-white">
-        <div className="max-w-6xl mx-auto px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-1">
             Simple, Transparent Pricing
           </h2>
@@ -459,7 +459,7 @@ export default function ProductPage() {
             Choose the plan that works best for your business.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Starter Plan */}
             <motion.div
               className="bg-[#F7F9FA] rounded-2xl p-6"
@@ -621,7 +621,7 @@ export default function ProductPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#f4f2ef] py-16 px-20 border-t border-gray-100 relative">
+      <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <svg
@@ -635,8 +635,8 @@ export default function ProductPage() {
             />
           </svg>
         </div>
-        <div className="max-w-4xl px-20 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+        <div className="max-w-4xl px-0 md:px-20 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
             {/* Newsletter Column */}
             <div className="col-span-2">
               <h3 className="font-semibold text-[14px] text-black mb-3">

@@ -8,9 +8,9 @@ export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <div className="min-h-screen p-12 bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 flex flex-col md:flex-row p-4 md:p-8 lg:p-12">
       {/* Sidebar */}
-      <aside className="w-[210px] bg-white border rounded-xl border-gray-200 flex flex-col">
+      <aside className="w-full md:w-[210px] bg-white border rounded-xl border-gray-200 flex flex-col mb-4 md:mb-0 md:mr-4">
         {/* User Profile */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center gap-3">
@@ -120,19 +120,19 @@ export default function DashboardPage() {
 
       {/* Main Content */}
       <motion.main
-        className="flex-1 px-8"
+        className="flex-1 md:px-0 lg:px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-blue-600 to-cyan-400 rounded-xl p-6 mb-6">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-400 rounded-xl p-5 md:p-6 mb-6">
           <h1 className="text-[14px] font-bold text-white mb-1">Welcome back, John!</h1>
           <p className="text-[12px] text-blue-50">You have 1 active subscription. Manage your products and billing from this dashboard.</p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="bg-white rounded-lg p-5 border border-gray-200">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
