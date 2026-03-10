@@ -13,8 +13,8 @@ export default function Home() {
             "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
         }}
       >
-        <div className="max-w-7xl mx-6 px-8 pt-10 relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function Home() {
               className="space-y-6"
             >
               {/* Blue Server Icon */}
-              <div className="bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 ml-[460px]">
+              <div className="hidden md:block bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 md:ml-[260px] lg:ml-[460px]">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="currentColor"
@@ -35,8 +35,8 @@ export default function Home() {
                   <circle cx="7" cy="17" r="1" fill="white" />
                 </svg>
               </div>
-              {/* Build */}
-              <h1 className="text-5xl lg:text-5xl -mt-12 font-extrabold text-gray-900 leading-none">
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl -mt-6 md:-mt-12 font-extrabold text-gray-900 leading-tight">
                 We build scalable
                 <br />
                 SaaS products
@@ -45,7 +45,7 @@ export default function Home() {
                 <br />
                 businesses
               </h1>
-              <div className="flex gap-3 pt-2">
+              <div className="flex flex-wrap gap-3 pt-2">
                 <button className="bg-white text-gray-900 text-sm px-5 py-1.5 rounded-lg font-medium hover:bg-gray-100 shadow-md border border-gray-200">
                   View Products
                 </button>
@@ -60,7 +60,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[450px]"
+              className="relative h-[320px] sm:h-[380px] md:h-[450px] mt-10 md:mt-0"
             >
               {/* Yellow/Teal Striped Background Circle */}
               {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] overflow-hidden rounded-full">
@@ -71,8 +71,8 @@ export default function Home() {
               </div> */}
 
               {/* Person Image */}
-              <div className="absolute top-52 left-40 -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="w-[280px] h-[350px] flex items-center justify-center relative">
+              <div className="absolute inset-0 flex items-center justify-center md:top-52 md:left-40 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 z-20">
+                <div className="w-48 h-60 sm:w-64 sm:h-80 md:w-[280px] md:h-[350px] flex items-center justify-center relative">
                   <img
                     src="/Person.png"
                     alt="Person smiling"
@@ -83,7 +83,7 @@ export default function Home() {
 
               {/* 5 Star Rating */}
               <motion.div
-                className="absolute bottom-58 -left-12 bg-white px-4 py-2 rounded-xl shadow-xl z-30"
+                className="absolute bottom-20 left-4 sm:left-8 bg-white px-4 py-2 rounded-xl shadow-xl z-30"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
@@ -98,7 +98,7 @@ export default function Home() {
 
               {/* Total Projects Card */}
               <motion.div
-                className="absolute top-2 bg-white p-2 right-8 rounded-2xl shadow-xl w-36 z-30"
+                className="absolute top-2 right-4 sm:right-8 bg-white p-2 rounded-2xl shadow-xl w-32 sm:w-36 z-30"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -162,7 +162,7 @@ export default function Home() {
 
               {/* Growth Chart Card */}
               <motion.div
-                className="absolute bottom-4 right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30"
+                className="absolute bottom-4 right-2 sm:right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
@@ -256,7 +256,7 @@ export default function Home() {
         </div> */}
 
         <div
-          className="w-[94%] ml-auto rounded-tl-[100px] px-6 pt-6 pb-24 relative"
+          className="w-full md:w-[94%] md:ml-auto rounded-tl-[60px] md:rounded-tl-[100px] px-4 sm:px-6 pt-10 pb-16 md:pt-6 md:pb-24 relative"
           style={{
             background:
               "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
@@ -268,8 +268,8 @@ export default function Home() {
                 fontFamily: "var(--font-anton)",
                 fontStyle: "normal",
                 fontWeight: 400,
-                fontSize: "100px",
-                lineHeight: "158px",
+                fontSize: "56px",
+                lineHeight: "72px",
                 WebkitTextStroke: "1.75px #8591FF",
                 WebkitTextFillColor: "transparent",
                 color: "transparent",
@@ -289,7 +289,7 @@ export default function Home() {
             }}
           ></div>
 
-          <div className="grid md:grid-cols-4 -mt-18">
+          <div className="grid md:grid-cols-4 gap-4 md:gap-0 mt-8 md:-mt-18">
             {/* POS & Billing Systems */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -410,7 +410,7 @@ export default function Home() {
             />
           </svg>
         </div>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2
             className="text-4xl font-medium text-center text-white mb-12"
             style={{ fontFamily: "var(--font-anton)" }}
@@ -419,15 +419,15 @@ export default function Home() {
           </h2>
 
           {/* First Row - 2 Cards */}
-          <div className="flex justify-center gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6 mb-6">
             {/* Pharmacy Management Suite */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#A6CAFE] rounded-lg"
-              style={{ width: "460px", padding: "24px" }}
+              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
+              style={{ padding: "24px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
@@ -490,8 +490,8 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-[#A6CAFE] rounded-lg"
-              style={{ width: "460px", padding: "24px" }}
+              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
+              style={{ padding: "24px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
@@ -556,8 +556,8 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#A6CAFE] rounded-lg"
-              style={{ width: "460px", padding: "24px" }}
+              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
+              style={{ padding: "24px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
@@ -627,7 +627,7 @@ export default function Home() {
             animation-play-state: paused;
           }
         `}</style>
-        <div className="flex items-center gap-16 animate-scroll">
+        <div className="flex items-center gap-10 sm:gap-16 animate-scroll px-6">
           <div className="flex-shrink-0">
             <img src="/item_1.png" alt="Partner 1" className="h-8 w-auto" />
           </div>
@@ -664,7 +664,7 @@ export default function Home() {
 
       {/* Trusted By Section */}
       <section className="bg-[#06181E] py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-white text-2xl mb-3">
             Trusted By Many Organizations and
             <br />
@@ -676,7 +676,7 @@ export default function Home() {
             and optimize your Software.
           </p>
 
-          <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white p-8 rounded-2xl text-center">
               <div className="text-5xl font-bold text-gray-900 mb-2">450+</div>
               <div className="text-gray-600 text-sm">Clients</div>
@@ -695,7 +695,7 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <section className="bg-[#06181E] py-16">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center text-white mb-3">
             Why Choose Us
           </h2>
@@ -814,7 +814,7 @@ export default function Home() {
           </div>
 
           {/* Stats Row */}
-          <div className="grid grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
               <div className="text-3xl font-bold text-teal-500 mb-1">50+</div>
               <div className="text-gray-500 text-[12px]">Modules Available</div>
@@ -846,10 +846,10 @@ export default function Home() {
         }}
       >
         {/* Gradient Background - only covers CTA heading area */}
-        <div className="w-[94%] mr-auto rounded-tr-[100px] relative overflow-hidden">
+        <div className="w-full md:w-[94%] md:mr-auto rounded-tr-[60px] md:rounded-tr-[100px] relative overflow-hidden">
           {/* Gradient area with heading and button */}
           <div
-            className="relative py-20 px-6 pb-16 overflow-hidden"
+            className="relative py-16 md:py-20 px-4 sm:px-6 pb-12 md:pb-16 overflow-hidden"
             style={{
               background:
                 "linear-gradient(150deg, #3A7A8C 0%, #4A78A8 25%, #6B6EBC 50%, #9B6EB8 75%, #C490C8 100%)",
@@ -866,8 +866,8 @@ export default function Home() {
             {/* White gradient at the bottom to merge seamlessly with the footer */}
             <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
-            <div className="max-w-4xl ml-10 px-8 mx-auto relative z-10">
-              <h2 className="font-serif text-4xl md:text-5xl font-normal text-black mb-8">
+            <div className="max-w-4xl md:ml-10 md:px-8 mx-auto relative z-10">
+              <h2 className="font-serif text-3xl md:text-5xl font-normal text-black mb-6 md:mb-8">
                 Ready to go? Start
                 <br />
                 Building together.
@@ -888,9 +888,9 @@ export default function Home() {
           </div>
 
           {/* Footer - white background */}
-          <div className="bg-white py-16 px-20">
+          <div className="bg-white py-12 md:py-16 px-6 md:px-20">
             <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
                 {/* Newsletter Column */}
                 <div className="col-span-2">
                   <h3 className="font-semibold text-[14px] text-gray-900 mb-3">

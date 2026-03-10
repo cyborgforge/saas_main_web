@@ -37,9 +37,9 @@ export default function AboutPage() {
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
-        <div className="max-w-5xl mx-auto px-12 pt-10 relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
           {/* Megaphone Icon - Left Side */}
-          <div className="absolute left-20 top-8/12 -translate-y-1/2 w-48 h-48 pointer-events-none">
+          <div className="hidden md:block absolute left-20 top-8/12 -translate-y-1/2 w-48 h-48 pointer-events-none">
             <img
               src="/cursor.png"
               alt="Cursor"
@@ -48,7 +48,7 @@ export default function AboutPage() {
           </div>
 
           {/* Chat Bubble Icon - Top Right */}
-          <div className="absolute right-15 top-0 w-48 h-48 pointer-events-none">
+          <div className="hidden md:block absolute right-15 top-0 w-48 h-48 pointer-events-none">
             <img
               src="/message.png"
               alt="Message"
@@ -72,7 +72,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl -mt-3 md:text-6xl font-bold text-gray-900 leading-tight mb-8"
+              className="text-3xl sm:text-4xl md:text-6xl -mt-1 md:-mt-3 font-bold text-gray-900 leading-tight mb-6 md:mb-8"
               style={{ fontFamily: "var(--font-anton)" }}
             >
               Building the future of <br /> business software
@@ -114,7 +114,7 @@ export default function AboutPage() {
             />
           </svg>
         </div>
-        <div className="max-w-6xl mx-6 px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2
             className="font-serif text-center text-4xl font-normal text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-anton)" }}
@@ -127,7 +127,7 @@ export default function AboutPage() {
             }
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Values List */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -304,9 +304,9 @@ export default function AboutPage() {
 
       {/* Testimonial Section */}
       <section className="py-16 bg-[#020c1c]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="bg-[#121627] rounded-2xl p-4 md:p-8">
-            <div className="flex items-center justify-between gap-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
               {/* Left Arrow */}
               <button
                 onClick={handlePrevious}
@@ -328,7 +328,7 @@ export default function AboutPage() {
               </button>
 
               {/* Center Content */}
-              <div className="flex-1 flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-1 flex flex-col md:flex-row items-center gap-6 md:gap-8">
                 {/* Profile Image */}
                 <div className="flex-shrink-0">
                   <div className="w-32 h-32 md:w-50 md:h-60 rounded-2xl overflow-hidden bg-gradient-to-br from-[#F4A261] to-[#E76F51]">
@@ -354,7 +354,7 @@ export default function AboutPage() {
                   >
                     <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                   </svg>
-                  <p className="text-white text-base md:text-sm mb-6 leading-relaxed">
+                  <p className="text-white text-sm md:text-base mb-6 leading-relaxed text-center md:text-left">
                     {testimonials[testimonialIndex].quote}
                   </p>
                   <div>
@@ -421,7 +421,7 @@ export default function AboutPage() {
 
       {/* Our Values Grid Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 mb-3">
             Our Values
           </h2>
@@ -429,7 +429,7 @@ export default function AboutPage() {
             The principles that guide everything we do.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Customer First */}
             <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
               <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
@@ -578,7 +578,7 @@ export default function AboutPage() {
 
       {/* Our Journey Timeline */}
       <section className="py-16 bg-[#ccefff] relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 mb-3">
             Our Journey
           </h2>
@@ -707,7 +707,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#f4f2ef] py-16 px-20 border-t border-gray-100 relative">
+      <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <svg
@@ -721,8 +721,8 @@ export default function AboutPage() {
             />
           </svg>
         </div>
-        <div className="max-w-4xl px-20 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+        <div className="max-w-4xl px-0 md:px-20 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
             {/* Newsletter Column */}
             <div className="col-span-2">
               <h3 className="font-semibold text-[14px] text-black mb-3">

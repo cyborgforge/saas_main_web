@@ -19,10 +19,10 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#d6eaf8] flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen w-full bg-[#d6eaf8] flex items-center justify-center relative overflow-hidden px-4">
       {/* Decorative background elements */}
       <div
-        className="absolute bg-[#656ED3] z-0"
+        className="absolute bg-[#656ED3] z-0 hidden sm:block"
         style={{
           width: "635px",
           height: "40%",
@@ -34,7 +34,7 @@ export default function RegisterPage() {
       />
 
       <div
-        className="absolute bg-[#6e8af7] z-0"
+        className="absolute bg-[#6e8af7] z-0 hidden sm:block"
         style={{
           width: "635px",
           height: "45%",
@@ -46,39 +46,44 @@ export default function RegisterPage() {
       />
 
       <motion.div
-        className="relative z-10 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-4 gap-4"
+        className="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 py-8 md:py-10 gap-6 bg-white/90 md:bg-transparent rounded-2xl md:rounded-3xl shadow-xl md:shadow-none"
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         {/* Left side - System Image */}
         <motion.div
-          className="w-full mt-20 ml-10 md:w-1/2 flex items-center justify-center"
+          className="hidden md:flex w-full md:w-1/2 items-center justify-center mt-4 md:mt-20 md:ml-10"
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Image
-            src="/system.png"
-            alt="System illustration"
-            width={360}
-            height={0}
-            style={{ height: "auto" }}
-            className="object-contain drop-shadow-lg"
-            priority
-          />
+          <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
+            <Image
+              src="/system.png"
+              alt="System illustration"
+              width={360}
+              height={0}
+              style={{ height: "auto" }}
+              className="object-contain drop-shadow-lg w-full h-auto"
+              priority
+            />
+          </div>
         </motion.div>
 
         {/* Right side - Register Form */}
         <motion.div
-          className="w-full md:w-1/2 max-w-[280px]"
+          className="w-full md:w-1/2"
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <h1 className="text-sm font-bold text-gray-800 mb-2 text-center">
-            Please Fill out form to Register!
+          <h1 className="text-lg font-bold text-gray-900 mb-1.5 text-center">
+            Create your account
           </h1>
+          <p className="text-[12px] text-gray-500 mb-4 text-center">
+            Sign up to start managing your products and subscriptions.
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-1.5">
             <div>
