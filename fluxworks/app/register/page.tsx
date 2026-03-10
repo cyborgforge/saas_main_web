@@ -46,14 +46,14 @@ export default function RegisterPage() {
       />
 
       <motion.div
-        className="relative z-10 w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-3 py-6 md:py-8 gap-6"
+        className="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 py-8 md:py-10 gap-6 bg-white/90 md:bg-transparent rounded-2xl md:rounded-3xl shadow-xl md:shadow-none"
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         {/* Left side - System Image */}
         <motion.div
-          className="w-full md:w-1/2 flex items-center justify-center mt-4 md:mt-20 md:ml-10"
+          className="hidden md:flex w-full md:w-1/2 items-center justify-center mt-4 md:mt-20 md:ml-10"
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -73,14 +73,17 @@ export default function RegisterPage() {
 
         {/* Right side - Register Form */}
         <motion.div
-          className="w-full md:w-1/2 max-w-sm"
+          className="w-full md:w-1/2"
           initial={{ opacity: 0, x: 16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <h1 className="text-sm font-bold text-gray-800 mb-2 text-center">
-            Please Fill out form to Register!
+          <h1 className="text-lg font-bold text-gray-900 mb-1.5 text-center">
+            Create your account
           </h1>
+          <p className="text-[12px] text-gray-500 mb-4 text-center">
+            Sign up to start managing your products and subscriptions.
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-1.5">
             <div>
