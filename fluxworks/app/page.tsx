@@ -12,14 +12,24 @@ export default function Home() {
             "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
+        {/* Simple basic background glow designs correctly scaled to full section */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
+          <div className="absolute top-[-5%] left-[-10%] w-96 h-96 bg-[#85a794]/40 blur-[100px] rounded-full"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-80 h-80 bg-teal-200/20 blur-[80px] rounded-full"></div>
+
+          {/* Background wireframe abstract circle */}
+          <div className="absolute top-[10%] -right-10 w-[300px] h-[300px] rounded-full border border-white/10 md:hidden pointer-events-none z-0"></div>
+          <div className="absolute top-[15%] -left-16 w-[200px] h-[200px] rounded-full border border-white/5 md:hidden pointer-events-none z-0"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-10 relative">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-8 md:space-y-6 flex flex-col items-center md:items-start text-center md:text-left py-10 md:py-0 relative"
             >
               {/* Blue Server Icon */}
               <div className="hidden md:block bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 md:ml-[260px] lg:ml-[460px]">
@@ -35,7 +45,31 @@ export default function Home() {
                 </svg>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl -mt-6 md:-mt-12 font-extrabold text-gray-900 leading-tight">
+              {/* Mobile-only background geometric elements (pure shapes, no text) */}
+              {/* Top abstract shape grid */}
+              <div className="absolute top-[-30px] right-4 md:hidden flex gap-2 pointer-events-none z-0 opacity-40">
+                <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
+              </div>
+
+              {/* Above-text swoosh */}
+              <div className="absolute top-[10%] left-[8%] w-12 h-1 bg-gradient-to-r from-teal-300/40 to-transparent rounded-full md:hidden pointer-events-none z-0 transform rotate-[-15deg]"></div>
+
+              {/* Floating shapes behind text */}
+              <div className="absolute top-[28%] right-[10%] w-16 h-16 rounded-full border-[2px] border-white/10 md:hidden pointer-events-none z-0"></div>
+              <div className="absolute top-[45%] left-[5%] w-14 h-14 rounded-full bg-teal-300/20 blur-[14px] md:hidden pointer-events-none z-0"></div>
+              <div className="absolute bottom-[25%] right-[2%] w-20 h-20 rounded-[14px] border-[1px] border-white/10 rotate-[25deg] md:hidden pointer-events-none z-0"></div>
+
+
+              {/* Sparkle */}
+              <div className="absolute top-[18%] left-[75%] md:hidden pointer-events-none z-0">
+                <svg className="w-5 h-5 text-yellow-300/60" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2L14.885 9.115L22 12L14.885 14.885L12 22L9.115 14.885L2 12L9.115 9.115L12 2Z" />
+                </svg>
+              </div>
+
+              <h1 className="text-[44px] sm:text-5xl lg:text-5xl xl:text-6xl -mt-2 md:-mt-12 text-gray-900 leading-[1.05] tracking-tight relative z-10" style={{ fontFamily: "var(--font-anton)" }}>
                 We build scalable
                 <br />
                 SaaS products
@@ -44,22 +78,26 @@ export default function Home() {
                 <br />
                 businesses
               </h1>
-              <div className="flex flex-wrap gap-3 pt-2">
-                <button className="bg-white text-gray-900 text-sm px-5 py-1.5 rounded-lg font-medium hover:bg-gray-100 shadow-md border border-gray-200">
+              <p className="text-gray-800 md:hidden text-[15px] font-medium px-4 leading-relaxed max-w-[320px]">
+                Empower your business with our cutting-edge SaaS platforms designed for scalability and performance.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4 w-full sm:w-auto px-6 sm:px-0">
+                <button className="w-full sm:w-auto bg-white text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] border border-gray-200 transition-all hover:scale-105 active:scale-95">
                   View Products
                 </button>
-                <button className="bg-transparent text-gray-900 text-sm px-5 py-1.5 rounded-lg font-medium hover:bg-black/5 border border-gray-400">
+                <button className="w-full sm:w-auto bg-white/20 backdrop-blur-md text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-white/30 border border-white/40 transition-all hover:scale-105 active:scale-95 shadow-sm">
                   Book a Demo
                 </button>
               </div>
             </motion.div>
 
-            {/* Right Content - Hero Image and Stats */}
+
+            {/* Desktop Only Content - Hero Image and Stats */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[320px] sm:h-[380px] md:h-[450px] mt-10 md:mt-0"
+              className="hidden md:block relative h-[360px] sm:h-[420px] md:h-[450px] mt-6 md:mt-0 max-w-[400px] md:max-w-none mx-auto w-full z-20"
             >
               {/* Yellow/Teal Striped Background Circle */}
               {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] overflow-hidden rounded-full">
@@ -70,19 +108,20 @@ export default function Home() {
               </div> */}
 
               {/* Person Image */}
-              <div className="absolute inset-0 flex items-center justify-center md:top-52 md:left-40 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 z-20">
-                <div className="w-48 h-60 sm:w-64 sm:h-80 md:w-[280px] md:h-[350px] flex items-center justify-center relative">
+
+              <div className="absolute inset-0 flex items-center justify-center md:top-1/2 md:left-1/2 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 z-20">
+                <div className="w-60 h-72 sm:w-[400px] sm:h-[500px] md:w-[480px] md:h-[600px] flex items-center justify-center relative overflow-hidden">
                   <img
                     src="/Person.png"
                     alt="Person smiling"
-                    className="w-full h-full object-cover rounded-b-full"
+                    className="w-full h-full object-contain object-bottom rounded-b-[40px] md:rounded-b-[60px]"
                   />
                 </div>
               </div>
 
               {/* 5 Star Rating */}
               <motion.div
-                className="absolute bottom-20 left-4 sm:left-8 bg-white px-4 py-2 rounded-xl shadow-xl z-30"
+                className="absolute bottom-12 sm:bottom-20 left-0 sm:left-4 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 px-4 py-2.5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] z-30"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
@@ -97,7 +136,7 @@ export default function Home() {
 
               {/* Total Projects Card */}
               <motion.div
-                className="absolute top-2 right-4 sm:right-8 bg-white p-2 rounded-2xl shadow-xl w-32 sm:w-36 z-30"
+                className="absolute top-0 right-0 sm:right-4 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 p-3 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] w-36 sm:w-40 z-30"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -161,7 +200,7 @@ export default function Home() {
 
               {/* Growth Chart Card */}
               <motion.div
-                className="absolute bottom-4 right-2 sm:right-0 bg-white p-4 rounded-2xl shadow-xl w-52 z-30"
+                className="absolute bottom-4 -right-2 sm:right-0 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 p-4 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] w-48 sm:w-56 z-30"
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
@@ -255,23 +294,23 @@ export default function Home() {
         </div> */}
 
         <div
-          className="w-full md:w-[94%] md:ml-auto rounded-tl-[60px] md:rounded-tl-[100px] px-4 sm:px-6 pt-10 pb-16 md:pt-6 md:pb-24 relative"
+          className="w-full md:w-[94%] md:ml-auto rounded-tl-[60px] md:rounded-tl-[100px] px-4 sm:px-6 pt-10 pb-16 md:pt-6 md:pb-24 relative overflow-hidden"
           style={{
             background:
               "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
           }}
         >
-          <div className="flex justify-center">
+          <div className="flex justify-center relative z-0">
             <h2
+              className="text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] xl:text-[240px] leading-none pointer-events-none"
               style={{
                 fontFamily: "var(--font-anton)",
                 fontStyle: "normal",
                 fontWeight: 400,
-                fontSize: "56px",
-                lineHeight: "72px",
-                WebkitTextStroke: "1.75px #8591FF",
+                WebkitTextStroke: "3px rgba(133, 145, 255, 0.6)",
                 WebkitTextFillColor: "transparent",
                 color: "transparent",
+                letterSpacing: "-0.02em"
               }}
             >
               WE BUILD
@@ -280,7 +319,7 @@ export default function Home() {
 
           {/* Blur fade effect at bottom extending into wave */}
           <div
-            className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
+            className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-0"
             style={{
               background:
                 "linear-gradient(to bottom, transparent 0%, rgba(184, 220, 232, 0.6) 50%, rgba(123, 168, 212, 0.9) 100%)",
@@ -288,7 +327,7 @@ export default function Home() {
             }}
           ></div>
 
-          <div className="grid md:grid-cols-4 gap-4 md:gap-0 mt-8 md:-mt-18">
+          <div className="grid md:grid-cols-4 gap-4 md:gap-6 mt-4 md:-mt-16 lg:-mt-24 xl:-mt-32 px-2 sm:px-4 relative z-10">
             {/* POS & Billing Systems */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -404,7 +443,7 @@ export default function Home() {
             preserveAspectRatio="none"
           >
             <path
-              d="M0,60 Q24,0 48,60 T96,60 T144,60 T192,60 T240,60 T288,60 T336,60 T384,60 T432,60 T480,60 T528,60 T576,60 T624,60 T672,60 T720,60 T768,60 T816,60 T864,60 T912,60 T960,60 T1008,60 T1056,60 T1104,60 T1152,60 T1200,60 T1248,60 T1296,60 T1344,60 T1392,60 T1440,60 L1440,120 L0,120 Z"
+              d="M0,60 Q90,0 180,60 T360,60 T540,60 T720,60 T900,60 T1080,60 T1260,60 T1440,60 L1440,120 L0,120 Z"
               fill="#06181E"
             />
           </svg>
@@ -418,69 +457,81 @@ export default function Home() {
           </h2>
 
           {/* First Row - 2 Cards */}
-          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-1 mb-4">
             {/* Pharmacy Management Suite */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
-              style={{ padding: "24px" }}
+              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
+              style={{ padding: "32px 32px 24px 32px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
+                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
                     Active
                   </div>
                   <h3
-                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
                     style={{ fontFamily: "var(--font-anton)" }}
                   >
                     Pharmacy
                     <br />
                     Management Suite
                   </h3>
-                  <p className="text-xs text-gray-700 mb-6">
+                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
                     Complete pharmacy solution with POS, inventory, online
                     ordering, and delivery
                   </p>
-                  <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
-                    View Product
-                  </button>
                 </div>
                 <div
-                  className="flex flex-col justify-center"
+                  className="flex flex-col pt-12"
                   style={{ width: "35%" }}
                 >
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">HRMS</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">HRMS</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">POS</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">POS</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Inventory</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Inventory</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Online Ordering</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Online Ordering</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Delivery</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Delivery</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Billing</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Billing</span>
                     </div>
                   </div>
                 </div>
               </div>
+              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+                View Product
+              </button>
             </motion.div>
 
             {/* Retail Suite */}
@@ -489,120 +540,140 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
-              style={{ padding: "24px" }}
+              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
+              style={{ padding: "32px 32px 24px 32px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
+                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
                     Soon
                   </div>
                   <h3
-                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
                     style={{ fontFamily: "var(--font-anton)" }}
                   >
                     Retail
                     <br />
                     Suite
                   </h3>
-                  <p className="text-xs text-gray-700 mb-6">
+                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
                     Multi-store retail management with inventory sync and
                     customer analytics
                   </p>
-                  <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
-                    Coming soon
-                  </button>
                 </div>
                 <div
-                  className="flex flex-col justify-center"
+                  className="flex flex-col pt-12"
                   style={{ width: "35%" }}
                 >
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Multi-Store</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Multi-Store</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">CRM</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">CRM</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Inventory</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Inventory</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Online Ordering</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Online Ordering</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Analytics</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Analytics</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Billing</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Billing</span>
                     </div>
                   </div>
                 </div>
               </div>
+              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+                Coming soon
+              </button>
             </motion.div>
           </div>
 
           {/* Second Row - 1 Card */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#A6CAFE] rounded-lg w-full max-w-[460px] mx-auto"
-              style={{ padding: "24px" }}
+              className="bg-[#A4C8FF] rounded-xl w-full max-w-[600px] mx-auto flex flex-col justify-between"
+              style={{ padding: "32px 32px 24px 32px" }}
             >
               <div className="flex gap-4">
                 <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block bg-white px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit">
+                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
                     Active
                   </div>
                   <h3
-                    className="text-2xl text-gray-900 mb-2 leading-tight"
+                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
                     style={{ fontFamily: "var(--font-anton)" }}
                   >
                     Clinic Management
                     <br />
                     Suite
                   </h3>
-                  <p className="text-xs text-gray-700 mb-6">
+                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
                     Healthcare practice management with appointments and patient
                     records
                   </p>
-                  <button className="bg-gray-900 text-white py-2.5 px-6 rounded-4xl text-sm font-medium hover:bg-gray-800 mt-auto">
-                    View Product
-                  </button>
                 </div>
                 <div
-                  className="flex flex-col justify-center"
+                  className="flex flex-col pt-12"
                   style={{ width: "35%" }}
                 >
-                  <div className="space-y-1.5">
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">EMR</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">EMR</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Prescription</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Prescription</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Billing</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Billing</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="text-blue-600">✓</span>
-                      <span className="text-gray-900">Appointments</span>
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-[#2d3748] font-medium">Appointments</span>
                     </div>
                   </div>
                 </div>
               </div>
+              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+                View Product
+              </button>
             </motion.div>
           </div>
         </div>

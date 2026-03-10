@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,7 +14,29 @@ const navLinks = [
 export function SiteHeader() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== "undefined") {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          // completely hide when scrolling down
+          setIsVisible(false);
+        } else {
+          // show when scrolling up
+          setIsVisible(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => window.removeEventListener("scroll", controlNavbar);
+    }
+  }, [lastScrollY]);
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -24,13 +46,22 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="fixed top-3 left-0 right-0 z-40 flex justify-center px-3 sm:px-4 md:px-6">
-      <div className="max-w-7xl w-full rounded-full border border-white/50 bg-white/70 shadow-lg backdrop-blur-xl px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-3">
+    <header className={`fixed top-3 left-0 right-0 z-40 flex justify-center px-3 sm:px-4 md:px-6 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-[150%]'}`}>
+      <div className="max-w-7xl w-full rounded-full border border-white/40 bg-white/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] backdrop-blur-2xl saturate-200 pr-4 pl-2 sm:pr-5 sm:pl-3 md:pr-6 md:pl-3 py-2 sm:py-2.5 flex items-center justify-between gap-3 transition-all duration-300">
         <Link
           href="/"
-          className="text-base font-semibold text-gray-900 tracking-tight"
+          className="flex items-center gap-2"
         >
-          FluxWorks
+          {/* Desktop full logo */}
+          <img src="/logo.png" alt="FluxWorks" className="hidden sm:block h-8 sm:h-10 md:h-12 w-auto object-contain transform scale-[1.6] md:scale-[2.0] origin-left mt-1 md:mt-1.5" />
+
+          {/* Mobile icon + text logo */}
+          <div className="flex sm:hidden items-center gap-1.5 mt-0.5 ml-1">
+            <img src="/onlylogo.png" alt="FluxWorks Icon" className="h-[36px] w-auto object-contain" />
+            <span className="text-[19px] font-bold text-[#0f172a] tracking-tight translate-y-[1px]" style={{ fontFamily: "var(--font-outfit)" }}>
+              FluxWorks
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-3">
@@ -71,18 +102,18 @@ export function SiteHeader() {
               </svg>
             </button>
             {showDropdown && (
-              <div className="absolute right-0 mt-2 w-36 bg-white/90 backdrop-blur border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+              <div className="absolute right-0 mt-2 w-36 bg-white/50 backdrop-blur-2xl saturate-200 border border-white/40 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] py-2 z-50 overflow-hidden">
                 <Link
                   href="/login"
                   onClick={() => setShowDropdown(false)}
-                  className="block w-full text-left px-4 py-2 text-[11px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+                  className="block w-full text-left px-4 py-2 text-[11px] text-gray-900 hover:bg-black/5 transition-colors font-medium"
                 >
                   Log In
                 </Link>
                 <Link
                   href="/register"
                   onClick={() => setShowDropdown(false)}
-                  className="block w-full text-left px-4 py-2 text-[11px] text-gray-900 hover:bg-gray-100 transition-colors font-medium"
+                  className="block w-full text-left px-4 py-2 text-[11px] text-gray-900 hover:bg-black/5 transition-colors font-medium"
                 >
                   Sign Up
                 </Link>
@@ -100,7 +131,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((open) => !open)}
-            className="inline-flex md:hidden items-center justify-center rounded-full border border-gray-300 bg-white/70 px-3 py-1.5 text-gray-900 hover:bg-black/5 transition-colors"
+            className="inline-flex md:hidden items-center justify-center rounded-full border border-white/40 bg-white/40 backdrop-blur-md saturate-150 px-3 py-1.5 text-gray-900 shadow-sm transition-colors"
             aria-label="Toggle navigation menu"
           >
             <svg
@@ -132,7 +163,7 @@ export function SiteHeader() {
       {/* Mobile menu panel */}
       {mobileMenuOpen && (
         <div className="absolute top-full mt-2 left-3 right-3 sm:left-4 sm:right-4 md:hidden z-30">
-          <div className="rounded-2xl border border-gray-200 bg-white/95 backdrop-blur shadow-xl px-4 py-3 space-y-2">
+          <div className="rounded-3xl border border-white/40 bg-white/50 backdrop-blur-2xl saturate-200 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] px-4 py-4 space-y-2">
             <nav className="flex flex-col gap-1.5">
               {navLinks.map((link) => (
                 <Link
@@ -150,7 +181,7 @@ export function SiteHeader() {
                 </Link>
               ))}
             </nav>
-            <div className="pt-2 border-t border-gray-100 flex flex-col gap-2">
+            <div className="pt-2 border-t border-black/5 flex flex-col gap-2">
               <div className="flex gap-2">
                 <Link
                   href="/login"
@@ -158,7 +189,7 @@ export function SiteHeader() {
                     setShowDropdown(false);
                     setMobileMenuOpen(false);
                   }}
-                  className="flex-1 inline-flex items-center justify-center rounded-full border border-gray-300 px-4 py-2 text-xs font-medium text-gray-900 hover:bg-black/5"
+                  className="flex-1 inline-flex items-center justify-center rounded-full border border-white/50 bg-white/30 px-4 py-2 text-xs font-medium text-gray-900 hover:bg-white/50 shadow-sm transition-colors"
                 >
                   Log In
                 </Link>
@@ -168,7 +199,7 @@ export function SiteHeader() {
                     setShowDropdown(false);
                     setMobileMenuOpen(false);
                   }}
-                  className="flex-1 inline-flex items-center justify-center rounded-full bg-gray-900 px-4 py-2 text-xs font-medium text-white hover:bg-gray-800"
+                  className="flex-1 inline-flex items-center justify-center rounded-full bg-gray-900 px-4 py-2 text-xs font-medium text-white hover:bg-gray-800 shadow-md transition-all"
                 >
                   Sign Up
                 </Link>

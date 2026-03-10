@@ -1,6 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Anton } from "next/font/google";
+
+import { Geist, Geist_Mono, Anton, Outfit } from "next/font/google";
+
 
 import "./globals.css";
 import { PageShell } from "../components/page-shell";
@@ -9,6 +11,10 @@ const anton = Anton({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-anton",
+});
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${anton.variable}`}>
+      <body className={`font-sans antialiased ${anton.variable} ${outfit.variable}`}>
         <PageShell>{children}</PageShell>
       </body>
     </html>
