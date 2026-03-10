@@ -35,7 +35,7 @@ export default function Home() {
                   <circle cx="7" cy="17" r="1" fill="white" />
                 </svg>
               </div>
-
+              {/* Build */}
               <h1 className="text-5xl lg:text-5xl -mt-12 font-extrabold text-gray-900 leading-none">
                 We build scalable
                 <br />
