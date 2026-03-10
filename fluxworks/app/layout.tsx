@@ -1,12 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
+
 import { Geist, Geist_Mono, Anton, Outfit } from "next/font/google";
+
 
 import "./globals.css";
 import { PageShell } from "../components/page-shell";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const anton = Anton({
   weight: "400",
   subsets: ["latin"],

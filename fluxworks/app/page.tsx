@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{

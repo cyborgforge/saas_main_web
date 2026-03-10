@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
 import { JSX } from "react/jsx-runtime"; // Import JSX to resolve undeclared variable error
 import { motion } from "framer-motion";
 
 export default function ProductPage() {
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const modules = [
     {
