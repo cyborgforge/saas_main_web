@@ -273,7 +273,7 @@ export default function ContactPage() {
               {status === 'success' && (
                 <div className="mt-4 p-3 bg-green-50 text-green-700 text-[12px] rounded-lg border border-green-200 flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Message sent successfully! We'll be in touch soon.
+                  Message sent successfully! We&apos;ll be in touch soon.
                 </div>
               )}
 
