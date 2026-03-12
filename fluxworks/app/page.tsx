@@ -1,6 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -82,12 +84,12 @@ export default function Home() {
                 Empower your business with our cutting-edge SaaS platforms designed for scalability and performance.
               </p>
               <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4 w-full sm:w-auto px-6 sm:px-0">
-                <button className="w-full sm:w-auto bg-white text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] border border-gray-200 transition-all hover:scale-105 active:scale-95">
+                <Link href="/product" className="w-full sm:w-auto text-center bg-white text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] border border-gray-200 transition-all hover:scale-105 active:scale-95">
                   View Products
-                </button>
-                <button className="w-full sm:w-auto bg-white/20 backdrop-blur-md text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-white/30 border border-white/40 transition-all hover:scale-105 active:scale-95 shadow-sm">
+                </Link>
+                <Link href="/contact" className="w-full sm:w-auto text-center bg-white/20 backdrop-blur-md text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-white/30 border border-white/40 transition-all hover:scale-105 active:scale-95 shadow-sm">
                   Book a Demo
-                </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -529,9 +531,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+              <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
                 View Product
-              </button>
+              </Link>
             </motion.div>
 
             {/* Retail Suite */}
@@ -671,9 +673,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+              <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
                 View Product
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -942,7 +944,7 @@ export default function Home() {
                 <br />
                 Building together.
               </h2>
-              <button className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
+              <Link href="/contact" className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
                 <span className="font-semibold text-[14px]">Request Demo</span>
                 <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
                   <path
@@ -953,7 +955,7 @@ export default function Home() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -989,24 +991,9 @@ export default function Home() {
                     Company
                   </h3>
                   <div className="space-y-2">
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Blog
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Careers
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Privacy
-                    </a>
+                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Blog</a>
+                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Careers</a>
+                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Contact</Link>
                   </div>
                 </div>
 
@@ -1016,84 +1003,32 @@ export default function Home() {
                     Social
                   </h3>
                   <div className="space-y-2">
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Twitter
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Discord
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      LinkedIn
-                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Twitter</a>
+                    <a href="https://discord.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Discord</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">LinkedIn</a>
                   </div>
                 </div>
 
-                {/* Product Column */}
                 <div>
                   <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
                     Product
                   </h3>
                   <div className="space-y-2">
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Overview
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Roadmap
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Changelog
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Book a demo
-                    </a>
+                    <Link href="/product" className="block text-[12px] text-gray-700 hover:text-gray-900">Overview</Link>
+                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Roadmap</a>
+                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Changelog</a>
+                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Book a demo</Link>
                   </div>
                 </div>
 
-                {/* Resources Column */}
                 <div>
                   <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
                     Resources
                   </h3>
                   <div className="space-y-2">
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Documentation
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href="#"
-                      className="block text-[12px] text-gray-700 hover:text-gray-900"
-                    >
-                      Contact us
-                    </a>
+                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Documentation</a>
+                    <a href="https://github.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">GitHub</a>
+                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Contact us</Link>
                   </div>
                 </div>
               </div>

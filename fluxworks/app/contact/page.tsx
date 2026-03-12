@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -73,7 +74,7 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <p className="text-gray-600 text-[13px]">
-                      hello@Cloud-saas.com
+                      fluxworks.it@gmail.com
                     </p>
                   </div>
                 </div>
@@ -100,7 +101,7 @@ export default function ContactPage() {
                       Phone
                     </h3>
                     <p className="text-gray-600 text-[13px]">
-                      +1 (800) 123-4567
+                      9790509690
                     </p>
                   </div>
                 </div>
@@ -133,9 +134,9 @@ export default function ContactPage() {
                       Office
                     </h3>
                     <p className="text-gray-600 text-[13px]">
-                      123 Innovation Drive
+                      First Floor, No.176A, Palai Road, Thoothukudi District,
                       <br />
-                      San Francisco, CA 94105
+                      Tamil Nadu-628008
                     </p>
                   </div>
                 </div>
@@ -147,8 +148,8 @@ export default function ContactPage() {
                   Working Hours
                 </h3>
                 <div className="space-y-1 text-[12px] text-gray-600">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
-                  <p>Saturday: 10:00 AM - 4:00 PM PST</p>
+                  <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                  <p>Saturday: 10:00 AM - 4:00 PM IST</p>
                   <p>Sunday: Closed</p>
                 </div>
               </div>
@@ -273,7 +274,7 @@ export default function ContactPage() {
               {status === 'success' && (
                 <div className="mt-4 p-3 bg-green-50 text-green-700 text-[12px] rounded-lg border border-green-200 flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Message sent successfully! {"We'll"} be in touch soon.
+                  Message sent successfully! We&apos;ll be in touch soon.
                 </div>
               )}
 
@@ -436,12 +437,12 @@ export default function ContactPage() {
                 >
                   Changelog
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Book a demo
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -463,12 +464,12 @@ export default function ContactPage() {
                 >
                   GitHub
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

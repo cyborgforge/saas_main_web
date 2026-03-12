@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 
         const mailOptions = {
             from: process.env.EMAIL_USER, // The email you are sending *from* (your email)
-            to: "cyborgforge.it@gmail.com", // The email you want to *receive* submissions at
+            to: "fluxworks.it@gmail.com", // The email you want to *receive* submissions at
             replyTo: email, // If you hit "Reply" in your email client, it goes to the submitter
             subject: `New Contact Form Submission from ${name} - ${businessName}`,
             html: `
