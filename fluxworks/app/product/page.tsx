@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -6,7 +7,6 @@ import { JSX } from "react/jsx-runtime"; // Import JSX to resolve undeclared var
 import { motion } from "framer-motion";
 
 export default function ProductPage() {
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const modules = [
     {
@@ -227,7 +227,7 @@ export default function ProductPage() {
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <button className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
+                <Link href="/contact" className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
                   Request Demo
                   <svg
                     className="w-4 h-4"
@@ -242,8 +242,8 @@ export default function ProductPage() {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </button>
-                <button className="bg-white text-[12px] border border-gray-300 text-[#0070A0] px-5 py-1.5 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
+                </Link>
+                <Link href="/contact" className="bg-white text-[12px] border border-gray-300 text-[#0070A0] px-5 py-1.5 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -258,7 +258,7 @@ export default function ProductPage() {
                     />
                   </svg>
                   Contact Sales
-                </button>
+                </Link>
               </div>
             </motion.div>
 
@@ -505,9 +505,9 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-[#0070A0] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a]">
+              <Link href="/contact" className="block w-full bg-[#0070A0] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a] text-center">
                 Get Started
-              </button>
+              </Link>
             </motion.div>
 
             {/* Growth Plan */}
@@ -559,9 +559,9 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-white py-1.5 text-sm rounded-lg font-medium hover:bg-gray-800">
+              <Link href="/contact" className="block w-full bg-white py-1.5 text-sm rounded-lg font-medium hover:bg-gray-100 text-center text-gray-900">
                 Most Popular
-              </button>
+              </Link>
             </motion.div>
 
             {/* Enterprise Plan */}
@@ -612,9 +612,9 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full bg-[#0070A0] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a]">
+              <Link href="/contact" className="block w-full bg-[#0070A0] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a] text-center">
                 Contact Sales
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -737,12 +737,12 @@ export default function ProductPage() {
                 >
                   Changelog
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Book a demo
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -764,12 +764,12 @@ export default function ProductPage() {
                 >
                   GitHub
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
           </div>

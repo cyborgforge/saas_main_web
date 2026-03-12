@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -5,7 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function AboutPage() {
-  const [showDropdown, setShowDropdown] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const testimonials = [
@@ -823,12 +823,12 @@ export default function AboutPage() {
                 >
                   Changelog
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Book a demo
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -850,12 +850,12 @@ export default function AboutPage() {
                 >
                   GitHub
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="/contact"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
                   Contact us
-                </a>
+                </Link>
               </div>
             </div>
           </div>
