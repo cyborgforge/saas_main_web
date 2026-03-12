@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { JSX } from "react/jsx-runtime"; // Import JSX to resolve undeclared variable error
+import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ProductPage() {
@@ -55,7 +56,7 @@ export default function ProductPage() {
   ];
 
   const getIcon = (iconName: string) => {
-    const icons: { [key: string]: JSX.Element } = {
+    const icons: { [key: string]: React.ReactElement } = {
       users: (
         <svg
           className="w-5 h-5"
