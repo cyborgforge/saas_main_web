@@ -3,16 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-
-import type { LiquidGlassProps } from "@liquidglass/react";
-
-// Default export — loaded client-side only to avoid SSR canvas errors
-const LiquidGlass = dynamic<LiquidGlassProps>(
-  () => import("@liquidglass/react").then((m: any) => m.default ?? m.LiquidGlass),
-  { ssr: false }
-);
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -42,12 +33,9 @@ export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const controlNavbar = () => {
