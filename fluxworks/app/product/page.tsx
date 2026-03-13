@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function ProductPage() {
 
@@ -623,16 +624,7 @@ export default function ProductPage() {
       <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-full h-15"
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 Q90,0 180,60 T360,60 T540,60 T720,60 T900,60 T1080,60 T1260,60 T1440,60 L1440,120 L0,120 Z"
-              fill="#f4f2ef"
-            />
-          </svg>
+          <ResponsiveWave fill="#f4f2ef" />
         </div>
         <div className="max-w-4xl px-0 md:px-20 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">

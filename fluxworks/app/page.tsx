@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
           <div className="absolute top-[15%] -left-16 w-[200px] h-[200px] rounded-full border border-white/5 md:hidden pointer-events-none z-0"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-10 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pt-6 md:pt-10 relative">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center relative z-10">
             {/* Left Content */}
             <motion.div
@@ -439,16 +440,7 @@ export default function Home() {
       <section className="bg-[#06181E] py-16 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-full h-15"
-            viewBox="0 0 1440 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 Q90,0 180,60 T360,60 T540,60 T720,60 T900,60 T1080,60 T1260,60 T1440,60 L1440,120 L0,120 Z"
-              fill="#06181E"
-            />
-          </svg>
+          <ResponsiveWave fill="#06181E" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2
@@ -459,7 +451,7 @@ export default function Home() {
           </h2>
 
           {/* First Row - 2 Cards */}
-          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-1 mb-4">
+          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-1 mb-1">
             {/* Pharmacy Management Suite */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -614,13 +606,13 @@ export default function Home() {
           </div>
 
           {/* Second Row - 1 Card */}
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#A4C8FF] rounded-xl w-full max-w-[600px] mx-auto flex flex-col justify-between"
+              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
               style={{ padding: "32px 32px 24px 32px" }}
             >
               <div className="flex gap-4">
