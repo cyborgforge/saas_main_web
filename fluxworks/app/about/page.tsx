@@ -761,7 +761,7 @@ export default function AboutPage() {
                   href="#"
                   className="block text-[12px] text-gray-600 hover:text-black"
                 >
-                  Discord
+                  Instagram
                 </a>
                 <a
                   href="#"

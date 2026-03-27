@@ -942,7 +942,7 @@ export default function Home() {
                   </h3>
                   <div className="space-y-2">
                     <a href="https://twitter.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Twitter</a>
-                    <a href="https://discord.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Discord</a>
+                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Instagram</a>
                     <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">LinkedIn</a>
                   </div>
                 </div>
