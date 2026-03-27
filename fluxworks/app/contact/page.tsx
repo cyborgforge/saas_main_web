@@ -102,7 +102,7 @@ export default function ContactPage() {
                       Phone
                     </h3>
                     <p className="text-gray-600 text-[13px]">
-                      9790509690
+                      +91 9363400322
                     </p>
                   </div>
                 </div>

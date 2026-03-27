@@ -476,7 +476,7 @@ export default function ProductPage() {
                 <span className="text-2xl font-bold text-gray-900">
                   Contact Us
                 </span>
-                <span className="text-gray-500 text-sm"> /per month</span>
+                {/* <span className="text-gray-500 text-sm"> /per month</span> */}
               </div>
               <div className="space-y-1.5 mb-6">
                 {[
@@ -529,7 +529,7 @@ export default function ProductPage() {
                 <span className="text-2xl font-bold text-white">
                   Contact Us
                 </span>
-                <span className="text-[#9CA3AF] text-sm"> /per month</span>
+                {/* <span className="text-[#9CA3AF] text-sm"> /per month</span> */}
               </div>
               <div className="space-y-1.5 mb-6">
                 {[
@@ -582,7 +582,7 @@ export default function ProductPage() {
                 <span className="text-2xl font-bold text-gray-900">
                   Contact Us
                 </span>
-                <span className="text-gray-500 text-sm"> /custom</span>
+                {/* <span className="text-gray-500 text-sm"> /custom</span> */}
               </div>
               <div className="space-y-1.5 mb-6">
                 {[

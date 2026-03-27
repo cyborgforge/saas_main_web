@@ -18,10 +18,15 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "FluxWorks",
+  title: "Fluxworks",
   description:
     "We build scalable SaaS products for modern businesses. Pharmacy Management, Retail Suite, and Clinic Management solutions.",
   generator: "v0.app",
+  icons: {
+    icon: "/onlylogo.png",
+    shortcut: "/onlylogo.png",
+    apple: "/onlylogo.png",
+  },
 };
 
 export default function RootLayout({

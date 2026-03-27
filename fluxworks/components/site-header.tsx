@@ -76,7 +76,7 @@ export function SiteHeader() {
         <div className="h-9 overflow-hidden flex items-center">
           <img
             src="/logo2.png"
-            alt="FluxWorks"
+            alt="Fluxworks"
             className="h-16 w-auto object-contain"
             style={{ marginTop: "-8px", marginBottom: "-8px" }}
           />
@@ -175,7 +175,7 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center shrink-0 mr-2">
             <img
               src="/onlylogo.png"
-              alt="FluxWorks"
+              alt="Fluxworks"
               className="h-8 w-auto object-contain"
             />
           </Link>

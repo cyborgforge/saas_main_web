@@ -12,7 +12,7 @@ export default function AboutPage() {
   const testimonials = [
     {
       quote:
-        "I love working at FluxWorks because of the people and the ability to work with multiple teams. Having the ability to work cross-functionally and being part of something growing is so exciting.",
+        "I love working at Fluxworks because of the people and the ability to work with multiple teams. Having the ability to work cross-functionally and being part of something growing is so exciting.",
       name: "Courtney Jamison",
       role: "Enterprise Customer Success Manager",
       location: "Cambridge",
@@ -65,7 +65,7 @@ export default function AboutPage() {
           >
             <div className="flex items-center justify-center mb-6">
               <span className="bg-[#0070A015] text-[#0070A0] text-xs font-medium px-4 py-1.5 rounded-full">
-                About FluxWorks
+                About Fluxworks
               </span>
             </div>
 
@@ -569,7 +569,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Journey Timeline */}
-      <section className="py-16 bg-[#ccefff] relative overflow-hidden">
+      {/* <section className="py-16 bg-[#ccefff] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 mb-3">
             Our Journey
@@ -579,7 +579,6 @@ export default function AboutPage() {
           </p>
 
           <div className="relative">
-            {/* Pie Chart Image - Left */}
             <div className="absolute left-0 top-20 hidden md:block">
               <img
                 src="/emojistar.png"
@@ -588,7 +587,6 @@ export default function AboutPage() {
               />
             </div>
 
-            {/* Gear Image - Right */}
             <div className="absolute right-0 bottom-0 hidden md:block">
               <img
                 src="/helix.png"
@@ -597,13 +595,10 @@ export default function AboutPage() {
               />
             </div>
 
-            {/* Timeline */}
             <div className="relative max-w-3xl mx-auto">
-              {/* Center line */}
               <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-[#4a90a4]"></div>
 
               <div className="space-y-12">
-                {/* 2019 - Left */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div className="text-right pr-8 flex flex-col items-end">
                     <div className="bg-[#b8e3f6] text-gray-900 text-[12px] font-medium mb-2 px-3 py-0.5 rounded-full inline-block">2019</div>
@@ -611,14 +606,13 @@ export default function AboutPage() {
                       Company Founded
                     </h3>
                     <p className="text-gray-600 text-[12px]">
-                      FluxWorks was born with a vision to simplify business operations.
+                      Fluxworks was born with a vision to simplify business operations.
                     </p>
                   </div>
                   <div></div>
                   <div className="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 bg-[#4a90a4] rounded-full border-4 border-white"></div>
                 </div>
 
-                {/* 2020 - Right */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div></div>
                   <div className="pl-8 flex flex-col">
@@ -633,7 +627,6 @@ export default function AboutPage() {
                   <div className="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 bg-[#4a90a4] rounded-full border-4 border-white"></div>
                 </div>
 
-                {/* 2021 - Left */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div className="text-right pr-8 flex flex-col items-end">
                     <div className="bg-[#b8e3f6] text-gray-900 text-[12px] font-medium mb-2 px-3 py-0.5 rounded-full inline-block">2021</div>
@@ -648,7 +641,6 @@ export default function AboutPage() {
                   <div className="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 bg-[#4a90a4] rounded-full border-4 border-white"></div>
                 </div>
 
-                {/* 2022 - Right */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div></div>
                   <div className="pl-8 flex flex-col">
@@ -663,7 +655,6 @@ export default function AboutPage() {
                   <div className="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 bg-[#4a90a4] rounded-full border-4 border-white"></div>
                 </div>
 
-                {/* 2023 - Left */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div className="text-right pr-8 flex flex-col items-end">
                     <div className="bg-[#b8e3f6] text-gray-900 text-[12px] font-medium mb-2 px-3 py-0.5 rounded-full inline-block">2023</div>
@@ -678,7 +669,6 @@ export default function AboutPage() {
                   <div className="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 bg-[#4a90a4] rounded-full border-4 border-white"></div>
                 </div>
 
-                {/* 2024 - Right */}
                 <div className="relative grid grid-cols-2 gap-8">
                   <div></div>
                   <div className="pl-8 flex flex-col">
@@ -696,7 +686,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">

@@ -274,166 +274,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WE BUILD Section */}
+      {/* Services And Product Suite Section */}
       <section
-        className=" relative"
+        className="relative py-16 md:py-20"
         style={{
           background:
             "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
         }}
       >
-        {/* Wave Top */}
-        {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -mt-1">
-          <svg
-            className="relative block w-full h-12"
-            viewBox="0 0 1200 60"
-            preserveAspectRatio="none"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="rounded-3xl border border-white/30 bg-white/85 backdrop-blur-sm p-6 md:p-10"
           >
-            <path
-              d="M0,0 Q300,40 600,20 T1200,0 L1200,0 L0,0 Z"
-              fill="#a8d4c8"
-            ></path>
-          </svg>
-        </div> */}
-
-        <div
-          className="w-full md:w-[94%] md:ml-auto rounded-tl-[60px] md:rounded-tl-[100px] px-4 sm:px-6 pt-10 pb-16 md:pt-6 md:pb-24 relative overflow-hidden"
-          style={{
-            background:
-              "linear-gradient(to bottom, #e8f0ec 0%, #c8ddd2 40%, #a8ccbe 100%)",
-          }}
-        >
-          <div className="flex justify-center relative z-0">
             <h2
-              className="text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] xl:text-[240px] leading-none pointer-events-none"
-              style={{
-                fontFamily: "var(--font-anton)",
-                fontStyle: "normal",
-                fontWeight: 400,
-                WebkitTextStroke: "3px rgba(133, 145, 255, 0.6)",
-                WebkitTextFillColor: "transparent",
-                color: "transparent",
-                letterSpacing: "-0.02em"
-              }}
+              className="text-3xl md:text-4xl text-gray-900 mb-2"
+              style={{ fontFamily: "var(--font-anton)" }}
             >
-              WE BUILD
+              Our Services
             </h2>
-          </div>
+            <p className="text-sm text-gray-700 mb-6">
+              What we do for clients
+            </p>
+            <ul className="grid md:grid-cols-2 gap-4 md:gap-5">
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Retail Technology Solutions</h3>
+                <p className="text-xs text-gray-700">Complete digital transformation for retail chains.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Business Process Automation</h3>
+                <p className="text-xs text-gray-700">Automating billing, inventory, reporting, and operations.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Custom Software Development</h3>
+                <p className="text-xs text-gray-700">Built-to-fit solutions based on client workflows.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">System Integration Services</h3>
+                <p className="text-xs text-gray-700">Connecting POS, CRM, accounting, and third-party tools.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Data Analytics & Reporting</h3>
+                <p className="text-xs text-gray-700">Dashboards, KPIs, and business insights for decision-making.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Cloud Deployment & Management</h3>
+                <p className="text-xs text-gray-700">Hosting, scaling, and maintaining applications.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">SaaS Implementation & Onboarding</h3>
+                <p className="text-xs text-gray-700">Setting up systems across multiple stores.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">System Integration & Data Sync</h3>
+                <p className="text-xs text-gray-700">Third-party integrations, APIs, real-time data flow between systems.</p>
+              </li>
+              <li className="bg-white rounded-2xl p-4 border border-gray-200 md:col-span-2">
+                <h3 className="text-sm font-bold text-gray-900 mb-1">Support & Maintenance</h3>
+                <p className="text-xs text-gray-700">Continuous updates, issue handling, and improvements.</p>
+              </li>
+            </ul>
+          </motion.div>
 
-          {/* Blur fade effect at bottom extending into wave */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none z-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, transparent 0%, rgba(184, 220, 232, 0.6) 50%, rgba(123, 168, 212, 0.9) 100%)",
-              filter: "blur(24px)",
-            }}
-          ></div>
-
-          <div className="grid md:grid-cols-4 gap-4 md:gap-6 mt-4 md:-mt-16 lg:-mt-24 xl:-mt-32 px-2 sm:px-4 relative z-10">
-            {/* POS & Billing Systems */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 text-center space-y-4"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-3xl border border-white/30 bg-[#06181E]/95 text-white p-6 md:p-10"
+          >
+            <h2
+              className="text-3xl md:text-4xl mb-6"
+              style={{ fontFamily: "var(--font-anton)" }}
             >
-              <div className="flex justify-center mb-4">
-                <img
-                  src="/we_build_1.png"
-                  alt="POS & Billing Systems"
-                  className="w-full h-52 object-cover rounded-xl"
-                />
-              </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">
-                POS & Billing
-                <br />
-                Systems
-              </h3>
-              <p className="text-[10px] text-gray-700">
-                Complete point-of-sale solutions with integrated billing and
-                invoicing
-              </p>
-            </motion.div>
-
-            {/* Inventory Management */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="p-6 text-center space-y-4"
-            >
-              <div className="flex justify-center mb-4">
-                <img
-                  src="/we_build_2.png"
-                  alt="Inventory Management"
-                  className="w-full h-52 object-cover rounded-xl"
-                />
-              </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">
-                Inventory
-                <br />
-                Management
-              </h3>
-              <p className="text-[10px] text-gray-700">
-                Real-time stock tracking and automated reordering systems
-              </p>
-            </motion.div>
-
-            {/* Online Ordering */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="p-6 text-center space-y-4"
-            >
-              <div className="flex justify-center mb-4">
-                <img
-                  src="/we_build_3.png"
-                  alt="Online Ordering"
-                  className="w-full h-52 object-cover rounded-xl"
-                />
-              </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">
-                Online
-                <br />
-                Ordering
-              </h3>
-              <p className="text-[10px] text-gray-700">
-                E-commerce integration with web and mobile ordering platforms
-              </p>
-            </motion.div>
-
-            {/* HRM's and User Management */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="p-6 text-center space-y-4"
-            >
-              <div className="flex justify-center mb-4">
-                <img
-                  src="/we_build_4.png"
-                  alt="HRM's and User Management"
-                  className="w-full h-52 object-cover rounded-xl"
-                />
-              </div>
-              <h3 className="text-sm font-bold text-gray-900 leading-4">
-                {"HRM's and User"}
-                <br />
-                Management
-              </h3>
-              <p className="text-[10px] text-gray-700">
-                Employee management, attendance, and role-based access control
-              </p>
-            </motion.div>
-          </div>
+              Our Product Suite
+            </h2>
+            <ul className="grid md:grid-cols-2 gap-4 md:gap-5">
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Commerce Transaction Suite</h3>
+                <p className="text-xs text-gray-200">Retail POS, Inventory, Multi-store Management. Handles all billing, sales, and order flows.</p>
+              </li>
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Customer Engine</h3>
+                <p className="text-xs text-gray-200">CRM, Loyalty Engine, Engagement Tools, Customer Support, Customer lifecycle, retention, and growth.</p>
+              </li>
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Operations Suite</h3>
+                <p className="text-xs text-gray-200">HR, Finance, People operations, Vendor & Supply Chain.</p>
+              </li>
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Analytical Insights Engine</h3>
+                <p className="text-xs text-gray-200">Advanced Analytics, Forecasting, Decision Systems, Real-time intelligence and predictive analytics.</p>
+              </li>
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Core Platform Suite</h3>
+                <p className="text-xs text-gray-200">Cloud Hosting, APIs, Integrations, Admin Controls, Third-party Integrations, Data Sync.</p>
+              </li>
+              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
+                <h3 className="text-sm font-bold mb-1">Cloud Deployment & Management</h3>
+                <p className="text-xs text-gray-200">Hosting, scaling, and maintaining applications.</p>
+              </li>
+            </ul>
+          </motion.div>
         </div>
-
       </section>
 
       {/* Our Products Section */}
@@ -727,7 +673,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="bg-[#06181E] py-16">
+      {/* <section className="bg-[#06181E] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-white text-2xl mb-3">
             Trusted By Many Organizations and
@@ -755,7 +701,7 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <section className="bg-[#06181E] py-16">
