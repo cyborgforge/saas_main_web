@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ResponsiveWave } from "@/components/responsive-wave";
 
+const LOGO_CAROUSEL_IDS = [1, 2, 3, 4] as const;
+/** One full cycle for translateX(-50%) seamless loop */
+const LOGO_CAROUSEL_SEAMLESS_BLOCK = [...LOGO_CAROUSEL_IDS, ...LOGO_CAROUSEL_IDS];
+/** Repeated so the strip is wider than any viewport (no dead gap on the right) */
+const LOGO_CAROUSEL_TRACK = Array.from({ length: 6 }, () => LOGO_CAROUSEL_SEAMLESS_BLOCK).flat();
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -631,44 +637,18 @@ export default function Home() {
             }
           }
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            animation: scroll 90s linear infinite;
           }
           .animate-scroll:hover {
             animation-play-state: paused;
           }
         `}</style>
-        <div className="flex items-center gap-10 sm:gap-16 animate-scroll px-6">
-          <div className="flex-shrink-0">
-            <img src="/item_1.png" alt="Partner 1" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_2.png" alt="Partner 2" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_3.png" alt="Partner 3" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_4.png" alt="Partner 4" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_5.png" alt="Partner 5" className="h-8 w-auto" />
-          </div>
-          {/* Duplicate for seamless loop */}
-          <div className="flex-shrink-0">
-            <img src="/item_1.png" alt="Partner 1" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_2.png" alt="Partner 2" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_3.png" alt="Partner 3" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_4.png" alt="Partner 4" className="h-8 w-auto" />
-          </div>
-          <div className="flex-shrink-0">
-            <img src="/item_5.png" alt="Partner 5" className="h-8 w-auto" />
-          </div>
+        <div className="flex w-max items-center gap-10 sm:gap-16 animate-scroll px-6">
+          {LOGO_CAROUSEL_TRACK.map((id, index) => (
+            <div key={index} className="flex-shrink-0">
+              <img src={`/item_${id}.png`} alt={`Partner ${id}`} className="h-8 w-auto" />
+            </div>
+          ))}
         </div>
       </section>
 
