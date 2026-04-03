@@ -26,7 +26,8 @@ function buildWavePath(
 const wavePaths = {
   mobile: buildWavePath(8),
   tablet: buildWavePath(12),
-  desktop: buildWavePath(16),
+  medium: buildWavePath(14, 1440, 70, 52, 140),
+  desktop: buildWavePath(16, 1440, 70, 52, 140),
 };
 
 export function ResponsiveWave({ fill }: ResponsiveWaveProps) {
@@ -40,15 +41,22 @@ export function ResponsiveWave({ fill }: ResponsiveWaveProps) {
         <path d={wavePaths.mobile} fill={fill} />
       </svg>
       <svg
-        className="relative hidden h-16 w-full sm:block lg:hidden"
+        className="relative hidden h-16 w-full sm:block md:hidden"
         viewBox="0 0 1440 120"
         preserveAspectRatio="none"
       >
         <path d={wavePaths.tablet} fill={fill} />
       </svg>
       <svg
-        className="relative hidden h-20 w-full lg:block"
-        viewBox="0 0 1440 120"
+        className="relative hidden h-24 w-full md:block lg:hidden"
+        viewBox="0 0 1440 140"
+        preserveAspectRatio="none"
+      >
+        <path d={wavePaths.medium} fill={fill} />
+      </svg>
+      <svg
+        className="relative hidden h-28 w-full lg:block"
+        viewBox="0 0 1440 140"
         preserveAspectRatio="none"
       >
         <path d={wavePaths.desktop} fill={fill} />

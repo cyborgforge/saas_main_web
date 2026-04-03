@@ -11,6 +11,51 @@ const LOGO_CAROUSEL_SEAMLESS_BLOCK = [...LOGO_CAROUSEL_IDS, ...LOGO_CAROUSEL_IDS
 /** Repeated so the strip is wider than any viewport (no dead gap on the right) */
 const LOGO_CAROUSEL_TRACK = Array.from({ length: 6 }, () => LOGO_CAROUSEL_SEAMLESS_BLOCK).flat();
 
+const PRODUCT_SUITE_CARDS = [
+  {
+    title: "Commerce Transaction Suite",
+    description: "Retail POS, inventory, and multi-store transaction management in one flow.",
+    features: ["Retail POS", "Inventory", "Multi-store"],
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Customer Engine",
+    description: "CRM, loyalty, and support tools to improve customer retention and growth.",
+    features: ["CRM", "Loyalty", "Support"],
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Operations Suite",
+    description: "Streamline HR, finance, people operations, and vendor lifecycle management.",
+    features: ["HR", "Finance", "Vendors"],
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Analytical Insights Engine",
+    description: "Forecasting and real-time intelligence to power faster strategic decisions.",
+    features: ["Forecasting", "Dashboards", "Insights"],
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Core Platform Suite",
+    description: "Cloud-ready foundation with APIs, integrations, and centralized controls.",
+    features: ["Cloud", "APIs", "Integrations"],
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Cloud Deployment & Management",
+    description: "Deploy, scale, and maintain workloads reliably across modern environments.",
+    features: ["Hosting", "Scaling", "Maintenance"],
+    status: "Active",
+    cta: "View Product",
+  },
+] as const;
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -345,46 +390,6 @@ export default function Home() {
             </ul>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-3xl border border-white/30 bg-[#06181E]/95 text-white p-6 md:p-10"
-          >
-            <h2
-              className="text-3xl md:text-4xl mb-6"
-              style={{ fontFamily: "var(--font-anton)" }}
-            >
-              Our Product Suite
-            </h2>
-            <ul className="grid md:grid-cols-2 gap-4 md:gap-5">
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Commerce Transaction Suite</h3>
-                <p className="text-xs text-gray-200">Retail POS, Inventory, Multi-store Management. Handles all billing, sales, and order flows.</p>
-              </li>
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Customer Engine</h3>
-                <p className="text-xs text-gray-200">CRM, Loyalty Engine, Engagement Tools, Customer Support, Customer lifecycle, retention, and growth.</p>
-              </li>
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Operations Suite</h3>
-                <p className="text-xs text-gray-200">HR, Finance, People operations, Vendor & Supply Chain.</p>
-              </li>
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Analytical Insights Engine</h3>
-                <p className="text-xs text-gray-200">Advanced Analytics, Forecasting, Decision Systems, Real-time intelligence and predictive analytics.</p>
-              </li>
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Core Platform Suite</h3>
-                <p className="text-xs text-gray-200">Cloud Hosting, APIs, Integrations, Admin Controls, Third-party Integrations, Data Sync.</p>
-              </li>
-              <li className="rounded-2xl p-4 border border-white/15 bg-white/5">
-                <h3 className="text-sm font-bold mb-1">Cloud Deployment & Management</h3>
-                <p className="text-xs text-gray-200">Hosting, scaling, and maintaining applications.</p>
-              </li>
-            </ul>
-          </motion.div>
         </div>
       </section>
 
@@ -403,7 +408,7 @@ export default function Home() {
           </h2>
 
           {/* First Row - 2 Cards */}
-          <div className="flex flex-col lg:flex-row justify-center items-stretch gap-1 mb-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1">
             {/* Pharmacy Management Suite */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -557,8 +562,56 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Second Row - 1 Card */}
-          <div className="flex justify-center mt-0">
+          {/* Product Suite Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-1">
+            {PRODUCT_SUITE_CARDS.map((suite, index) => (
+              <motion.div
+                key={suite.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: 0.05 * index }}
+                className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
+                style={{ padding: "32px 32px 24px 32px" }}
+              >
+                <div className="flex gap-4">
+                  <div className="flex flex-col" style={{ width: "65%" }}>
+                    <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
+                      {suite.status}
+                    </div>
+                    <h3
+                      className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
+                      style={{ fontFamily: "var(--font-anton)" }}
+                    >
+                      {suite.title}
+                    </h3>
+                    <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
+                      {suite.description}
+                    </p>
+                  </div>
+                  <div className="flex flex-col pt-12" style={{ width: "35%" }}>
+                    <div className="space-y-3">
+                      {suite.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-2 text-[11px]">
+                          <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-[#2d3748] font-medium">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+                  {suite.cta}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Clinic Management Card */}
+          <div className="mt-1 flex justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
