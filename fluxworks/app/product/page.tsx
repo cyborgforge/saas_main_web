@@ -1,12 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function ProductPage() {
+  const productScreens = [
+    {
+      src: "/laptop.png",
+      title: "Operations Dashboard",
+    },
+    {
+      src: "/system.png",
+      title: "Insights & Reports",
+    },
+    {
+      src: "/we_build_1.png",
+      title: "Module Management",
+    },
+  ] as const;
+
+  const [activeScreenIndex, setActiveScreenIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveScreenIndex((current) => (current + 1) % productScreens.length);
+    }, 3200);
+
+    return () => window.clearInterval(intervalId);
+  }, [productScreens.length]);
 
   const modules = [
     {
@@ -243,22 +266,6 @@ export default function ProductPage() {
                     />
                   </svg>
                 </Link>
-                <Link href="/contact" className="bg-white text-[12px] border border-gray-300 text-[#0070A0] px-5 py-1.5 rounded-lg font-medium hover:bg-gray-50 flex items-center gap-2">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="#0070A0"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  Contact Sales
-                </Link>
               </div>
             </motion.div>
 
@@ -338,6 +345,60 @@ export default function ProductPage() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Product Gallery */}
+      <section className="py-16 bg-[#F4FAFD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+            Product Gallery
+          </h2>
+          <p className="text-center text-[14px] text-gray-600 mb-10">
+            Real screens from the suite, auto-playing for a quick preview.
+          </p>
+
+          <div className="rounded-3xl border border-[#D5E8F0] bg-white p-3 sm:p-4 shadow-[0_20px_50px_rgba(0,40,60,0.12)]">
+            <div className="relative h-[240px] sm:h-[330px] md:h-[420px] overflow-hidden rounded-2xl bg-[#09273A]">
+              {productScreens.map((screen, index) => (
+                <motion.div
+                  key={screen.src}
+                  className="absolute inset-0"
+                  initial={false}
+                  animate={{
+                    opacity: activeScreenIndex === index ? 1 : 0,
+                    scale: activeScreenIndex === index ? 1 : 1.04,
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  <img
+                    src={screen.src}
+                    alt={screen.title}
+                    className="w-full h-full object-contain bg-[#09273A]"
+                  />
+                  <div className="absolute bottom-4 left-4 rounded-full bg-black/45 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-sm">
+                    {screen.title}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-4 flex justify-center gap-2">
+              {productScreens.map((screen, index) => (
+                <button
+                  key={screen.title}
+                  type="button"
+                  aria-label={`Go to ${screen.title}`}
+                  onClick={() => setActiveScreenIndex(index)}
+                  className={`h-2.5 rounded-full transition-all ${
+                    activeScreenIndex === index
+                      ? "w-8 bg-[#0070A0]"
+                      : "w-2.5 bg-[#A9C5D1] hover:bg-[#88B1C2]"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -620,152 +681,6 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
-        {/* Wave Top */}
-        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="#f4f2ef" />
-        </div>
-        <div className="max-w-4xl px-0 md:px-20 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
-            {/* Newsletter Column */}
-            <div className="col-span-2">
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Newsletter
-              </h3>
-              <p className="text-[12px] text-gray-600 mb-4">
-                {
-                  "We'd love to share our love for engineering with you in our monthly newsletter."
-                }
-              </p>
-              <div className="flex items-center gap-0.5">
-                <input
-                  type="email"
-                  placeholder="jane@domain.com"
-                  className="flex-1 pl-2 py-1.5 bg-[#ebeae9] rounded-l-md text-[11px] placeholder:text-gray-400 focus:outline-none"
-                />
-                <button className="px-1 py-1.5 bg-[#ebeae9] rounded-r-md text-[11px] font-semibold hover:bg-gray-200">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-
-            {/* Company Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Company
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Blog
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Careers
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Privacy
-                </a>
-              </div>
-            </div>
-
-            {/* Social Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Social
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Twitter
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Instagram
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-
-            {/* Product Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Product
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Overview
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Roadmap
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Changelog
-                </a>
-                <Link
-                  href="/contact"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Book a demo
-                </Link>
-              </div>
-            </div>
-
-            {/* Resources Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Resources
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Documentation
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  GitHub
-                </a>
-                <Link
-                  href="/contact"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Contact us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

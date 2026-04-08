@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -29,13 +29,9 @@ const activeGlass: React.CSSProperties = {
 };
 
 export function SiteHeader() {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const navContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -50,16 +46,6 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setShowDropdown(false);
-      }
-    };
-    if (showDropdown) document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showDropdown]);
-
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
@@ -67,10 +53,7 @@ export function SiteHeader() {
 
   // Inner content of the desktop nav bar — shared by both SSR fallback and GlassCard
   const DesktopNavContent = (
-    <div
-      className="flex items-center justify-between gap-6 px-5 py-4 w-full"
-      ref={navContainerRef}
-    >
+    <div className="flex items-center justify-between gap-6 px-5 py-4 w-full">
       {/* Logo — overflow-hidden crops top/bottom whitespace, image scaled up for visual size */}
       <Link href="/" className="flex items-center shrink-0">
         <div className="h-9 overflow-hidden flex items-center">
@@ -102,39 +85,6 @@ export function SiteHeader() {
 
       {/* Right actions */}
       <div className="flex items-center gap-3 shrink-0">
-        {/* Login */}
-        <div className="relative" ref={dropdownRef}>
-          <button
-            onClick={() => setShowDropdown((v) => !v)}
-            className="text-[13px] text-gray-600 font-normal flex items-center gap-1.5 px-4 py-2 rounded-full hover:bg-black/5 transition-colors"
-          >
-            Log In
-            <svg
-              className={`w-3.5 h-3.5 transition-transform duration-200 ${showDropdown ? "rotate-180" : ""}`}
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </button>
-
-          {/* Dropdown — inside the ref div so click-outside works correctly */}
-          {showDropdown && (
-            <div
-              className="absolute right-0 top-full mt-2 w-36 rounded-2xl py-1 z-[9999]"
-              style={{
-                background: "rgba(255,255,255,0.85)",
-                backdropFilter: "blur(24px) saturate(170%)",
-                WebkitBackdropFilter: "blur(24px) saturate(170%)",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.9)",
-              }}
-            >
-              <Link href="/login" onClick={() => setShowDropdown(false)} className="block px-4 py-2.5 text-[13px] text-gray-900 hover:bg-black/5 transition-colors font-medium rounded-xl mx-1">Log In</Link>
-              <Link href="/register" onClick={() => setShowDropdown(false)} className="block px-4 py-2.5 text-[13px] text-gray-900 hover:bg-black/5 transition-colors font-medium rounded-xl mx-1">Sign Up</Link>
-            </div>
-          )}
-        </div>
-
         <Link
           href="/contact"
           className="inline-flex items-center justify-center rounded-full bg-gray-900 text-[13px] font-medium text-white px-5 py-2 hover:bg-gray-800 transition-colors"
@@ -200,46 +150,15 @@ export function SiteHeader() {
             })}
           </div>
 
-          {/* Hamburger — fixed width right */}
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen((o) => !o)}
-            className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-black/5 transition-colors text-gray-700 shrink-0 ml-2"
-            aria-label="Toggle menu"
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-gray-900 text-[11px] font-medium text-white px-3 py-1.5 hover:bg-gray-800 transition-colors shrink-0 ml-2"
+            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            Demo
+          </Link>
         </div>
-
-        {/* Desktop Dropdown has been moved inside the Login button ref above */}
       </div>
-
-      {/* ═══ Mobile Dropdown (anchored top-right, under hamburger) ═══ */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full mt-1.5 right-3 md:hidden z-30 w-36">
-          <div
-            className="w-full rounded-2xl overflow-hidden"
-            style={{
-              background: "rgba(255,255,255,0.08)",
-              backdropFilter: "blur(28px) saturate(180%)",
-              WebkitBackdropFilter: "blur(28px) saturate(180%)",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.06), inset 0 1.5px 0 rgba(255,255,255,0.4)",
-            }}
-          >
-            <Link href="/login" onClick={() => setMobileMenuOpen(false)} className="flex items-center px-4 py-2 text-[12px] font-normal text-gray-600 hover:bg-black/5 transition-colors">Log In</Link>
-            <div className="h-px mx-3" style={{ background: "rgba(0,0,0,0.05)" }} />
-            <Link href="/register" onClick={() => setMobileMenuOpen(false)} className="flex items-center px-4 py-2 text-[12px] font-normal text-gray-600 hover:bg-black/5 transition-colors">Sign Up</Link>
-            <div className="h-px mx-3" style={{ background: "rgba(0,0,0,0.05)" }} />
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="flex items-center px-4 py-2 text-[12px] font-normal text-gray-600 hover:bg-black/5 transition-colors">Book a demo</Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

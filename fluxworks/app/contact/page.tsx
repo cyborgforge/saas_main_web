@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -290,7 +289,7 @@ export default function ContactPage() {
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 {status !== 'submitting' && (
                   <svg
-                    className="w-4 h-4"
+                    className="w-4 h-4 rotate-90"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -305,168 +304,11 @@ export default function ContactPage() {
                 )}
               </button>
 
-              <p className="text-center text-[11px] text-gray-500 mt-3">
-                By submitting this form, you agree to our{" "}
-                <a href="#" className="text-[#4a90a4] hover:underline">
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a href="#" className="text-[#4a90a4] hover:underline">
-                  Terms of Service
-                </a>
-                .
-              </p>
             </motion.form>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#f4f2ef] py-16 px-6 md:px-20 border-t border-gray-100 relative">
-        {/* Wave Top */}
-        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="#f4f2ef" />
-        </div>
-        <div className="max-w-4xl px-0 md:px-20 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
-            {/* Newsletter Column */}
-            <div className="col-span-2">
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Newsletter
-              </h3>
-              <p className="text-[12px] text-gray-600 mb-4">
-                {
-                  "We'd love to share our love for engineering with you in our monthly newsletter."
-                }
-              </p>
-              <div className="flex items-center gap-0.5">
-                <input
-                  type="email"
-                  placeholder="jane@domain.com"
-                  className="flex-1 pl-2 py-1.5 bg-[#ebeae9] rounded-l-md text-[11px] placeholder:text-gray-400 focus:outline-none"
-                />
-                <button className="px-1 py-1.5 bg-[#ebeae9] rounded-r-md text-[11px] font-semibold hover:bg-gray-200">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-
-            {/* Company Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Company
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Blog
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Careers
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Privacy
-                </a>
-              </div>
-            </div>
-
-            {/* Social Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Social
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Twitter
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Instagram
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-
-            {/* Product Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Product
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Overview
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Roadmap
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Changelog
-                </a>
-                <Link
-                  href="/contact"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Book a demo
-                </Link>
-              </div>
-            </div>
-
-            {/* Resources Column */}
-            <div>
-              <h3 className="font-semibold text-[14px] text-black mb-3">
-                Resources
-              </h3>
-              <div className="space-y-2">
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Documentation
-                </a>
-                <a
-                  href="#"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  GitHub
-                </a>
-                <Link
-                  href="/contact"
-                  className="block text-[12px] text-gray-600 hover:text-black"
-                >
-                  Contact us
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -3,6 +3,22 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  BarChart3,
+  Blocks,
+  Cloud,
+  Database,
+  Headset,
+  LayoutDashboard,
+  Pill,
+  Rocket,
+  Stethoscope,
+  Layers3,
+  Store,
+  ShieldCheck,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 import { ResponsiveWave } from "@/components/responsive-wave";
 
 const LOGO_CAROUSEL_IDS = [1, 2, 3, 4] as const;
@@ -13,9 +29,26 @@ const LOGO_CAROUSEL_TRACK = Array.from({ length: 6 }, () => LOGO_CAROUSEL_SEAMLE
 
 const PRODUCT_SUITE_CARDS = [
   {
+    title: "Pharmacy Management Suite",
+    description: "Complete pharmacy solution with POS, inventory, online ordering, and delivery.",
+    features: ["HRMS", "POS", "Inventory"],
+    icon: Pill,
+    status: "Active",
+    cta: "View Product",
+  },
+  {
+    title: "Retail Suite",
+    description: "Multi-store retail management with inventory sync and customer analytics.",
+    features: ["Multi-Store", "CRM", "Analytics"],
+    icon: Store,
+    status: "Soon",
+    cta: "Coming soon",
+  },
+  {
     title: "Commerce Transaction Suite",
     description: "Retail POS, inventory, and multi-store transaction management in one flow.",
     features: ["Retail POS", "Inventory", "Multi-store"],
+    icon: LayoutDashboard,
     status: "Active",
     cta: "View Product",
   },
@@ -23,6 +56,7 @@ const PRODUCT_SUITE_CARDS = [
     title: "Customer Engine",
     description: "CRM, loyalty, and support tools to improve customer retention and growth.",
     features: ["CRM", "Loyalty", "Support"],
+    icon: Workflow,
     status: "Active",
     cta: "View Product",
   },
@@ -30,6 +64,7 @@ const PRODUCT_SUITE_CARDS = [
     title: "Operations Suite",
     description: "Streamline HR, finance, people operations, and vendor lifecycle management.",
     features: ["HR", "Finance", "Vendors"],
+    icon: Blocks,
     status: "Active",
     cta: "View Product",
   },
@@ -37,6 +72,7 @@ const PRODUCT_SUITE_CARDS = [
     title: "Analytical Insights Engine",
     description: "Forecasting and real-time intelligence to power faster strategic decisions.",
     features: ["Forecasting", "Dashboards", "Insights"],
+    icon: BarChart3,
     status: "Active",
     cta: "View Product",
   },
@@ -44,6 +80,7 @@ const PRODUCT_SUITE_CARDS = [
     title: "Core Platform Suite",
     description: "Cloud-ready foundation with APIs, integrations, and centralized controls.",
     features: ["Cloud", "APIs", "Integrations"],
+    icon: Layers3,
     status: "Active",
     cta: "View Product",
   },
@@ -51,8 +88,69 @@ const PRODUCT_SUITE_CARDS = [
     title: "Cloud Deployment & Management",
     description: "Deploy, scale, and maintain workloads reliably across modern environments.",
     features: ["Hosting", "Scaling", "Maintenance"],
+    icon: Cloud,
     status: "Active",
     cta: "View Product",
+  },
+  {
+    title: "Clinic Management Suite",
+    description: "Healthcare practice management with appointments and patient records.",
+    features: ["EMR", "Prescription", "Billing"],
+    icon: Stethoscope,
+    status: "Active",
+    cta: "View Product",
+  },
+] as const;
+
+const SERVICE_CARDS: Array<{
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}> = [
+  {
+    title: "Retail Technology Solutions",
+    description: "Complete digital transformation for retail chains.",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Business Process Automation",
+    description: "Automating billing, inventory, reporting, and operations.",
+    icon: Workflow,
+  },
+  {
+    title: "Custom Software Development",
+    description: "Built-to-fit solutions based on client workflows.",
+    icon: Blocks,
+  },
+  {
+    title: "System Integration Services",
+    description: "Connecting POS, CRM, accounting, and third-party tools.",
+    icon: Database,
+  },
+  {
+    title: "Data Analytics & Reporting",
+    description: "Dashboards, KPIs, and business insights for decision-making.",
+    icon: BarChart3,
+  },
+  {
+    title: "Cloud Deployment & Management",
+    description: "Hosting, scaling, and maintaining applications.",
+    icon: Cloud,
+  },
+  {
+    title: "SaaS Implementation & Onboarding",
+    description: "Setting up systems across multiple stores.",
+    icon: Headset,
+  },
+  {
+    title: "System Integration & Data Sync",
+    description: "Third-party integrations, APIs, real-time data flow between systems.",
+    icon: Rocket,
+  },
+  {
+    title: "Support & Maintenance",
+    description: "Continuous updates, issue handling, and improvements.",
+    icon: ShieldCheck,
   },
 ] as const;
 
@@ -63,17 +161,17 @@ export default function Home() {
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
           background:
-            "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
+            "linear-gradient(180deg, #081826 0%, #0b2234 40%, #0f3350 72%, #12415f 100%)",
         }}
       >
         {/* Simple basic background glow designs correctly scaled to full section */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
-          <div className="absolute top-[-5%] left-[-10%] w-96 h-96 bg-[#85a794]/40 blur-[100px] rounded-full"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-80 h-80 bg-teal-200/20 blur-[80px] rounded-full"></div>
+          <div className="absolute top-[-8%] left-[-12%] w-96 h-96 bg-cyan-400/20 blur-[110px] rounded-full"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-80 h-80 bg-sky-400/20 blur-[90px] rounded-full"></div>
 
           {/* Background wireframe abstract circle */}
-          <div className="absolute top-[10%] -right-10 w-[300px] h-[300px] rounded-full border border-white/10 md:hidden pointer-events-none z-0"></div>
-          <div className="absolute top-[15%] -left-16 w-[200px] h-[200px] rounded-full border border-white/5 md:hidden pointer-events-none z-0"></div>
+          <div className="absolute top-[10%] -right-10 w-75 h-75 rounded-full border border-white/10 md:hidden pointer-events-none z-0"></div>
+          <div className="absolute top-[15%] -left-16 w-50 h-50 rounded-full border border-white/5 md:hidden pointer-events-none z-0"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pt-6 md:pt-10 relative">
@@ -85,61 +183,53 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="space-y-8 md:space-y-6 flex flex-col items-center md:items-start text-center md:text-left py-10 md:py-0 relative"
             >
-              {/* Blue Server Icon */}
-              <div className="hidden md:block bg-[#4a90a4] p-3 rounded-2xl shadow-lg w-fit -mt-10 md:ml-[260px] lg:ml-[460px]">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
-                  <circle cx="7" cy="7" r="1" fill="white" />
-                  <circle cx="7" cy="12" r="1" fill="white" />
-                  <circle cx="7" cy="17" r="1" fill="white" />
-                </svg>
+              {/* Software signal badge */}
+              <div className="hidden md:inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 shadow-lg backdrop-blur-md mb-3 md:mb-5 relative z-20">
+                <LayoutDashboard className="h-4 w-4 text-cyan-300" />
+                SaaS systems built for scale
               </div>
 
               {/* Mobile-only background geometric elements (pure shapes, no text) */}
               {/* Top abstract shape grid */}
-              <div className="absolute top-[-30px] right-4 md:hidden flex gap-2 pointer-events-none z-0 opacity-40">
+              <div className="absolute -top-7.5 right-4 md:hidden flex gap-2 pointer-events-none z-0 opacity-40">
                 <div className="w-1.5 h-1.5 bg-yellow-300 rounded-full animate-pulse"></div>
                 <div className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
                 <div className="w-1.5 h-1.5 bg-white/50 rounded-full"></div>
               </div>
 
               {/* Above-text swoosh */}
-              <div className="absolute top-[10%] left-[8%] w-12 h-1 bg-gradient-to-r from-teal-300/40 to-transparent rounded-full md:hidden pointer-events-none z-0 transform rotate-[-15deg]"></div>
+              <div className="absolute top-[10%] left-[8%] w-12 h-1 bg-linear-to-r from-teal-300/40 to-transparent rounded-full md:hidden pointer-events-none z-0 transform -rotate-15"></div>
 
               {/* Floating shapes behind text */}
-              <div className="absolute top-[28%] right-[10%] w-16 h-16 rounded-full border-[2px] border-white/10 md:hidden pointer-events-none z-0"></div>
+              <div className="absolute top-[28%] right-[10%] w-16 h-16 rounded-full border-2 border-white/10 md:hidden pointer-events-none z-0"></div>
               <div className="absolute top-[45%] left-[5%] w-14 h-14 rounded-full bg-teal-300/20 blur-[14px] md:hidden pointer-events-none z-0"></div>
-              <div className="absolute bottom-[25%] right-[2%] w-20 h-20 rounded-[14px] border-[1px] border-white/10 rotate-[25deg] md:hidden pointer-events-none z-0"></div>
+              <div className="absolute bottom-[25%] right-[2%] w-20 h-20 rounded-[14px] border border-white/10 rotate-25 md:hidden pointer-events-none z-0"></div>
 
 
               {/* Sparkle */}
               <div className="absolute top-[18%] left-[75%] md:hidden pointer-events-none z-0">
-                <svg className="w-5 h-5 text-yellow-300/60" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 text-cyan-300/60" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L14.885 9.115L22 12L14.885 14.885L12 22L9.115 14.885L2 12L9.115 9.115L12 2Z" />
                 </svg>
               </div>
 
-              <h1 className="text-[44px] sm:text-5xl lg:text-5xl xl:text-6xl -mt-2 md:-mt-12 text-gray-900 leading-[1.05] tracking-tight relative z-10" style={{ fontFamily: "var(--font-anton)" }}>
+              <h1 className="text-[44px] sm:text-5xl lg:text-5xl xl:text-6xl -mt-2 md:mt-0 text-white leading-[1.05] tracking-tight relative z-10 drop-shadow-[0_10px_30px_rgba(0,0,0,0.25)]" style={{ fontFamily: "var(--font-anton)" }}>
                 We build scalable
                 <br />
-                SaaS products
+                software platforms
                 <br />
                 for modern
                 <br />
                 businesses
               </h1>
-              <p className="text-gray-800 md:hidden text-[15px] font-medium px-4 leading-relaxed max-w-[320px]">
-                Empower your business with our cutting-edge SaaS platforms designed for scalability and performance.
+              <p className="text-slate-200 md:hidden text-[15px] font-medium px-4 leading-relaxed max-w-[320px]">
+                SaaS platforms for retail, operations, and customer workflows built to scale with your business.
               </p>
               <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4 w-full sm:w-auto px-6 sm:px-0">
-                <Link href="/product" className="w-full sm:w-auto text-center bg-white text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-gray-50 shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] border border-gray-200 transition-all hover:scale-105 active:scale-95">
+                <Link href="/product" className="w-full sm:w-auto text-center bg-white text-slate-950 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-cyan-50 shadow-[0_10px_24px_0_rgba(0,0,0,0.18)] border border-white/20 transition-all hover:scale-105 active:scale-95">
                   View Products
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto text-center bg-white/20 backdrop-blur-md text-gray-900 text-sm px-8 py-3.5 rounded-full font-bold hover:bg-white/30 border border-white/40 transition-all hover:scale-105 active:scale-95 shadow-sm">
+                <Link href="/contact" className="w-full sm:w-auto text-center bg-white/10 backdrop-blur-md text-white text-sm px-8 py-3.5 rounded-full font-bold hover:bg-white/20 border border-white/20 transition-all hover:scale-105 active:scale-95 shadow-sm">
                   Book a Demo
                 </Link>
               </div>
@@ -151,175 +241,68 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="hidden md:block relative h-[360px] sm:h-[420px] md:h-[450px] mt-6 md:mt-0 max-w-[400px] md:max-w-none mx-auto w-full z-20"
+              className="hidden md:block relative h-90 sm:h-105 md:h-112.5 mt-6 md:mt-0 max-w-100 md:max-w-none mx-auto w-full z-20"
             >
-              {/* Yellow/Teal Striped Background Circle */}
-              {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] overflow-hidden rounded-full">
-                <div className="absolute inset-0" style={{
-                  background: 'repeating-linear-gradient(45deg, #e5d68a 0px, #e5d68a 25px, #5b9aa0 25px, #5b9aa0 50px)'
-                }}>
-                </div>
-              </div> */}
+              <div className="absolute inset-0 rounded-[34px] border border-white/10 bg-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm" />
+              <div className="absolute inset-x-8 top-8 h-24 rounded-full bg-cyan-300/20 blur-3xl" />
+              <div className="absolute inset-y-16 left-0 w-24 rounded-full bg-sky-400/10 blur-3xl" />
 
-              {/* Person Image */}
-
-              <div className="absolute inset-0 flex items-center justify-center md:top-1/2 md:left-1/2 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 z-20">
-                <div className="w-60 h-72 sm:w-[400px] sm:h-[500px] md:w-[480px] md:h-[600px] flex items-center justify-center relative overflow-hidden">
-                  <img
-                    src="/Person.png"
-                    alt="Person smiling"
-                    className="w-full h-full object-contain object-bottom rounded-b-[40px] md:rounded-b-[60px]"
-                  />
-                </div>
+              <div className="absolute top-6 left-6 z-30 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-semibold tracking-[0.22em] text-white/80 uppercase backdrop-blur-md">
+                Cloud-ready operations suite
               </div>
 
-              {/* 5 Star Rating */}
               <motion.div
-                className="absolute bottom-12 sm:bottom-20 left-0 sm:left-4 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 px-4 py-2.5 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] z-30"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute top-6 right-6 z-30 rounded-2xl border border-white/15 bg-[#0c2130]/85 px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.22)] backdrop-blur-xl"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="flex gap-0.5 text-yellow-400 text-lg">
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
-                  <span>★</span>
+                <div className="text-[10px] uppercase tracking-[0.22em] text-cyan-200/70">
+                  Live modules
+                </div>
+                <div className="mt-2 flex items-center gap-2 text-white">
+                  <LayoutDashboard className="h-4 w-4 text-cyan-300" />
+                  <span className="text-sm font-semibold">Retail, CRM, analytics</span>
                 </div>
               </motion.div>
 
-              {/* Total Projects Card */}
-              <motion.div
-                className="absolute top-0 right-0 sm:right-4 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 p-3 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] w-36 sm:w-40 z-30"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="space-y-2">
-                  <div className="text-[12px] text-gray-600 font-medium">
-                    Total Projects
-                  </div>
-                  <div className="flex items-baseline gap-2">
-                    <div className="text-1xl font-bold text-gray-900">38</div>
-                    <div className="flex gap-1">
-                      <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-                      <div className="w-1 h-1 -mt-1 bg-yellow-400 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="text-[10px] -mt-3 text-gray-500">
-                    <p>Views</p>
-                  </div>
-                  <div className="flex gap-1 h-12 items-end pt-2">
-                    <div
-                      className="w-4 bg-blue-600 rounded-t"
-                      style={{ height: "35%" }}
-                    ></div>
-                    <div
-                      className="w-4 bg-blue-400 rounded-t"
-                      style={{ height: "55%" }}
-                    ></div>
-                    <div
-                      className="w-4 bg-blue-600 rounded-t"
-                      style={{ height: "25%" }}
-                    ></div>
-                    <div
-                      className="w-4 bg-blue-600 rounded-t"
-                      style={{ height: "75%" }}
-                    ></div>
-                    <div
-                      className="w-4 bg-blue-400 rounded-t"
-                      style={{ height: "45%" }}
-                    ></div>
-                    <div
-                      className="w-4 bg-blue-600 rounded-t"
-                      style={{ height: "65%" }}
-                    ></div>
-                  </div>
-                  <div className="text-xs text-gray-700 flex items-center gap-1.5 pt-1 border-t border-gray-100">
-                    <svg
-                      className="w-3 h-3 text-blue-600"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="7" height="7" rx="1" />
-                      <rect x="3" y="14" width="7" height="7" rx="1" />
-                      <rect x="14" y="3" width="7" height="7" rx="1" />
-                      <rect x="14" y="14" width="7" height="7" rx="1" />
-                    </svg>
-                    <span className="font-medium text-[10px]">
-                      Projects Management
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Growth Chart Card */}
-              <motion.div
-                className="absolute bottom-4 -right-2 sm:right-0 bg-white/70 backdrop-blur-xl saturate-150 border border-white/50 p-4 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] w-48 sm:w-56 z-30"
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <div className="text-sm font-bold mb-2 text-gray-900">
-                  Growth
-                </div>
-                <div className="h-16 relative mb-2">
-                  <svg
-                    className="w-full h-full"
-                    viewBox="0 0 200 64"
-                    preserveAspectRatio="none"
+              <div className="absolute inset-0 flex items-center justify-center md:top-1/2 md:left-1/2 md:inset-auto md:-translate-x-1/2 md:-translate-y-1/2 z-20">
+                <div className="relative w-full max-w-140 px-6 pt-12">
+                  <img
+                    src="/laptop.png"
+                    alt="Software dashboard on a laptop"
+                    className="w-full h-full object-contain object-center"
+                  />
+                  <motion.div
+                    className="absolute -right-2 top-14 w-36 sm:w-44 rounded-3xl border border-white/15 bg-white/10 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                   >
-                    <defs>
-                      <linearGradient
-                        id="gradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="0%"
-                        y2="100%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#93c5fd"
-                          stopOpacity="0.3"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#93c5fd"
-                          stopOpacity="0"
-                        />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12 L 200 64 L 0 64 Z"
-                      fill="url(#gradient)"
+                    <img
+                      src="/system.png"
+                      alt="Analytics dashboard"
+                      className="h-auto w-full rounded-[18px] object-contain"
                     />
-                    <path
-                      d="M 0 50 Q 30 45 60 40 Q 90 35 120 28 Q 150 20 180 15 L 200 12"
-                      fill="none"
-                      stroke="#3b82f6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="120" cy="28" r="3" fill="#3b82f6" />
-                    <circle cx="180" cy="15" r="3" fill="#3b82f6" />
-                  </svg>
+                  </motion.div>
+                  <motion.div
+                    className="absolute left-6 bottom-6 rounded-2xl border border-white/15 bg-[#081826]/90 px-4 py-3 shadow-[0_18px_40px_rgba(0,0,0,0.24)] backdrop-blur-xl"
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  >
+                    <div className="text-[10px] uppercase tracking-[0.22em] text-cyan-200/70">
+                      Deployment health
+                    </div>
+                    <div className="mt-2 flex items-center gap-2 text-white">
+                      <ShieldCheck className="h-4 w-4 text-emerald-300" />
+                      <span className="text-sm font-semibold">99.9% uptime</span>
+                    </div>
+                    <div className="mt-3 flex gap-2">
+                      <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/80">APIs</span>
+                      <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/80">Billing</span>
+                      <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] text-white/80">Sync</span>
+                    </div>
+                  </motion.div>
                 </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="w-3/4 h-full bg-gray-300 rounded-full"></div>
-                  </div>
-                </div>
-                <div className="flex justify-between text-[9px] text-gray-400 font-medium">
-                  <span>67</span>
-                  <span>73</span>
-                  <span>53</span>
-                  <span>47</span>
-                  <span>39</span>
-                  <span>27</span>
-                </div>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -350,43 +333,24 @@ export default function Home() {
             <p className="text-sm text-gray-700 mb-6">
               What we do for clients
             </p>
-            <ul className="grid md:grid-cols-2 gap-4 md:gap-5">
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Retail Technology Solutions</h3>
-                <p className="text-xs text-gray-700">Complete digital transformation for retail chains.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Business Process Automation</h3>
-                <p className="text-xs text-gray-700">Automating billing, inventory, reporting, and operations.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Custom Software Development</h3>
-                <p className="text-xs text-gray-700">Built-to-fit solutions based on client workflows.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">System Integration Services</h3>
-                <p className="text-xs text-gray-700">Connecting POS, CRM, accounting, and third-party tools.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Data Analytics & Reporting</h3>
-                <p className="text-xs text-gray-700">Dashboards, KPIs, and business insights for decision-making.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Cloud Deployment & Management</h3>
-                <p className="text-xs text-gray-700">Hosting, scaling, and maintaining applications.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">SaaS Implementation & Onboarding</h3>
-                <p className="text-xs text-gray-700">Setting up systems across multiple stores.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">System Integration & Data Sync</h3>
-                <p className="text-xs text-gray-700">Third-party integrations, APIs, real-time data flow between systems.</p>
-              </li>
-              <li className="bg-white rounded-2xl p-4 border border-gray-200 md:col-span-2">
-                <h3 className="text-sm font-bold text-gray-900 mb-1">Support & Maintenance</h3>
-                <p className="text-xs text-gray-700">Continuous updates, issue handling, and improvements.</p>
-              </li>
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {SERVICE_CARDS.map((service) => {
+                const Icon = service.icon;
+
+                return (
+                  <li key={service.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-2xl bg-slate-950 p-3 text-white shadow-lg transition-colors group-hover:bg-cyan-600">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-bold text-gray-900 mb-1">{service.title}</h3>
+                        <p className="text-xs leading-relaxed text-gray-700">{service.description}</p>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </motion.div>
 
@@ -408,272 +372,63 @@ export default function Home() {
           </h2>
 
           {/* First Row - 2 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1">
-            {/* Pharmacy Management Suite */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
-              style={{ padding: "32px 32px 24px 32px" }}
-            >
-              <div className="flex gap-4">
-                <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
-                    Active
-                  </div>
-                  <h3
-                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
-                    style={{ fontFamily: "var(--font-anton)" }}
-                  >
-                    Pharmacy
-                    <br />
-                    Management Suite
-                  </h3>
-                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
-                    Complete pharmacy solution with POS, inventory, online
-                    ordering, and delivery
-                  </p>
-                </div>
-                <div
-                  className="flex flex-col pt-12"
-                  style={{ width: "35%" }}
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">HRMS</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">POS</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Inventory</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Online Ordering</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Delivery</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Billing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
-                View Product
-              </Link>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1 mt-1">
+            {PRODUCT_SUITE_CARDS.map((suite, index) => {
+              const SuiteIcon = suite.icon;
+              const isComingSoon = suite.status.toLowerCase() === "soon";
 
-            {/* Retail Suite */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
-              style={{ padding: "32px 32px 24px 32px" }}
-            >
-              <div className="flex gap-4">
-                <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
-                    Soon
-                  </div>
-                  <h3
-                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
-                    style={{ fontFamily: "var(--font-anton)" }}
-                  >
-                    Retail
-                    <br />
-                    Suite
-                  </h3>
-                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
-                    Multi-store retail management with inventory sync and
-                    customer analytics
-                  </p>
-                </div>
-                <div
-                  className="flex flex-col pt-12"
-                  style={{ width: "35%" }}
+              return (
+                <motion.div
+                  key={suite.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 0.05 * index }}
+                  className="bg-[#A4C8FF] rounded-xl w-full max-w-125 mx-auto flex flex-col justify-between"
+                  style={{ padding: "32px 32px 24px 32px" }}
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Multi-Store</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">CRM</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Inventory</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Online Ordering</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Analytics</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Billing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button className="w-full bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
-                Coming soon
-              </button>
-            </motion.div>
-          </div>
-
-          {/* Product Suite Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mt-1">
-            {PRODUCT_SUITE_CARDS.map((suite, index) => (
-              <motion.div
-                key={suite.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: 0.05 * index }}
-                className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
-                style={{ padding: "32px 32px 24px 32px" }}
-              >
-                <div className="flex gap-4">
-                  <div className="flex flex-col" style={{ width: "65%" }}>
-                    <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
-                      {suite.status}
-                    </div>
-                    <h3
-                      className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
-                      style={{ fontFamily: "var(--font-anton)" }}
-                    >
-                      {suite.title}
-                    </h3>
-                    <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
-                      {suite.description}
-                    </p>
-                  </div>
-                  <div className="flex flex-col pt-12" style={{ width: "35%" }}>
-                    <div className="space-y-3">
-                      {suite.features.map((feature) => (
-                        <div key={feature} className="flex items-center gap-2 text-[11px]">
-                          <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-[#2d3748] font-medium">{feature}</span>
+                  <div className="flex gap-4">
+                    <div className="flex flex-col" style={{ width: "65%" }}>
+                      <div className="mb-6 flex items-center justify-between gap-3">
+                        <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide w-fit">
+                          {suite.status}
                         </div>
-                      ))}
+                      </div>
+                      <div className="mb-6 flex items-start gap-3">
+                        <div className="rounded-2xl bg-[#0a1922] p-2 text-cyan-300 shadow-md shrink-0 mt-1">
+                          <SuiteIcon className="h-4 w-4" />
+                        </div>
+                        <h3
+                          className="text-[32px] text-gray-900 leading-[1.1] tracking-tight"
+                          style={{ fontFamily: "var(--font-anton)" }}
+                        >
+                          {suite.title}
+                        </h3>
+                      </div>
+                      <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
+                        {suite.description}
+                      </p>
+                    </div>
+                    <div className="flex flex-col pt-12" style={{ width: "35%" }}>
+                      <div className="space-y-3">
+                        {suite.features.map((feature) => (
+                          <div key={feature} className="flex items-center gap-2 text-[11px]">
+                            <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-[#2d3748] font-medium">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
-                  {suite.cta}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Clinic Management Card */}
-          <div className="mt-1 flex justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-[#A4C8FF] rounded-xl w-full max-w-[500px] mx-auto flex flex-col justify-between"
-              style={{ padding: "32px 32px 24px 32px" }}
-            >
-              <div className="flex gap-4">
-                <div className="flex flex-col" style={{ width: "65%" }}>
-                  <div className="inline-block border border-gray-600 px-4 py-1.5 rounded-[40px] text-[11px] font-semibold text-gray-700 tracking-wide mb-6 w-fit">
-                    Active
-                  </div>
-                  <h3
-                    className="text-[32px] text-gray-900 mb-6 leading-[1.1] tracking-tight"
-                    style={{ fontFamily: "var(--font-anton)" }}
-                  >
-                    Clinic Management
-                    <br />
-                    Suite
-                  </h3>
-                  <p className="text-[12px] text-[#2d3748] mb-8 pr-4">
-                    Healthcare practice management with appointments and patient
-                    records
-                  </p>
-                </div>
-                <div
-                  className="flex flex-col pt-12"
-                  style={{ width: "35%" }}
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">EMR</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Prescription</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Billing</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[11px]">
-                      <svg className="w-3.5 h-3.5 text-blue-600/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-[#2d3748] font-medium">Appointments</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
-                View Product
-              </Link>
-            </motion.div>
+                  <Link href="/product" className="w-full block text-center bg-[#0a1922] text-[#f4f4f4] py-3 rounded-full text-xs font-semibold hover:bg-black transition-colors mt-auto shadow-md">
+                    {isComingSoon ? "Coming soon" : suite.cta}
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -698,7 +453,7 @@ export default function Home() {
         `}</style>
         <div className="flex w-max items-center gap-10 sm:gap-16 animate-scroll px-6">
           {LOGO_CAROUSEL_TRACK.map((id, index) => (
-            <div key={index} className="flex-shrink-0">
+            <div key={index} className="shrink-0">
               <img src={`/item_${id}.png`} alt={`Partner ${id}`} className="h-8 w-auto" />
             </div>
           ))}
@@ -859,22 +614,22 @@ export default function Home() {
           {/* Stats Row */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <div className="text-3xl font-bold text-teal-500 mb-1">50+</div>
-              <div className="text-gray-500 text-[12px]">Modules Available</div>
+              <div className="text-3xl font-bold text-cyan-400 mb-1">50+</div>
+              <div className="text-slate-400 text-[12px]">Modules Available</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-              <div className="text-3xl font-bold text-teal-500 mb-1">99.9%</div>
-              <div className="text-gray-500 text-[12px]">Uptime SLA</div>
+              <div className="text-3xl font-bold text-cyan-400 mb-1">99.9%</div>
+              <div className="text-slate-400 text-[12px]">Uptime SLA</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-              <div className="text-3xl font-bold text-amber-500 mb-1">
+              <div className="text-3xl font-bold text-sky-400 mb-1">
                 {"<"}2min
               </div>
-              <div className="text-gray-500 text-[12px]">Avg. Response Time</div>
+              <div className="text-slate-400 text-[12px]">Avg. Response Time</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
-              <div className="text-3xl font-bold text-amber-500 mb-1">24/7</div>
-              <div className="text-gray-500 text-[12px]">Expert Support</div>
+              <div className="text-3xl font-bold text-sky-400 mb-1">24/7</div>
+              <div className="text-slate-400 text-[12px]">Expert Support</div>
             </motion.div>
           </div>
         </div>
@@ -900,14 +655,14 @@ export default function Home() {
           >
             {/* Purple/pink glow in bottom-right */}
             <div
-              className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none"
+              className="absolute bottom-0 right-0 w-125 h-125 pointer-events-none"
               style={{
                 background: "radial-gradient(circle at 70% 70%, #D4A0D8 0%, #B87AD4 30%, transparent 65%)",
                 opacity: 0.5,
               }}
             />
             {/* White gradient at the bottom to merge seamlessly with the footer */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-white to-transparent pointer-events-none" />
 
             <div className="max-w-4xl md:ml-10 md:px-8 mx-auto relative z-10">
               <h2 className="font-serif text-3xl md:text-5xl font-normal text-black mb-6 md:mb-8">
@@ -927,82 +682,6 @@ export default function Home() {
                   />
                 </svg>
               </Link>
-            </div>
-          </div>
-
-          {/* Footer - white background */}
-          <div className="bg-white py-12 md:py-16 px-6 md:px-20">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8">
-                {/* Newsletter Column */}
-                <div className="col-span-2">
-                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
-                    Newsletter
-                  </h3>
-                  <p className="text-[12px] text-gray-700 mb-4">
-                    {
-                      "We'd love to share our love for engineering with you in our monthly newsletter."
-                    }
-                  </p>
-                  <div className="flex items-center gap-0.5">
-                    <input
-                      type="email"
-                      placeholder="jane@domain.com"
-                      className="flex-1 pl-2 py-1.5 bg-gray-800/20 rounded-l-md text-[11px] text-gray-900 placeholder:text-gray-600 focus:outline-none"
-                    />
-                    <button className="px-1 py-1.5 bg-gray-800/20 rounded-r-md text-[11px] font-semibold text-gray-900 hover:bg-gray-800/30">
-                      Subscribe
-                    </button>
-                  </div>
-                </div>
-
-                {/* Company Column */}
-                <div>
-                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
-                    Company
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Blog</a>
-                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Careers</a>
-                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Contact</Link>
-                  </div>
-                </div>
-
-                {/* Social Column */}
-                <div>
-                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
-                    Social
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="https://twitter.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Twitter</a>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">Instagram</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">LinkedIn</a>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
-                    Product
-                  </h3>
-                  <div className="space-y-2">
-                    <Link href="/product" className="block text-[12px] text-gray-700 hover:text-gray-900">Overview</Link>
-                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Roadmap</a>
-                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Changelog</a>
-                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Book a demo</Link>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-semibold text-[14px] text-gray-900 mb-3">
-                    Resources
-                  </h3>
-                  <div className="space-y-2">
-                    <a href="#" className="block text-[12px] text-gray-700 hover:text-gray-900">Documentation</a>
-                    <a href="https://github.com" target="_blank" rel="noreferrer" className="block text-[12px] text-gray-700 hover:text-gray-900">GitHub</a>
-                    <Link href="/contact" className="block text-[12px] text-gray-700 hover:text-gray-900">Contact us</Link>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
