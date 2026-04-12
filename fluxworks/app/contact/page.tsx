@@ -8,22 +8,22 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-[#0a0a0a]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#0a0a0a]"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
           <h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Get in Touch
           </h1>
-          <p className="text-gray-600 max-w-xl text-[12px] mx-auto px-6">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl text-[12px] mx-auto px-6">
             Have questions about our products? Want to schedule a demo? {"We'd"}{" "}
             love to hear from you. Fill out the form below and {"we'll"} get
             back to you within 24 hours.
@@ -32,7 +32,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f5f9fa]">
+      <section className="py-16 bg-[#f5f9fa] dark:bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
@@ -42,10 +42,10 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="font-serif text-2xl font-normal text-gray-900 mb-2">
+              <h2 className="font-serif text-2xl font-normal text-gray-900 dark:text-white mb-2">
                 Contact Information
               </h2>
-              <p className="text-gray-600 text-[12px] mb-8">
+              <p className="text-gray-600 dark:text-gray-400 text-[12px] mb-8">
                 Reach out to us through any of these channels.
                 <br />
                 Our team is ready to help.
@@ -54,9 +54,9 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-gray-800 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-gray-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -70,10 +70,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Email
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                       fluxworks.it@gmail.com
                     </p>
                   </div>
@@ -81,9 +81,9 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-gray-800 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-gray-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -97,10 +97,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Phone
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                       +91 9363400322
                     </p>
                   </div>
@@ -108,9 +108,9 @@ export default function ContactPage() {
 
                 {/* Office */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-gray-800 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-gray-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -130,10 +130,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Office
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                       First Floor, No.176A, Palai Road, Thoothukudi District,
                       <br />
                       Tamil Nadu-628008
@@ -143,11 +143,11 @@ export default function ContactPage() {
               </div>
 
               {/* Working Hours */}
-              <div className="mt-8 bg-[#f0f5f7] p-6 rounded-2xl">
-                <h3 className="font-semibold text-[12px] text-gray-900 mb-3">
+              <div className="mt-8 bg-[#f0f5f7] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-6 rounded-2xl">
+                <h3 className="font-semibold text-[12px] text-gray-900 dark:text-white mb-3">
                   Working Hours
                 </h3>
-                <div className="space-y-1 text-[12px] text-gray-600">
+                <div className="space-y-1 text-[12px] text-gray-600 dark:text-gray-400">
                   <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
                   <p>Saturday: 10:00 AM - 4:00 PM IST</p>
                   <p>Sunday: Closed</p>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   setTimeout(() => setStatus('idle'), 5000);
                 }
               }}
-              className="bg-white p-5 rounded-2xl shadow-sm relative"
+              className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl shadow-sm dark:shadow-none relative"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -195,7 +195,7 @@ export default function ContactPage() {
             >
               <div className="grid md:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -203,11 +203,11 @@ export default function ContactPage() {
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Business Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -215,25 +215,25 @@ export default function ContactPage() {
                     name="businessName"
                     required
                     placeholder="Acme Inc."
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-3 mt-3">
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     placeholder="+1 (555) 000-0000"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -241,16 +241,16 @@ export default function ContactPage() {
                     name="email"
                     required
                     placeholder="john@company.com"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
               </div>
 
               <div className="mt-3">
-                <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Product Interested In
                 </label>
-                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
+                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
                   <option value="">Select a product</option>
                   <option value="Pharmacy Management Suite">Pharmacy Management Suite</option>
                   <option value="Retail Suite">Retail Suite</option>
@@ -259,7 +259,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-3">
-                <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Message
                 </label>
                 <textarea
@@ -267,25 +267,25 @@ export default function ContactPage() {
                   rows={3}
                   required
                   placeholder="Tell us about your business and what you're looking for..."
-                  className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
+                  className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
                 />
               </div>
 
               {status === 'success' && (
-                <div className="mt-4 p-3 bg-green-50 text-green-700 text-[12px] rounded-lg border border-green-200 flex items-center gap-2">
+                <div className="mt-4 p-3 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-[12px] rounded-lg border border-green-200 dark:border-green-800 flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                   Message sent successfully! We&apos;ll be in touch soon.
                 </div>
               )}
 
               {status === 'error' && (
-                <div className="mt-4 p-3 bg-red-50 text-red-700 text-[12px] rounded-lg border border-red-200 flex items-center gap-2">
+                <div className="mt-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-[12px] rounded-lg border border-red-200 dark:border-red-800 flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                   Failed to send message. Please try again later.
                 </div>
               )}
 
-              <button disabled={status === 'submitting'} type="submit" className="w-full mt-4 bg-[#4a90a4] text-[12px] text-white py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] disabled:bg-[#4a90a4]/70 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors">
+              <button disabled={status === 'submitting'} type="submit" className="w-full mt-4 bg-[#4a90a4] dark:bg-white text-[12px] text-white dark:text-gray-900 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] dark:hover:bg-gray-100 disabled:bg-[#4a90a4]/70 dark:disabled:bg-white/50 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors">
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 {status !== 'submitting' && (
                   <svg
