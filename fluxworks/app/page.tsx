@@ -156,7 +156,7 @@ const SERVICE_CARDS: Array<{
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-[#0a0a0a]">
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
@@ -310,11 +310,7 @@ export default function Home() {
 
       {/* Services And Product Suite Section */}
       <section
-        className="relative py-16 md:py-20"
-        style={{
-          background:
-            "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
-        }}
+        className="relative py-16 md:py-20 bg-white dark:bg-[#0a0a0a]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 space-y-8">
           <motion.div
@@ -322,15 +318,15 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-3xl border border-white/30 bg-white/85 backdrop-blur-sm p-6 md:p-10"
+            className="rounded-3xl border border-white/30 dark:border-white/10 bg-white/85 dark:bg-[#111111] backdrop-blur-sm p-6 md:p-10"
           >
             <h2
-              className="text-3xl md:text-4xl text-gray-900 mb-2"
+              className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
               style={{ fontFamily: "var(--font-anton)" }}
             >
               Our Services
             </h2>
-            <p className="text-sm text-gray-700 mb-6">
+            <p className="text-sm text-gray-700 dark:text-gray-400 mb-6">
               What we do for clients
             </p>
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -338,14 +334,14 @@ export default function Home() {
                 const Icon = service.icon;
 
                 return (
-                  <li key={service.title} className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                  <li key={service.title} className="group rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0f0f0f] p-5 shadow-sm dark:shadow-none transition-all hover:-translate-y-0.5 hover:shadow-md dark:hover:shadow-none">
                     <div className="flex items-start gap-4">
-                      <div className="rounded-2xl bg-slate-950 p-3 text-white shadow-lg transition-colors group-hover:bg-cyan-600">
+                      <div className="rounded-2xl bg-slate-950 dark:bg-[#1a1a1a] p-3 text-white shadow-lg transition-colors group-hover:bg-cyan-600 dark:group-hover:bg-cyan-600">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className="text-sm font-bold text-gray-900 mb-1">{service.title}</h3>
-                        <p className="text-xs leading-relaxed text-gray-700">{service.description}</p>
+                        <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{service.title}</h3>
+                        <p className="text-xs leading-relaxed text-gray-700 dark:text-gray-400">{service.description}</p>
                       </div>
                     </div>
                   </li>
@@ -358,7 +354,7 @@ export default function Home() {
       </section>
 
       {/* Our Products Section */}
-      <section className="bg-[#06181E] py-16 relative">
+      <section className="bg-white dark:bg-[#0a0a0a] py-16 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#06181E" />
@@ -434,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* Logo Carousel Section */}
-      <section className="bg-[#06181E] py-8 overflow-hidden">
+      <section className="bg-white dark:bg-[#0a0a0a] py-8 overflow-hidden">
         <style jsx>{`
           @keyframes scroll {
             0% {
@@ -492,12 +488,12 @@ export default function Home() {
       </section> */}
 
       {/* Why Choose Us Section */}
-      <section className="bg-[#06181E] py-16">
+      <section className="bg-white dark:bg-[#0a0a0a] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-center text-white mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Why Choose Us
           </h2>
-          <p className="text-center text-gray-400 text-sm mb-12">
+          <p className="text-center text-gray-600 dark:text-gray-400 text-sm mb-12">
             {
               "We don't just build software—we build partnerships. Our platform is designed"
             }
@@ -507,9 +503,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             {/* Modular Product Architecture */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-white/10 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-blue-50 p-2 rounded-lg">
+                <div className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-lg">
                   <svg
                     className="w-5 h-5 text-sky-500"
                     fill="currentColor"
@@ -522,10 +518,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900 dark:text-white">
                     Modular Product Architecture
                   </h3>
-                  <p className="text-gray-600 text-xs">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">
                     Pick and choose the modules you need. Scale up as your
                     business grows without disrupting existing workflows.
                   </p>
@@ -534,9 +530,9 @@ export default function Home() {
             </motion.div>
 
             {/* Centralized Billing & Subscriptions */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-white/10 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-blue-50 p-2 rounded-lg">
+                <div className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-lg">
                   <svg
                     className="w-5 h-5 text-sky-500"
                     fill="currentColor"
@@ -551,10 +547,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900 dark:text-white">
                     Centralized Billing & Subscriptions
                   </h3>
-                  <p className="text-gray-600 text-xs">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">
                     One dashboard to manage all your subscriptions, payments,
                     and invoices across all products.
                   </p>
@@ -563,9 +559,9 @@ export default function Home() {
             </motion.div>
 
             {/* Activation-Based Access Control */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-white/10 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-blue-50 p-2 rounded-lg">
+                <div className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-lg">
                   <svg
                     className="w-5 h-5 text-sky-500"
                     fill="currentColor"
@@ -575,10 +571,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900 dark:text-white">
                     Activation-Based Access Control
                   </h3>
-                  <p className="text-gray-600 text-xs">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">
                     Secure, role-based access system that puts you in control of
                     who can use what and when.
                   </p>
@@ -587,9 +583,9 @@ export default function Home() {
             </motion.div>
 
             {/* Scalable & Future-Ready */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-white/10 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
-                <div className="bg-blue-50 p-2 rounded-lg">
+                <div className="bg-blue-50 dark:bg-blue-950/30 p-2 rounded-lg">
                   <svg
                     className="w-5 h-5 text-sky-500"
                     fill="currentColor"
@@ -599,10 +595,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm mb-1 text-gray-900">
+                  <h3 className="font-semibold text-sm mb-1 text-gray-900 dark:text-white">
                     Scalable & Future-Ready
                   </h3>
-                  <p className="text-gray-600 text-xs">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs">
                     Built on modern cloud infrastructure that grows with your
                     business, ensuring 99.9% uptime.
                   </p>
@@ -614,22 +610,22 @@ export default function Home() {
           {/* Stats Row */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}>
-              <div className="text-3xl font-bold text-cyan-400 mb-1">50+</div>
-              <div className="text-slate-400 text-[12px]">Modules Available</div>
+              <div className="text-3xl font-bold text-cyan-500 dark:text-cyan-400 mb-1">50+</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[12px]">Modules Available</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}>
-              <div className="text-3xl font-bold text-cyan-400 mb-1">99.9%</div>
-              <div className="text-slate-400 text-[12px]">Uptime SLA</div>
+              <div className="text-3xl font-bold text-cyan-500 dark:text-cyan-400 mb-1">99.9%</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[12px]">Uptime SLA</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}>
-              <div className="text-3xl font-bold text-sky-400 mb-1">
+              <div className="text-3xl font-bold text-sky-500 dark:text-sky-400 mb-1">
                 {"<"}2min
               </div>
-              <div className="text-slate-400 text-[12px]">Avg. Response Time</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[12px]">Avg. Response Time</div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
-              <div className="text-3xl font-bold text-sky-400 mb-1">24/7</div>
-              <div className="text-slate-400 text-[12px]">Expert Support</div>
+              <div className="text-3xl font-bold text-sky-500 dark:text-sky-400 mb-1">24/7</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[12px]">Expert Support</div>
             </motion.div>
           </div>
         </div>
@@ -666,17 +662,17 @@ export default function Home() {
             />
 
             <div className="max-w-4xl md:ml-10 md:px-8 mx-auto relative z-10">
-              <h2 className="font-serif text-3xl md:text-5xl font-normal text-black dark:text-slate-100 mb-6 md:mb-8">
+              <h2 className="font-serif text-3xl md:text-5xl font-normal text-black dark:text-white mb-6 md:mb-8">
                 Ready to go? Start
                 <br />
                 Building together.
               </h2>
-              <Link href="/contact" className="flex items-center gap-2 bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition-colors">
+              <Link href="/contact" className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-gray-900 px-5 py-2 rounded-lg hover:bg-gray-900 dark:hover:bg-gray-100 transition-colors">
                 <span className="font-semibold text-[14px]">Request Demo</span>
                 <svg width="8" height="14" viewBox="0 0 8 14" fill="none">
                   <path
                     d="M1 1L7 7L1 13"
-                    stroke="white"
+                    stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"

@@ -115,7 +115,7 @@ export function SiteHeader() {
         </button>
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center rounded-full bg-gray-900 text-[13px] font-medium text-white px-5 py-2 hover:bg-gray-800 transition-colors"
+          className="inline-flex items-center justify-center rounded-full bg-gray-900 dark:bg-white text-[13px] font-medium text-white dark:text-gray-900 px-5 py-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
           style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.25)" }}
         >
           Book a demo
@@ -184,7 +184,7 @@ export function SiteHeader() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-gray-900 text-[11px] font-medium text-white px-3 py-1.5 hover:bg-gray-800 transition-colors shrink-0 ml-2"
+            className="inline-flex items-center justify-center rounded-full bg-gray-900 dark:bg-white text-[11px] font-medium text-white dark:text-gray-900 px-3 py-1.5 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shrink-0 ml-2"
             style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
           >
             Demo
