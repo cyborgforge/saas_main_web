@@ -7,12 +7,12 @@ import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
         }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
@@ -41,7 +41,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <span className="bg-[#0070A015] text-[#0070A0] text-xs font-medium px-4 py-1.5 rounded-full">
+              <span className="bg-[#0070A015] dark:bg-gray-800 text-[#0070A0] dark:text-white text-xs font-medium px-4 py-1.5 rounded-full">
                 About Fluxworks
               </span>
             </div>
@@ -49,11 +49,11 @@ export default function AboutPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-6xl -mt-1 md:-mt-3 font-bold text-gray-900 leading-tight mb-6 md:mb-8"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold text-white mb-6"
               style={{ fontFamily: "var(--font-anton)" }}
             >
-              Building the future of <br /> business software
+              About Fluxworks
             </motion.h1>
 
             <motion.div
@@ -62,12 +62,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-105 -mt-5 mx-auto text-left"
             >
-              <p className="text-gray-600 text-[12px] mb-6">
+              <p className="text-gray-300 text-[12px] mb-6">
                 {
                   "We're a team of passionate engineers, designers, and business experts dedicated to creating software that makes a difference. Our mission is to empower businesses of all sizes with enterprise-grade tools that are accessible, affordable, and easy to use."
                 }
               </p>
-              <p className="text-gray-600 text-[12px]">
+              <p className="text-gray-300 text-[12px]">
                 {
                   "Founded in 2019, we've grown from a small startup to a trusted partner for over 1000 businesses worldwide. But we're just getting started."
                 }
@@ -78,19 +78,19 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section with Images */}
-      <section className="py-16 bg-[#dce1ff] relative">
+      <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#dce1ff" />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2
-            className="font-serif text-center text-4xl font-normal text-gray-900 mb-4"
+            className="font-serif text-center text-4xl font-normal text-gray-900 dark:text-white mb-4"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Our values
           </h2>
-          <p className="text-gray-600 text-[12px] text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-[12px] text-center mb-12 max-w-2xl mx-auto">
             {
               "These values guide how we work together every day. They don't just sit in a dusty document—they evolve and change as our company grows, and we love rewarding teammates who best exemplify them (with prizes 🏆)."
             }
@@ -106,7 +106,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-[#4a90a4] dark:text-gray-400 mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -120,10 +120,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-gray-900 dark:text-white">
                     Take pride in your work
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                     {
                       "Be bold and aspire for excellence. Let's build a lasting company."
                     }
@@ -132,7 +132,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-[#4a90a4] dark:text-gray-400 mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -146,10 +146,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-gray-900 dark:text-white">
                     Be an owner
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                     Owners sweep the floors and take out the trash. They do{" "}
                     {"what's"} best for the customer and company, and are always
                     accountable to their teammates.
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-[#4a90a4] dark:text-gray-400 mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -176,10 +176,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-gray-900 dark:text-white">
                     Always be learning
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                     Improve every day; feedback and reflection will make us all
                     better.
                   </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-[#4a90a4] dark:text-gray-400 mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -197,10 +197,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-gray-900 dark:text-white">
                     Empower others
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                     {
                       "We exist to empower customers; we'll succeed by empowering each other."
                     }
@@ -209,7 +209,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-[#4a90a4] dark:text-gray-400 mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -227,10 +227,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-gray-900 dark:text-white">
                     Embrace the journey
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-gray-600 dark:text-gray-400 text-[13px]">
                     Appreciate the entire experience, win as a team, and have
                     fun.
                   </p>
@@ -272,21 +272,21 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Grid Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
-          <h2 className="font-serif text-4xl font-normal text-center text-gray-900 mb-3">
+          <h2 className="font-serif text-4xl font-normal text-center text-gray-900 dark:text-white mb-3">
             Our Values
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-12">
             The principles that guide everything we do.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Customer First */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -299,20 +299,20 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">
                 Customer First
               </h3>
-              <p className="text-gray-600 text-[12px]">
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 Every decision we make starts with our customers. Their success
                 is our success.
               </p>
             </div>
 
             {/* Innovation */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -325,18 +325,18 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">Innovation</h3>
-              <p className="text-gray-600 text-[12px]">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">Innovation</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 We constantly push boundaries to deliver cutting-edge solutions
                 that solve real problems.
               </p>
             </div>
 
             {/* Collaboration */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -349,10 +349,10 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">
                 Collaboration
               </h3>
-              <p className="text-gray-600 text-[12px]">
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 {
                   "We believe in the power of teamwork—both within our company and with our partners."
                 }
@@ -360,28 +360,28 @@ export default function AboutPage() {
             </div>
 
             {/* Excellence */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">Excellence</h3>
-              <p className="text-gray-600 text-[12px]">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">Excellence</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 We strive for excellence in everything we do, from code quality
                 to customer support.
               </p>
             </div>
 
             {/* Integrity */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -394,18 +394,18 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">Integrity</h3>
-              <p className="text-gray-600 text-[12px]">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">Integrity</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 We operate with transparency and honesty, building trust with
                 every interaction.
               </p>
             </div>
 
             {/* Passion */}
-            <div className="border bg-[#f7f9fa] border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="w-5 h-5 text-[#5249e5]"
+                  className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -418,8 +418,8 @@ export default function AboutPage() {
                   />
                 </svg>
               </div>
-              <h3 className="font-semibold text-[14px] text-gray-900 mb-2">Passion</h3>
-              <p className="text-gray-600 text-[12px]">
+              <h3 className="font-semibold text-[14px] text-gray-900 dark:text-white mb-2">Passion</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
                 We love what we do, and that passion drives us to create
                 exceptional products.
               </p>
