@@ -206,10 +206,10 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-[#0a0a0a]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#1a1a1a]"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
@@ -235,7 +235,7 @@ export default function ProductPage() {
               </div>
 
               <h1
-                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-anton)" }}
               >
                 Pharmacy
@@ -243,14 +243,14 @@ export default function ProductPage() {
                 Management Suite
               </h1>
 
-              <p className="text-gray-600 mb-8 text-[12px]">
+              <p className="text-gray-600 dark:text-gray-400 mb-8 text-[12px]">
                 Complete pharmacy management solution with POS, inventory,
                 online ordering, and delivery management. Streamline your
                 pharmacy operations with our all-in-one platform.
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
+                <Link href="/contact" className="bg-[#0070A0] dark:bg-[#0088d9] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] dark:hover:bg-[#006ba8] flex items-center gap-2">
                   Request Demo
                   <svg
                     className="w-4 h-4"
@@ -350,12 +350,12 @@ export default function ProductPage() {
       </section>
 
       {/* Real Product Gallery */}
-      <section className="py-16 bg-[#F4FAFD]">
+      <section className="py-16 bg-[#F4FAFD] dark:bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Product Gallery
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-10">
+          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-10">
             Real screens from the suite, auto-playing for a quick preview.
           </p>
 
@@ -404,12 +404,12 @@ export default function ProductPage() {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Modules Included
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-12">
             Everything you need to run your business, all in one place.
           </p>
 
@@ -417,21 +417,21 @@ export default function ProductPage() {
             {modules.map((module, index) => (
               <motion.div
                 key={index}
-                className="border border-[#F7F9FA] bg-[#F7F9FA] rounded-xl p-4 hover:border-[#4a90a4] transition-colors"
+                className="border border-[#F7F9FA] dark:border-gray-700 bg-[#F7F9FA] dark:bg-[#1a1a1a] rounded-xl p-4 hover:border-[#4a90a4] dark:hover:border-[#4a90a4] transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
                 <div className="flex items-start gap-3">
-                  <div className="text-[#4a90a4] bg-[#CCEFF633] p-2 rounded-lg">
+                  <div className="text-[#4a90a4] dark:text-[#4a90a4] bg-[#CCEFF633] dark:bg-[#CCEFF633] p-2 rounded-lg">
                     {getIcon(module.icon)}
                   </div>
                   <div>
-                    <h5 className="font-semibold text-[13px] text-gray-900 -mt-0.5">
+                    <h5 className="font-semibold text-[13px] text-gray-900 dark:text-white -mt-0.5">
                       {module.name}
                     </h5>
-                    <p className="text-gray-500 text-[11px]">
+                    <p className="text-gray-500 dark:text-gray-400 text-[11px]">
                       {module.description}
                     </p>
                   </div>
@@ -443,12 +443,12 @@ export default function ProductPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-[#DCE1FF]">
+      <section className="py-16 bg-[#DCE1FF] dark:bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-semibold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-3">
             How It Works
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-12">
             Get started in minutes with our simple onboarding process.
           </p>
 
@@ -486,7 +486,7 @@ export default function ProductPage() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="w-12 h-12 bg-[#0070A0] text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
+                <div className="w-12 h-12 bg-[#0070A0] dark:bg-[#0088d9] text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 relative z-10">
                   {item.step}
                 </div>
                 {/* Connecting Line between steps */}
@@ -500,10 +500,10 @@ export default function ProductPage() {
                     }}
                   ></div>
                 )}
-                <h3 className="font-semibold text-[13px] text-gray-900 mb-1">
+                <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white mb-1">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-[12px]">{item.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-[12px]">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -511,30 +511,30 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 mb-12 bg-white">
+      <section className="py-16 mb-12 bg-white dark:bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-1">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-center text-gray-600 mb-16">
+          <p className="text-center text-gray-600 dark:text-gray-400 mb-16">
             Choose the plan that works best for your business.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Starter Plan */}
             <motion.div
-              className="bg-[#F7F9FA] rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-bold text-xl text-gray-900 mb-1">Starter</h3>
-              <p className="text-gray-600 text-[10px] mb-4">
+              <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-1">Starter</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-[10px] mb-4">
                 Perfect for small businesses getting started
               </p>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-gray-900">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   Contact Us
                 </span>
                 {/* <span className="text-gray-500 text-sm"> /per month</span> */}
@@ -549,7 +549,7 @@ export default function ProductPage() {
                 ].map((feature, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-[12px] text-gray-700"
+                    className="flex items-center gap-2 text-[12px] text-gray-700 dark:text-gray-400"
                   >
                     <svg
                       className="w-4 h-4 text-[#4a90a4]"
@@ -566,28 +566,28 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="block w-full bg-[#0070A0] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a] text-center">
+              <Link href="/contact" className="block w-full bg-[#0070A0] dark:bg-[#0088d9] text-white py-1.5 text-sm rounded-lg font-medium hover:bg-[#3d7a8a] dark:hover:bg-[#006ba8] text-center">
                 Get Started
               </Link>
             </motion.div>
 
             {/* Growth Plan */}
             <motion.div
-              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F]"
+              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F] dark:bg-[#2a2a2a]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0070A0] text-white text-xs font-medium px-3 py-1 rounded-full">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0070A0] dark:bg-[#0088d9] text-white text-xs font-medium px-3 py-1 rounded-full">
                 Most Popular
               </div>
-              <h3 className="font-bold text-xl text-white mb-1">Growth</h3>
-              <p className="text-[#9CA3AF] text-[10px] mb-4">
+              <h3 className="font-bold text-xl text-white dark:text-white mb-1">Growth</h3>
+              <p className="text-[#9CA3AF] dark:text-gray-400 text-[10px] mb-4">
                 For growing businesses with expanding needs
               </p>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white">
+                <span className="text-2xl font-bold text-white dark:text-white">
                   Contact Us
                 </span>
                 {/* <span className="text-[#9CA3AF] text-sm"> /per month</span> */}
@@ -603,10 +603,10 @@ export default function ProductPage() {
                 ].map((feature, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-[12px] text-[#D1D5DB]"
+                    className="flex items-center gap-2 text-[12px] text-[#D1D5DB] dark:text-gray-400"
                   >
                     <svg
-                      className="w-4 h-4 text-[#D1D5DB]"
+                      className="w-4 h-4 text-[#D1D5DB] dark:text-gray-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -620,27 +620,27 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="block w-full bg-white py-1.5 text-sm rounded-lg font-medium hover:bg-gray-100 text-center text-gray-900">
+              <Link href="/contact" className="block w-full bg-white dark:bg-gray-700 py-1.5 text-sm rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-600 text-center text-gray-900 dark:text-white">
                 Most Popular
               </Link>
             </motion.div>
 
             {/* Enterprise Plan */}
             <motion.div
-              className="bg-[#F7F9FA] rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-bold text-xl text-gray-900 mb-1">
+              <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-1">
                 Enterprise
               </h3>
-              <p className="text-gray-600 text-[10px] mb-4">
+              <p className="text-gray-600 dark:text-gray-400 text-[10px] mb-4">
                 Custom solutions for large organizations
               </p>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-gray-900">
+                <span className="text-2xl font-bold text-gray-900 dark:text-white">
                   Contact Us
                 </span>
                 {/* <span className="text-gray-500 text-sm"> /custom</span> */}
@@ -656,7 +656,7 @@ export default function ProductPage() {
                 ].map((feature, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-[12px] text-gray-700"
+                    className="flex items-center gap-2 text-[12px] text-gray-700 dark:text-gray-400"
                   >
                     <svg
                       className="w-4 h-4 text-[#4a90a4]"
@@ -673,7 +673,7 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="block w-full bg-[#0070A0] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a] text-center">
+              <Link href="/contact" className="block w-full bg-[#0070A0] dark:bg-[#0088d9] text-white py-1.5 rounded-lg text-sm font-medium hover:bg-[#3d7a8a] dark:hover:bg-[#006ba8] text-center">
                 Contact Sales
               </Link>
             </motion.div>
