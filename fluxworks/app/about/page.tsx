@@ -41,7 +41,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <span className="bg-[#0070A015] text-[#0070A0] text-xs font-medium px-4 py-1.5 rounded-full">
+              <span className="bg-accent/15 dark:bg-accent/20 text-accent text-xs font-medium px-4 py-1.5 rounded-full">
                 About Fluxworks
               </span>
             </div>
@@ -85,12 +85,12 @@ export default function AboutPage() {
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2
-            className="font-serif text-center text-4xl font-normal text-gray-900 mb-4"
+            className="font-serif text-center text-4xl font-normal text-foreground mb-4"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Our values
           </h2>
-          <p className="text-gray-600 text-[12px] text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-[12px] text-center mb-12 max-w-2xl mx-auto">
             {
               "These values guide how we work together every day. They don't just sit in a dusty document—they evolve and change as our company grows, and we love rewarding teammates who best exemplify them (with prizes 🏆)."
             }
@@ -106,7 +106,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-accent mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -120,10 +120,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-foreground">
                     Take pride in your work
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-muted-foreground text-[13px]">
                     {
                       "Be bold and aspire for excellence. Let's build a lasting company."
                     }
@@ -132,7 +132,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-accent mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -146,10 +146,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-foreground">
                     Be an owner
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-muted-foreground text-[13px]">
                     Owners sweep the floors and take out the trash. They do{" "}
                     {"what's"} best for the customer and company, and are always
                     accountable to their teammates.
@@ -158,7 +158,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-accent mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -176,10 +176,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-foreground">
                     Always be learning
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-muted-foreground text-[13px]">
                     Improve every day; feedback and reflection will make us all
                     better.
                   </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-accent mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -197,10 +197,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-foreground">
                     Empower others
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-muted-foreground text-[13px]">
                     {
                       "We exist to empower customers; we'll succeed by empowering each other."
                     }
@@ -209,7 +209,7 @@ export default function AboutPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="text-[#4a90a4] mt-1">
+                <div className="text-accent mt-1">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -227,10 +227,10 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[14px] font-semibold text-gray-900">
+                  <h3 className="text-[14px] font-semibold text-foreground">
                     Embrace the journey
                   </h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-muted-foreground text-[13px]">
                     Appreciate the entire experience, win as a team, and have
                     fun.
                   </p>

@@ -18,7 +18,7 @@ export default function ContactPage() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
           <h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-5xl md:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Get in Touch
@@ -42,7 +42,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="font-serif text-2xl font-normal text-gray-900 dark:text-white mb-2">
+              <h2 className="font-serif text-2xl font-normal text-foreground mb-2">
                 Contact Information
               </h2>
               <p className="text-gray-600 dark:text-muted-foreground text-[12px] mb-8">
@@ -70,10 +70,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
+                    <h3 className="font-semibold text-[13px] text-foreground">
                       Email
                     </h3>
-                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
+                    <p className="text-muted-foreground text-[13px]">
                       fluxworks.it@gmail.com
                     </p>
                   </div>
@@ -97,10 +97,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
+                    <h3 className="font-semibold text-[13px] text-foreground">
                       Phone
                     </h3>
-                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
+                    <p className="text-muted-foreground text-[13px]">
                       +91 9363400322
                     </p>
                   </div>
@@ -130,10 +130,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
+                    <h3 className="font-semibold text-[13px] text-foreground">
                       Office
                     </h3>
-                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
+                    <p className="text-muted-foreground text-[13px]">
                       First Floor, No.176A, Palai Road, Thoothukudi District,
                       <br />
                       Tamil Nadu-628008
@@ -155,7 +155,6 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Contact Form */}
             {/* Contact Form */}
             <motion.form
               onSubmit={async (e) => {
@@ -187,7 +186,7 @@ export default function ContactPage() {
                   setTimeout(() => setStatus('idle'), 5000);
                 }
               }}
-              className="bg-white p-5 rounded-2xl shadow-sm relative"
+              className="bg-card dark:bg-card p-5 rounded-2xl shadow-sm relative border border-border dark:border-border transition-theme"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -195,7 +194,7 @@ export default function ContactPage() {
             >
               <div className="grid md:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-foreground mb-1.5">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -203,11 +202,11 @@ export default function ContactPage() {
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] bg-background dark:bg-secondary border border-border dark:border-border text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-theme"
                   />
                 </div>
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-foreground mb-1.5">
                     Business Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -215,25 +214,25 @@ export default function ContactPage() {
                     name="businessName"
                     required
                     placeholder="Acme Inc."
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] bg-background dark:bg-secondary border border-border dark:border-border text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-theme"
                   />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-3 mt-3">
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-foreground mb-1.5">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     placeholder="+1 (555) 000-0000"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] bg-background dark:bg-secondary border border-border dark:border-border text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-theme"
                   />
                 </div>
                 <div>
-                  <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
+                  <label className="block text-[12px] font-medium text-foreground mb-1.5">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -241,7 +240,7 @@ export default function ContactPage() {
                     name="email"
                     required
                     placeholder="john@company.com"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] bg-background dark:bg-secondary border border-border dark:border-border text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-theme"
                   />
                 </div>
               </div>
@@ -250,7 +249,7 @@ export default function ContactPage() {
                 <label className="block text-[12px] font-medium text-gray-700 mb-1.5">
                   Product Interested In
                 </label>
-                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
+                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-border dark:border-border bg-background dark:bg-secondary text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-theme">
                   <option value="">Select a product</option>
                   <option value="Pharmacy Management Suite">Pharmacy Management Suite</option>
                   <option value="Retail Suite">Retail Suite</option>
@@ -267,7 +266,7 @@ export default function ContactPage() {
                   rows={3}
                   required
                   placeholder="Tell us about your business and what you're looking for..."
-                  className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
+                  className="w-full px-2.5 py-1.5 text-[12px] bg-background dark:bg-secondary border border-border dark:border-border text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-theme"
                 />
               </div>
 
@@ -285,7 +284,7 @@ export default function ContactPage() {
                 </div>
               )}
 
-              <button disabled={status === 'submitting'} type="submit" className="w-full mt-4 bg-[#4a90a4] text-[12px] text-white py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] disabled:bg-[#4a90a4]/70 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors">
+              <button disabled={status === 'submitting'} type="submit" className="w-full mt-4 bg-accent text-[12px] text-accent-foreground py-1.5 rounded-lg font-medium hover:bg-accent-dark disabled:bg-accent/70 disabled:cursor-not-allowed flex items-center justify-center gap-2 transition-colors">
                 {status === 'submitting' ? 'Sending...' : 'Send Message'}
                 {status !== 'submitting' && (
                   <svg
