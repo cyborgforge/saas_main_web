@@ -10,9 +10,9 @@ export default function AboutPage() {
     <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#050505]"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
         }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
@@ -41,7 +41,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center mb-6">
-              <span className="bg-[#0070A015] dark:bg-gray-800 text-[#0070A0] dark:text-gray-400 text-xs font-medium px-4 py-1.5 rounded-full">
+              <span className="bg-[#0070A015] dark:bg-gray-800 text-[#0070A0] dark:text-white text-xs font-medium px-4 py-1.5 rounded-full">
                 About Fluxworks
               </span>
             </div>
@@ -49,11 +49,11 @@ export default function AboutPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-6xl -mt-1 md:-mt-3 font-bold text-gray-900 dark:text-white leading-tight mb-6 md:mb-8"
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl md:text-6xl font-bold text-white mb-6"
               style={{ fontFamily: "var(--font-anton)" }}
             >
-              Building the future of <br /> business software
+              About Fluxworks
             </motion.h1>
 
             <motion.div
@@ -62,12 +62,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-105 -mt-5 mx-auto text-left"
             >
-              <p className="text-gray-600 dark:text-gray-400 text-[12px] mb-6">
+              <p className="text-gray-300 text-[12px] mb-6">
                 {
                   "We're a team of passionate engineers, designers, and business experts dedicated to creating software that makes a difference. Our mission is to empower businesses of all sizes with enterprise-grade tools that are accessible, affordable, and easy to use."
                 }
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-[12px]">
+              <p className="text-gray-300 text-[12px]">
                 {
                   "Founded in 2019, we've grown from a small startup to a trusted partner for over 1000 businesses worldwide. But we're just getting started."
                 }

@@ -21,9 +21,9 @@ const glassFallbackStyle: React.CSSProperties = {
   boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.55)",
 };
 
-// Dark mode fallback - matches reference image
+// Dark mode fallback - matches reference image #00000099
 const darkGlassStyle: React.CSSProperties = {
-  background: "rgba(20,20,20,0.95)",
+  background: "rgba(0,0,0,0.6)",
   backdropFilter: "blur(12px) saturate(160%)",
   WebkitBackdropFilter: "blur(12px) saturate(160%)",
   boxShadow: "0 0 1px rgba(255,255,255,0.1), inset 0 0 1px rgba(255,255,255,0.05)",

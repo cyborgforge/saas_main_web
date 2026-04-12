@@ -209,9 +209,9 @@ export default function ProductPage() {
     <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#0f0f0f]"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
@@ -222,20 +222,20 @@ export default function ProductPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-0.5 bg-[#0070A015] px-2 py-1 rounded-full text-xs mb-6">
+              <div className="inline-flex items-center gap-0.5 bg-[#0070A015] dark:bg-gray-800 px-2 py-1 rounded-full text-xs mb-6">
                 <span
                   className="text-yellow-600 inline-block"
                   style={{ transform: "rotate(270deg)" }}
                 >
                   💊
                 </span>
-                <span className="text-[#0070A0] text-[11px]">
+                <span className="text-[#0070A0] dark:text-white text-[11px]">
                   Available Now
                 </span>
               </div>
 
               <h1
-                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+                className="text-4xl -mt-4 md:text-5xl font-bold text-white mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-anton)" }}
               >
                 Pharmacy
@@ -243,7 +243,7 @@ export default function ProductPage() {
                 Management Suite
               </h1>
 
-              <p className="text-gray-600 dark:text-gray-400 mb-8 text-[12px]">
+              <p className="text-gray-300 mb-8 text-[12px]">
                 Complete pharmacy management solution with POS, inventory,
                 online ordering, and delivery management. Streamline your
                 pharmacy operations with our all-in-one platform.
