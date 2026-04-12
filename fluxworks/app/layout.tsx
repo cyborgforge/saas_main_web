@@ -6,6 +6,7 @@ import { Geist, Geist_Mono, Anton, Outfit } from "next/font/google";
 
 import "./globals.css";
 import { PageShell } from "../components/page-shell";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const anton = Anton({
   weight: "400",
@@ -35,9 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased ${anton.variable} ${outfit.variable}`}>
-        <PageShell>{children}</PageShell>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <PageShell>{children}</PageShell>
+        </ThemeProvider>
       </body>
     </html>
   );

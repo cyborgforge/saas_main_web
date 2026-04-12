@@ -22,6 +22,18 @@ export default function ProductPage() {
   ] as const;
 
   const [activeScreenIndex, setActiveScreenIndex] = useState(0);
+  
+  // Detect dark mode for responsive styling
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkDarkMode();
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {

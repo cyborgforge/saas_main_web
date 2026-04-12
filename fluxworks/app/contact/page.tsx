@@ -8,22 +8,22 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-800"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
           <h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
+            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Get in Touch
           </h1>
-          <p className="text-gray-600 max-w-xl text-[12px] mx-auto px-6">
+          <p className="text-gray-600 dark:text-muted-foreground max-w-xl text-[12px] mx-auto px-6">
             Have questions about our products? Want to schedule a demo? {"We'd"}{" "}
             love to hear from you. Fill out the form below and {"we'll"} get
             back to you within 24 hours.
@@ -32,7 +32,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f5f9fa]">
+      <section className="py-16 bg-[#f5f9fa] dark:bg-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
@@ -42,10 +42,10 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true, amount: 0.2 }}
             >
-              <h2 className="font-serif text-2xl font-normal text-gray-900 mb-2">
+              <h2 className="font-serif text-2xl font-normal text-gray-900 dark:text-white mb-2">
                 Contact Information
               </h2>
-              <p className="text-gray-600 text-[12px] mb-8">
+              <p className="text-gray-600 dark:text-muted-foreground text-[12px] mb-8">
                 Reach out to us through any of these channels.
                 <br />
                 Our team is ready to help.
@@ -54,9 +54,9 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -70,10 +70,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Email
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
                       fluxworks.it@gmail.com
                     </p>
                   </div>
@@ -81,9 +81,9 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -97,10 +97,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Phone
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
                       +91 9363400322
                     </p>
                   </div>
@@ -108,9 +108,9 @@ export default function ContactPage() {
 
                 {/* Office */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] p-3 rounded-full">
+                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4]"
+                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -130,10 +130,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[13px] text-gray-900">
+                    <h3 className="font-semibold text-[13px] text-gray-900 dark:text-white">
                       Office
                     </h3>
-                    <p className="text-gray-600 text-[13px]">
+                    <p className="text-gray-600 dark:text-muted-foreground text-[13px]">
                       First Floor, No.176A, Palai Road, Thoothukudi District,
                       <br />
                       Tamil Nadu-628008
