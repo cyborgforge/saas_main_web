@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function AboutPage() {
   return (

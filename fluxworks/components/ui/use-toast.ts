@@ -22,6 +22,7 @@ type ActionTypes = {
   REMOVE_TOAST: 'REMOVE_TOAST';
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const actionTypes: ActionTypes = {
   ADD_TOAST: 'ADD_TOAST',
   UPDATE_TOAST: 'UPDATE_TOAST',

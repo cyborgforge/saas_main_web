@@ -3,7 +3,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import {
   BarChart3,
@@ -157,12 +156,7 @@ const SERVICE_CARDS: Array<{
 ] as const;
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a]">

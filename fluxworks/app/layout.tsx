@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 
-import { Geist, Geist_Mono, Anton, Outfit } from "next/font/google";
+import { Anton, Outfit } from "next/font/google";
 
 
 import "./globals.css";
