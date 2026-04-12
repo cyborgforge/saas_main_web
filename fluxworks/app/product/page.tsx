@@ -206,10 +206,10 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen dark:bg-[#0a0a0a]">
+    <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#1a1a1a]"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#0f0f0f]"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
@@ -350,7 +350,7 @@ export default function ProductPage() {
       </section>
 
       {/* Real Product Gallery */}
-      <section className="py-16 bg-[#F4FAFD] dark:bg-[#0a0a0a]">
+      <section className="py-16 bg-[#F4FAFD] dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Product Gallery
@@ -404,7 +404,7 @@ export default function ProductPage() {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 bg-white dark:bg-[#0a0a0a]">
+      <section className="py-16 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Modules Included
@@ -417,7 +417,7 @@ export default function ProductPage() {
             {modules.map((module, index) => (
               <motion.div
                 key={index}
-                className="border border-[#F7F9FA] dark:border-gray-700 bg-[#F7F9FA] dark:bg-[#1a1a1a] rounded-xl p-4 hover:border-[#4a90a4] dark:hover:border-[#4a90a4] transition-colors"
+                className="border border-[#F7F9FA] dark:border-gray-800/50 bg-[#F7F9FA] dark:bg-[#0f0f0f] rounded-xl p-4 hover:border-[#4a90a4] dark:hover:border-[#4a90a4] transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -443,7 +443,7 @@ export default function ProductPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-[#DCE1FF] dark:bg-[#0a0a0a]">
+      <section className="py-16 bg-[#DCE1FF] dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-3">
             How It Works
@@ -511,7 +511,7 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 mb-12 bg-white dark:bg-[#0a0a0a]">
+      <section className="py-16 mb-12 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">
             Simple, Transparent Pricing
@@ -523,7 +523,7 @@ export default function ProductPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Starter Plan */}
             <motion.div
-              className="bg-[#F7F9FA] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
@@ -573,7 +573,7 @@ export default function ProductPage() {
 
             {/* Growth Plan */}
             <motion.div
-              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F] dark:bg-[#2a2a2a]"
+              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F] dark:bg-[#0f0f0f]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
@@ -627,7 +627,7 @@ export default function ProductPage() {
 
             {/* Enterprise Plan */}
             <motion.div
-              className="bg-[#F7F9FA] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}

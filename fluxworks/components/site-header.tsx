@@ -81,7 +81,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-gray-600 hover:bg-black/5"
+              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-gray-600 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10"
               style={active ? activeGlass : {}}
             >
               {link.label}
@@ -131,14 +131,14 @@ export function SiteHeader() {
 
         {/* ═══ DESKTOP NAV (md+) — CSS glass pill ═══ */}
         <div className="hidden md:block w-full">
-          <div className="w-full rounded-full" style={glassFallbackStyle}>
+          <div className="w-full rounded-full dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800" style={glassFallbackStyle}>
             {DesktopNavContent}
           </div>
         </div>
 
         {/* ═══ MOBILE NAV (below md) ═══ */}
         <div
-          className="flex md:hidden w-full items-center rounded-full px-3 py-2"
+          className="flex md:hidden w-full items-center rounded-full px-3 py-2 dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800"
           style={{
             background: "rgba(255,255,255,0.08)",
             backdropFilter: "blur(28px) saturate(180%)",
@@ -165,8 +165,8 @@ export function SiteHeader() {
                   href={link.href}
                   className={`text-[11px] font-normal px-3 py-1 rounded-full transition-all duration-200 ${
                     active
-                      ? "text-gray-700 bg-white/40"
-                      : "text-gray-600 hover:bg-black/5"
+                      ? "text-gray-700 dark:text-white bg-white/40 dark:bg-white/15"
+                      : "text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10 dark:hover:text-white"
                   }`}
                 >
                   {link.label}

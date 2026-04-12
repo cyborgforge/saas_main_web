@@ -310,7 +310,7 @@ export default function Home() {
 
       {/* Services And Product Suite Section */}
       <section
-        className="relative py-16 md:py-20 dark:bg-[#0a0a0a]"
+        className="relative py-16 md:py-20 dark:bg-[#050505]"
         style={{
           background:
             "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
@@ -322,7 +322,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-3xl border border-white/30 dark:border-gray-700 bg-white/85 dark:bg-[#1a1a1a] backdrop-blur-sm p-6 md:p-10"
+            className="rounded-3xl border border-white/30 dark:border-gray-800/50 bg-white/85 dark:bg-[#0f0f0f] backdrop-blur-sm p-6 md:p-10"
           >
             <h2
               className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
@@ -358,7 +358,7 @@ export default function Home() {
       </section>
 
       {/* Our Products Section */}
-      <section className="bg-[#06181E] dark:bg-[#0a0a0a] py-16 relative">
+      <section className="bg-[#06181E] dark:bg-[#050505] py-16 relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#06181E" />
@@ -384,7 +384,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: 0.05 * index }}
-                  className="bg-[#A4C8FF] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 rounded-xl w-full max-w-125 mx-auto flex flex-col justify-between"
+                  className="bg-[#A4C8FF] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-xl w-full max-w-125 mx-auto flex flex-col justify-between"
                   style={{ padding: "32px 32px 24px 32px" }}
                 >
                   <div className="flex gap-4">
@@ -434,7 +434,7 @@ export default function Home() {
       </section>
 
       {/* Logo Carousel Section */}
-      <section className="bg-[#06181E] dark:bg-[#0a0a0a] py-8 overflow-hidden">
+      <section className="bg-[#06181E] dark:bg-[#050505] py-8 overflow-hidden">
         <style jsx>{`
           @keyframes scroll {
             0% {
@@ -492,7 +492,7 @@ export default function Home() {
       </section> */}
 
       {/* Why Choose Us Section */}
-      <section className="bg-[#06181E] dark:bg-[#0a0a0a] py-16">
+      <section className="bg-[#06181E] dark:bg-[#050505] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-center text-white dark:text-white mb-3">
             Why Choose Us
@@ -507,7 +507,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             {/* Modular Product Architecture */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 dark:bg-gray-800 p-2 rounded-lg">
                   <svg
@@ -534,7 +534,7 @@ export default function Home() {
             </motion.div>
 
             {/* Centralized Billing & Subscriptions */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 dark:bg-gray-800 p-2 rounded-lg">
                   <svg
@@ -563,7 +563,7 @@ export default function Home() {
             </motion.div>
 
             {/* Activation-Based Access Control */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 dark:bg-gray-800 p-2 rounded-lg">
                   <svg
@@ -587,7 +587,7 @@ export default function Home() {
             </motion.div>
 
             {/* Scalable & Future-Ready */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-5 rounded-2xl">
               <div className="flex items-start gap-3">
                 <div className="bg-blue-50 dark:bg-gray-800 p-2 rounded-lg">
                   <svg
@@ -637,7 +637,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section
-        className="relative overflow-hidden dark:bg-[#0a0a0a]"
+        className="relative overflow-hidden dark:bg-[#050505]"
         style={{
           background:
             "linear-gradient(180deg, #06181E 0%, #FFFFFF 100%)",
