@@ -4,6 +4,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -12,26 +14,39 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-// Plain CSS fallback (SSR / before hydration)
 const glassFallbackStyle: React.CSSProperties = {
-  background: "rgba(255,255,255,0.18)",
-  backdropFilter: "blur(24px) saturate(160%)",
-  WebkitBackdropFilter: "blur(24px) saturate(160%)",
-  boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.55)",
+  background: "var(--header-glass-bg)",
+  backdropFilter: "var(--header-glass-filter)",
+  WebkitBackdropFilter: "var(--header-glass-filter)",
+  boxShadow: "var(--header-glass-shadow)",
 };
 
-// Active link glass bubble — half-clear, lets background show through
 const activeGlass: React.CSSProperties = {
-  background: "rgba(255,255,255,0.22)",
-  backdropFilter: "blur(16px) saturate(180%)",
-  WebkitBackdropFilter: "blur(16px) saturate(180%)",
-  boxShadow: "0 2px 10px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(255,255,255,0.1)",
+  background: "var(--header-active-bg)",
+  backdropFilter: "var(--header-active-filter)",
+  WebkitBackdropFilter: "var(--header-active-filter)",
+  boxShadow: "var(--header-active-shadow)",
+};
+
+const mobileGlassStyle: React.CSSProperties = {
+  background: "var(--header-mobile-bg)",
+  backdropFilter: "var(--header-mobile-filter)",
+  WebkitBackdropFilter: "var(--header-mobile-filter)",
+  boxShadow: "var(--header-mobile-shadow)",
 };
 
 export function SiteHeader() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const isDark = resolvedTheme === "dark";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -49,6 +64,11 @@ export function SiteHeader() {
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const toggleTheme = () => {
+    if (!mounted) return;
+    setTheme(isDark ? "light" : "dark");
   };
 
   // Inner content of the desktop nav bar — shared by both SSR fallback and GlassCard
@@ -74,7 +94,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-gray-600 hover:bg-black/5"
+              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-gray-600 dark:text-gray-100 hover:bg-black/5 dark:hover:bg-white/10"
               style={active ? activeGlass : {}}
             >
               {link.label}
@@ -85,6 +105,14 @@ export function SiteHeader() {
 
       {/* Right actions */}
       <div className="flex items-center gap-3 shrink-0">
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-700 dark:text-gray-100 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+          aria-label="Toggle theme"
+        >
+          {mounted && isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+        </button>
         <Link
           href="/contact"
           className="inline-flex items-center justify-center rounded-full bg-gray-900 text-[13px] font-medium text-white px-5 py-2 hover:bg-gray-800 transition-colors"
@@ -114,12 +142,7 @@ export function SiteHeader() {
         {/* ═══ MOBILE NAV (below md) ═══ */}
         <div
           className="flex md:hidden w-full items-center rounded-full px-3 py-2"
-          style={{
-            background: "rgba(255,255,255,0.08)",
-            backdropFilter: "blur(28px) saturate(180%)",
-            WebkitBackdropFilter: "blur(28px) saturate(180%)",
-            boxShadow: "0 4px 24px rgba(0,0,0,0.06), inset 0 1.5px 0 rgba(255,255,255,0.4)",
-          }}
+          style={mobileGlassStyle}
         >
           {/* Logo — fixed width left */}
           <Link href="/" className="flex items-center shrink-0 mr-2">
@@ -140,8 +163,8 @@ export function SiteHeader() {
                   href={link.href}
                   className={`text-[11px] font-normal px-3 py-1 rounded-full transition-all duration-200 ${
                     active
-                      ? "text-gray-700 bg-white/40"
-                      : "text-gray-600 hover:bg-black/5"
+                      ? "text-gray-700 dark:text-gray-100 bg-white/40 dark:bg-white/10"
+                      : "text-gray-600 dark:text-gray-100 hover:bg-black/5 dark:hover:bg-white/10"
                   }`}
                 >
                   {link.label}
@@ -149,6 +172,15 @@ export function SiteHeader() {
               );
             })}
           </div>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="inline-flex h-7 w-7 items-center justify-center rounded-full text-gray-700 dark:text-gray-100 hover:bg-black/5 dark:hover:bg-white/10 transition-colors shrink-0 ml-2"
+            aria-label="Toggle theme"
+          >
+            {mounted && isDark ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+          </button>
 
           <Link
             href="/contact"

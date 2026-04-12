@@ -206,12 +206,12 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-[#04070d]">
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "var(--marketing-hero-gradient)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
