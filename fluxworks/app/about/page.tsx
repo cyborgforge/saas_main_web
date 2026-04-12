@@ -75,8 +75,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values Section with Images */}
-      {/* <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
+      {/* Our Values Section with Images - COMMENTED OUT
+      <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#dce1ff" />
         </div>
@@ -264,7 +264,8 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
+      */}
 
       {/* Our Values Grid Section */}
       <section className="py-16 bg-white dark:bg-[#050505]">
@@ -423,8 +424,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Journey Timeline */}
-      {/* <section className="py-16 bg-[#ccefff] relative overflow-hidden">
+      {/* Our Journey Timeline - COMMENTED OUT
+      <section className="py-16 bg-[#ccefff] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 mb-3">
             Our Journey
@@ -541,7 +542,8 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+      */}
 
     </div>
   );
