@@ -8,12 +8,12 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground transition-theme">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-800"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "var(--gradient-primary)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
@@ -32,7 +32,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f5f9fa] dark:bg-slate-800">
+      <section className="py-16 bg-surface-light dark:bg-surface-medium transition-theme">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
@@ -54,9 +54,9 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
+                  <div className="bg-accent/10 dark:bg-accent/20 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
+                      className="w-4 h-4 text-accent"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -81,9 +81,9 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
+                  <div className="bg-accent/10 dark:bg-accent/20 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
+                      className="w-4 h-4 text-accent"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -108,9 +108,9 @@ export default function ContactPage() {
 
                 {/* Office */}
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e0f0f4] dark:bg-slate-700 p-3 rounded-full">
+                  <div className="bg-accent/10 dark:bg-accent/20 p-3 rounded-full">
                     <svg
-                      className="w-4 h-4 text-[#4a90a4] dark:text-cyan-400"
+                      className="w-4 h-4 text-accent"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -143,11 +143,11 @@ export default function ContactPage() {
               </div>
 
               {/* Working Hours */}
-              <div className="mt-8 bg-[#f0f5f7] p-6 rounded-2xl">
-                <h3 className="font-semibold text-[12px] text-gray-900 mb-3">
+              <div className="mt-8 bg-surface-light dark:bg-surface-medium p-6 rounded-2xl border border-border dark:border-border transition-theme">
+                <h3 className="font-semibold text-[12px] text-foreground mb-3">
                   Working Hours
                 </h3>
-                <div className="space-y-1 text-[12px] text-gray-600">
+                <div className="space-y-1 text-[12px] text-muted-foreground">
                   <p>Monday - Friday: 9:00 AM - 6:00 PM IST</p>
                   <p>Saturday: 10:00 AM - 4:00 PM IST</p>
                   <p>Sunday: Closed</p>

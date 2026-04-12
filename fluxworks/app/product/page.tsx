@@ -218,12 +218,12 @@ export default function ProductPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground transition-theme">
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
+          background: "var(--gradient-primary)",
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
@@ -247,7 +247,7 @@ export default function ProductPage() {
               </div>
 
               <h1
-                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+                className="text-4xl -mt-4 md:text-5xl font-bold text-white mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-anton)" }}
               >
                 Pharmacy
@@ -255,14 +255,14 @@ export default function ProductPage() {
                 Management Suite
               </h1>
 
-              <p className="text-gray-600 mb-8 text-[12px]">
+              <p className="text-gray-200 dark:text-gray-300 mb-8 text-[12px]">
                 Complete pharmacy management solution with POS, inventory,
                 online ordering, and delivery management. Streamline your
                 pharmacy operations with our all-in-one platform.
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/contact" className="bg-[#0070A0] text-[12px] text-white px-5 py-1.5 rounded-lg font-medium hover:bg-[#3d7a8a] flex items-center gap-2">
+                <Link href="/contact" className="bg-accent hover:bg-accent-dark text-accent-foreground text-[12px] px-5 py-1.5 rounded-lg font-medium flex items-center gap-2 transition-colors">
                   Request Demo
                   <svg
                     className="w-4 h-4"
@@ -288,9 +288,9 @@ export default function ProductPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-white rounded-2xl shadow-xl">
+              <div className="bg-card dark:bg-card rounded-2xl shadow-xl border border-border dark:border-border transition-theme">
                 {/* Browser Dots */}
-                <div className="flex gap-1 p-3 bg-[#0070A0] rounded-t-2xl">
+                <div className="flex gap-1 p-3 bg-accent rounded-t-2xl">
                   <div className="w-2 h-2 bg-white/30 rounded-full"></div>
                   <div className="w-2 h-2 bg-white/30 rounded-full"></div>
                   <div className="w-2 h-2 bg-white/30 rounded-full"></div>
@@ -299,33 +299,33 @@ export default function ProductPage() {
                 <div className="p-6">
                   {/* Stats Row */}
                   <div className="grid grid-cols-3 gap-4 mb-6">
-                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
-                      <div className="text-xl font-bold text-gray-900">
+                    <div className="text-center bg-surface-light dark:bg-surface-medium rounded-lg py-3 transition-theme">
+                      <div className="text-xl font-bold text-foreground">
                         2,847
                       </div>
-                      <div className="text-xs text-gray-500">Orders</div>
+                      <div className="text-xs text-muted-foreground">Orders</div>
                     </div>
-                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
-                      <div className="text-xl font-bold text-gray-900">
+                    <div className="text-center bg-surface-light dark:bg-surface-medium rounded-lg py-3 transition-theme">
+                      <div className="text-xl font-bold text-foreground">
                         $84.2K
                       </div>
-                      <div className="text-xs text-gray-500">Revenue</div>
+                      <div className="text-xs text-muted-foreground">Revenue</div>
                     </div>
-                    <div className="text-center bg-[#F7F9FA] rounded-lg py-3">
-                      <div className="text-xl font-bold text-gray-900">
+                    <div className="text-center bg-surface-light dark:bg-surface-medium rounded-lg py-3 transition-theme">
+                      <div className="text-xl font-bold text-foreground">
                         1,234
                       </div>
-                      <div className="text-xs text-gray-500">Customers</div>
+                      <div className="text-xs text-muted-foreground">Customers</div>
                     </div>
                   </div>
 
                   {/* Chart */}
-                  <div className="h-32 flex items-end bg-[#E8F5FA] p-3 rounded-lg gap-1.5 sm:gap-2">
+                  <div className="h-32 flex items-end bg-accent/10 dark:bg-accent/20 p-3 rounded-lg gap-1.5 sm:gap-2 transition-theme">
                     {[40, 55, 45, 60, 50, 70, 65, 80, 75, 90].map(
                       (height, i) => (
                         <div
                           key={i}
-                          className="flex-1 bg-[#0070A0] rounded-t"
+                          className="flex-1 bg-accent rounded-t"
                           style={{ height: `${height}%` }}
                         ></div>
                       ),
@@ -336,10 +336,10 @@ export default function ProductPage() {
 
               {/* Real-time Sync Badge - Positioned absolutely to overflow */}
                   <div className="absolute bottom-3 right-0 sm:-right-4">
-                <div className="flex items-center gap-2 bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-100">
-                  <div className="bg-[#0070A0] p-1.5 rounded">
+                <div className="flex items-center gap-2 bg-card dark:bg-card rounded-lg shadow-lg px-3 py-2 border border-border dark:border-border transition-theme">
+                  <div className="bg-accent p-1.5 rounded">
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-4 h-4 text-accent-foreground"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -347,10 +347,10 @@ export default function ProductPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-[13px] text-gray-900">
+                    <div className="font-medium text-[13px] text-foreground">
                       Real-time Sync
                     </div>
-                    <div className="text-[10px] -mt-0.5 text-gray-500">
+                    <div className="text-[10px] -mt-0.5 text-muted-foreground">
                       Across all devices
                     </div>
                   </div>
@@ -362,16 +362,16 @@ export default function ProductPage() {
       </section>
 
       {/* Real Product Gallery */}
-      <section className="py-16 bg-[#F4FAFD]">
+      <section className="py-16 bg-surface-light dark:bg-surface-medium transition-theme">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-3">
             Product Gallery
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-10">
+          <p className="text-center text-[14px] text-muted-foreground mb-10">
             Real screens from the suite, auto-playing for a quick preview.
           </p>
 
-          <div className="rounded-3xl border border-[#D5E8F0] bg-white p-3 sm:p-4 shadow-[0_20px_50px_rgba(0,40,60,0.12)]">
+          <div className="rounded-3xl border border-border dark:border-border bg-card dark:bg-card p-3 sm:p-4 shadow-lg transition-theme">
             <div className="relative h-[240px] sm:h-[330px] md:h-[420px] overflow-hidden rounded-2xl bg-[#09273A]">
               {productScreens.map((screen, index) => (
                 <motion.div
@@ -405,8 +405,8 @@ export default function ProductPage() {
                   onClick={() => setActiveScreenIndex(index)}
                   className={`h-2.5 rounded-full transition-all ${
                     activeScreenIndex === index
-                      ? "w-8 bg-[#0070A0]"
-                      : "w-2.5 bg-[#A9C5D1] hover:bg-[#88B1C2]"
+                      ? "w-8 bg-accent"
+                      : "w-2.5 bg-border dark:bg-border hover:bg-muted"
                   }`}
                 />
               ))}
@@ -416,12 +416,12 @@ export default function ProductPage() {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background transition-theme">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-3">
             Modules Included
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-muted-foreground mb-12">
             Everything you need to run your business, all in one place.
           </p>
 
@@ -429,21 +429,21 @@ export default function ProductPage() {
             {modules.map((module, index) => (
               <motion.div
                 key={index}
-                className="border border-[#F7F9FA] bg-[#F7F9FA] rounded-xl p-4 hover:border-[#4a90a4] transition-colors"
+                className="border border-border dark:border-border bg-surface-light dark:bg-surface-medium rounded-xl p-4 hover:border-accent dark:hover:border-accent transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
               >
                 <div className="flex items-start gap-3">
-                  <div className="text-[#4a90a4] bg-[#CCEFF633] p-2 rounded-lg">
+                  <div className="text-accent bg-accent/10 dark:bg-accent/20 p-2 rounded-lg">
                     {getIcon(module.icon)}
                   </div>
                   <div>
-                    <h5 className="font-semibold text-[13px] text-gray-900 -mt-0.5">
+                    <h5 className="font-semibold text-[13px] text-foreground -mt-0.5">
                       {module.name}
                     </h5>
-                    <p className="text-gray-500 text-[11px]">
+                    <p className="text-muted-foreground text-[11px]">
                       {module.description}
                     </p>
                   </div>
@@ -455,12 +455,12 @@ export default function ProductPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-[#DCE1FF]">
+      <section className="py-16 bg-surface-light dark:bg-surface-medium transition-theme">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-semibold text-center text-gray-900 mb-3">
+          <h2 className="text-3xl font-semibold text-center text-foreground mb-3">
             How It Works
           </h2>
-          <p className="text-center text-[14px] text-gray-600 mb-12">
+          <p className="text-center text-[14px] text-muted-foreground mb-12">
             Get started in minutes with our simple onboarding process.
           </p>
 

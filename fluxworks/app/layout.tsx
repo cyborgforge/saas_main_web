@@ -1,5 +1,5 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Geist, Geist_Mono, Anton, Outfit } from "next/font/google";
 
@@ -19,7 +19,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Fluxworks",
+  title: "Fluxworks - Scalable SaaS Solutions",
   description:
     "We build scalable SaaS products for modern businesses. Pharmacy Management, Retail Suite, and Clinic Management solutions.",
   generator: "v0.app",
@@ -30,6 +30,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1419" },
+  ],
+  colorScheme: "light dark",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,8 +45,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased ${anton.variable} ${outfit.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className={`font-sans antialiased transition-theme ${anton.variable} ${outfit.variable}`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="fluxworks-theme">
           <PageShell>{children}</PageShell>
         </ThemeProvider>
       </body>
