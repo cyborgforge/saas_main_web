@@ -174,7 +174,6 @@ export default function Home() {
           <div className="absolute top-[-8%] left-[-12%] w-96 h-96 bg-cyan-400/20 blur-[110px] rounded-full"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-80 h-80 bg-sky-400/20 blur-[90px] rounded-full"></div>
 
-          {/* Background wireframe abstract circle */}
           <div className="absolute top-[10%] -right-10 w-75 h-75 rounded-full border border-white/10 md:hidden pointer-events-none z-0"></div>
           <div className="absolute top-[15%] -left-16 w-50 h-50 rounded-full border border-white/5 md:hidden pointer-events-none z-0"></div>
         </div>
