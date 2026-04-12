@@ -21,6 +21,14 @@ const glassFallbackStyle: React.CSSProperties = {
   boxShadow: "0 4px 24px rgba(0,0,0,0.08), inset 0 1.5px 0 rgba(255,255,255,0.55)",
 };
 
+// Dark mode fallback
+const darkGlassStyle: React.CSSProperties = {
+  background: "rgba(26,26,26,0.8)",
+  backdropFilter: "blur(10px) saturate(180%)",
+  WebkitBackdropFilter: "blur(10px) saturate(180%)",
+  boxShadow: "inset 1.2px 0 rgba(255,255,255,0.06), inset -1.2px 0 rgba(255,255,255,0.06), inset 0 1.2px rgba(255,255,255,0.1), inset 0 -0.6px rgba(255,255,255,0.06)",
+};
+
 // Active link glass bubble — half-clear, lets background show through
 const activeGlass: React.CSSProperties = {
   background: "rgba(255,255,255,0.22)",
@@ -131,15 +139,18 @@ export function SiteHeader() {
 
         {/* ═══ DESKTOP NAV (md+) — CSS glass pill ═══ */}
         <div className="hidden md:block w-full">
-          <div className="w-full rounded-full dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800" style={glassFallbackStyle}>
+          <div 
+            className="w-full rounded-full dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800/50" 
+            style={theme === "dark" ? { ...darkGlassStyle } : glassFallbackStyle}
+          >
             {DesktopNavContent}
           </div>
         </div>
 
         {/* ═══ MOBILE NAV (below md) ═══ */}
         <div
-          className="flex md:hidden w-full items-center rounded-full px-3 py-2 dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800"
-          style={{
+          className="flex md:hidden w-full items-center rounded-full px-3 py-2 dark:bg-[#1a1a1a]/80 dark:border dark:border-gray-800/50"
+          style={theme === "dark" ? darkGlassStyle : {
             background: "rgba(255,255,255,0.08)",
             backdropFilter: "blur(28px) saturate(180%)",
             WebkitBackdropFilter: "blur(28px) saturate(180%)",

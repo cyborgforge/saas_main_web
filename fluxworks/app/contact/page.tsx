@@ -8,10 +8,10 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
-    <div className="min-h-screen dark:bg-[#0a0a0a]">
+    <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#0a0a0a]"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#050505]"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
@@ -32,7 +32,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-[#f5f9fa] dark:bg-[#0a0a0a]">
+      <section className="py-16 bg-[#f5f9fa] dark:bg-[#050505]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
@@ -143,7 +143,7 @@ export default function ContactPage() {
               </div>
 
               {/* Working Hours */}
-              <div className="mt-8 bg-[#f0f5f7] dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-6 rounded-2xl">
+              <div className="mt-8 bg-[#f0f5f7] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-6 rounded-2xl">
                 <h3 className="font-semibold text-[12px] text-gray-900 dark:text-white mb-3">
                   Working Hours
                 </h3>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   setTimeout(() => setStatus('idle'), 5000);
                 }
               }}
-              className="bg-white dark:bg-[#1a1a1a] dark:border dark:border-gray-700 p-5 rounded-2xl shadow-sm dark:shadow-none relative"
+              className="bg-white dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 p-5 rounded-2xl shadow-sm dark:shadow-none relative"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
                     name="businessName"
                     required
                     placeholder="Acme Inc."
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function ContactPage() {
                     type="tel"
                     name="phone"
                     placeholder="+1 (555) 000-0000"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -241,7 +241,7 @@ export default function ContactPage() {
                     name="email"
                     required
                     placeholder="john@company.com"
-                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
+                    className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent"
                   />
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                 <label className="block text-[12px] font-medium text-gray-700 dark:text-gray-300 mb-1.5">
                   Product Interested In
                 </label>
-                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
+                <select name="product" className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent bg-white text-gray-500">
                   <option value="">Select a product</option>
                   <option value="Pharmacy Management Suite">Pharmacy Management Suite</option>
                   <option value="Retail Suite">Retail Suite</option>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                   rows={3}
                   required
                   placeholder="Tell us about your business and what you're looking for..."
-                  className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-700 dark:bg-[#0f0f0f] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
+                  className="w-full px-2.5 py-1.5 text-[12px] border border-gray-200 dark:border-gray-800/50 dark:bg-[#1a1a1a] dark:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4a90a4] focus:border-transparent resize-none"
                 />
               </div>
 

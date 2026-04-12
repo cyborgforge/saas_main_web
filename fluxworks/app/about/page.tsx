@@ -7,10 +7,10 @@ import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen dark:bg-[#0a0a0a]">
+    <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#0a0a0a]"
+        className="relative overflow-hidden pt-24 md:pt-32 pb-20 dark:bg-[#050505]"
         style={{
           background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
@@ -78,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section with Images */}
-      <section className="py-16 bg-[#dce1ff] dark:bg-[#0a0a0a] relative">
+      <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#dce1ff" />
@@ -272,7 +272,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Grid Section */}
-      <section className="py-16 bg-white dark:bg-[#0a0a0a]">
+      <section className="py-16 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 dark:text-white mb-3">
             Our Values
@@ -283,7 +283,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Customer First */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
               <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
@@ -309,8 +309,8 @@ export default function AboutPage() {
             </div>
 
             {/* Innovation */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
@@ -333,8 +333,8 @@ export default function AboutPage() {
             </div>
 
             {/* Collaboration */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
@@ -360,8 +360,8 @@ export default function AboutPage() {
             </div>
 
             {/* Excellence */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="currentColor"
@@ -378,8 +378,8 @@ export default function AboutPage() {
             </div>
 
             {/* Integrity */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
@@ -402,8 +402,8 @@ export default function AboutPage() {
             </div>
 
             {/* Passion */}
-            <div className="border bg-[#f7f9fa] dark:bg-[#1a1a1a] dark:border-gray-700 border-gray-200 rounded-2xl p-6">
-              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-800 rounded-lg flex items-center justify-center mb-4">
+            <div className="border bg-[#f7f9fa] dark:bg-[#0f0f0f] dark:border-gray-800/50 border-gray-200 rounded-2xl p-6">
+              <div className="w-10 h-10 bg-[#e3eaee] dark:bg-gray-900 rounded-lg flex items-center justify-center mb-4">
                 <svg
                   className="w-5 h-5 text-[#5249e5] dark:text-blue-400"
                   fill="none"
