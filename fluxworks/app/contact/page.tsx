@@ -8,7 +8,7 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   return (
-    <div className="min-h-screen dark:bg-[#050505]">
+    <div className="dark:bg-[#050505]">
       {/* Hero Section */}
       <section
         className="relative py-20 md:py-32"

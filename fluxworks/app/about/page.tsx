@@ -77,9 +77,6 @@ export default function AboutPage() {
 
       {/* Our Values Section with Images - COMMENTED OUT
       <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
-        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="#dce1ff" />
-        </div>
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-12">
           <h2
             className="font-serif text-center text-4xl font-normal text-gray-900 dark:text-white mb-4"

@@ -20,7 +20,6 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
-import { ResponsiveWave } from "@/components/responsive-wave";
 
 const LOGO_CAROUSEL_IDS = [1, 2, 3, 4] as const;
 /** One full cycle for translateX(-50%) seamless loop */
@@ -348,10 +347,6 @@ export default function Home() {
 
       {/* Our Products Section */}
       <section className="bg-[#06181E] dark:bg-[#050505] py-16 relative">
-        {/* Wave Top */}
-        <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="#06181E" />
-        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2
             className="text-4xl font-medium text-center text-white dark:text-white mb-12"
