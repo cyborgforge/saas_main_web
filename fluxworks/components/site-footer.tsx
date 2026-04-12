@@ -5,9 +5,9 @@ import { ResponsiveWave } from "@/components/responsive-wave";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#f4f2ef] dark:bg-[#0a0a0a] py-16 px-6 md:px-20 border-t border-gray-100 dark:border-gray-800 relative">
+    <footer className="bg-white dark:bg-[#0a0a0a] py-16 px-6 md:px-20 border-t border-gray-100 dark:border-gray-800 relative">
       <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-        <ResponsiveWave fill="#f4f2ef" />
+        <ResponsiveWave fill="var(--footer-bg)" />
       </div>
       <div className="max-w-4xl px-0 md:px-20 mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">

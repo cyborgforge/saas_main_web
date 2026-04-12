@@ -3,6 +3,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   BarChart3,
   Blocks,
@@ -155,13 +157,22 @@ const SERVICE_CARDS: Array<{
 ] as const;
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a]">
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
           background:
-            "linear-gradient(180deg, #081826 0%, #0b2234 40%, #0f3350 72%, #12415f 100%)",
+            theme === "dark"
+              ? "var(--product-hero-gradient)"
+              : "linear-gradient(180deg, #081826 0%, #0b2234 40%, #0f3350 72%, #12415f 100%)",
         }}
       >
         {/* Simple basic background glow designs correctly scaled to full section */}
@@ -309,31 +320,18 @@ export default function Home() {
       </section>
 
       {/* Services And Product Suite Section */}
-      <section
-        className="relative py-16 md:py-20 dark:bg-[#050505]"
-        style={{
-          background:
-            "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 space-y-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="rounded-3xl border border-white/30 dark:border-gray-800/50 bg-white/85 dark:bg-[#0f0f0f] backdrop-blur-sm p-6 md:p-10"
+      <section className="bg-white dark:bg-[#050505] py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+          <h2
+            className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
+            style={{ fontFamily: "var(--font-anton)" }}
           >
-            <h2
-              className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
-              style={{ fontFamily: "var(--font-anton)" }}
-            >
-              Our Services
-            </h2>
-            <p className="text-sm text-gray-700 dark:text-gray-400 mb-6">
-              What we do for clients
-            </p>
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            Our Services
+          </h2>
+          <p className="text-sm text-gray-700 dark:text-gray-400 mb-8">
+            What we do for clients
+          </p>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {SERVICE_CARDS.map((service) => {
                 const Icon = service.icon;
 
@@ -352,8 +350,6 @@ export default function Home() {
                 );
               })}
             </ul>
-          </motion.div>
-
         </div>
       </section>
 
@@ -644,25 +640,38 @@ export default function Home() {
         }}
       >
         {/* Gradient Background - only covers CTA heading area */}
-        <div className="w-full md:w-[94%] md:mr-auto rounded-tr-[60px] md:rounded-tr-[100px] relative overflow-hidden">
+        <div className="w-full relative overflow-hidden">
           {/* Gradient area with heading and button */}
           <div
             className="relative py-16 md:py-20 px-4 sm:px-6 pb-12 md:pb-16 overflow-hidden"
             style={{
               background:
-                "linear-gradient(150deg, #3A7A8C 0%, #4A78A8 25%, #6B6EBC 50%, #9B6EB8 75%, #C490C8 100%)",
+                theme === "dark"
+                  ? "linear-gradient(150deg, #1a1a1a 0%, #2d1b3d 25%, #3d2d5c 50%, #4d3d6c 75%, #5d4d7c 100%)"
+                  : "linear-gradient(150deg, #3A7A8C 0%, #4A78A8 25%, #6B6EBC 50%, #9B6EB8 75%, #C490C8 100%)",
             }}
           >
             {/* Purple/pink glow in bottom-right */}
             <div
               className="absolute bottom-0 right-0 w-125 h-125 pointer-events-none"
               style={{
-                background: "radial-gradient(circle at 70% 70%, #D4A0D8 0%, #B87AD4 30%, transparent 65%)",
+                background:
+                  theme === "dark"
+                    ? "radial-gradient(circle at 70% 70%, #5d3d7d 0%, #4d2d6d 30%, transparent 65%)"
+                    : "radial-gradient(circle at 70% 70%, #D4A0D8 0%, #B87AD4 30%, transparent 65%)",
                 opacity: 0.5,
               }}
             />
-            {/* White gradient at the bottom to merge seamlessly with the footer */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-white to-transparent pointer-events-none" />
+            {/* Gradient at the bottom to merge seamlessly with the footer */}
+            <div
+              className="absolute bottom-0 left-0 w-full h-32 pointer-events-none"
+              style={{
+                background:
+                  theme === "dark"
+                    ? "linear-gradient(to top, #0a0a0a, transparent)"
+                    : "linear-gradient(to top, #ffffff, transparent)",
+              }}
+            />
 
             <div className="max-w-4xl md:ml-10 md:px-8 mx-auto relative z-10">
               <h2 className="font-serif text-3xl md:text-5xl font-normal text-black dark:text-white mb-6 md:mb-8">

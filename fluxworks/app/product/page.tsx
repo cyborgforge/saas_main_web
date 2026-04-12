@@ -1,35 +1,70 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ProductPage() {
   const productScreens = [
     {
-      src: "/laptop.png",
-      title: "Operations Dashboard",
+      src: "/Gemini_Generated_Image_5h0ni55h0ni55h0n.png",
+      title: "Warehouse Management",
     },
     {
-      src: "/system.png",
-      title: "Insights & Reports",
-    },
-    {
-      src: "/we_build_1.png",
-      title: "Module Management",
+      src: "/Gemini_Generated_Image_xidhsuxidhsuxidh.png",
+      title: "User Management Dashboard",
     },
   ] as const;
 
   const [activeScreenIndex, setActiveScreenIndex] = useState(0);
+  const productGalleryRef = useRef<HTMLElement | null>(null);
+  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Auto-play gallery
   useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setActiveScreenIndex((current) => (current + 1) % productScreens.length);
-    }, 3200);
+    autoPlayTimerRef.current = setInterval(() => {
+      setActiveScreenIndex((prevIndex) =>
+        prevIndex === productScreens.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change slide every 4 seconds
 
-    return () => window.clearInterval(intervalId);
+    return () => {
+      if (autoPlayTimerRef.current) {
+        clearInterval(autoPlayTimerRef.current);
+      }
+    };
   }, [productScreens.length]);
+
+  const handlePrevious = () => {
+    setActiveScreenIndex((prevIndex) =>
+      prevIndex === 0 ? productScreens.length - 1 : prevIndex - 1
+    );
+    // Reset timer on manual navigation
+    if (autoPlayTimerRef.current) {
+      clearInterval(autoPlayTimerRef.current);
+    }
+    autoPlayTimerRef.current = setInterval(() => {
+      setActiveScreenIndex((prevIndex) =>
+        prevIndex === productScreens.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+  };
+
+  const handleNext = () => {
+    setActiveScreenIndex((prevIndex) =>
+      prevIndex === productScreens.length - 1 ? 0 : prevIndex + 1
+    );
+    // Reset timer on manual navigation
+    if (autoPlayTimerRef.current) {
+      clearInterval(autoPlayTimerRef.current);
+    }
+    autoPlayTimerRef.current = setInterval(() => {
+      setActiveScreenIndex((prevIndex) =>
+        prevIndex === productScreens.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+  };
 
   const modules = [
     {
@@ -209,12 +244,12 @@ export default function ProductPage() {
     <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative py-20 md:py-32"
         style={{
-          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
+          background: "var(--product-hero-gradient)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-10 relative">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
@@ -235,7 +270,7 @@ export default function ProductPage() {
               </div>
 
               <h1
-                className="text-4xl -mt-4 md:text-5xl font-bold text-white mb-6 leading-tight"
+                className="text-4xl -mt-4 md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-anton)" }}
               >
                 Pharmacy
@@ -243,7 +278,7 @@ export default function ProductPage() {
                 Management Suite
               </h1>
 
-              <p className="text-gray-300 mb-8 text-[12px]">
+              <p className="text-gray-600 dark:text-gray-300 mb-8 text-[12px]">
                 Complete pharmacy management solution with POS, inventory,
                 online ordering, and delivery management. Streamline your
                 pharmacy operations with our all-in-one platform.
@@ -323,7 +358,7 @@ export default function ProductPage() {
               </div>
 
               {/* Real-time Sync Badge - Positioned absolutely to overflow */}
-                  <div className="absolute bottom-3 right-0 sm:-right-4">
+              <div className="absolute bottom-3 right-0 sm:-right-4">
                 <div className="flex items-center gap-2 bg-white rounded-lg shadow-lg px-3 py-2 border border-gray-100">
                   <div className="bg-[#0070A0] p-1.5 rounded">
                     <svg
@@ -350,62 +385,101 @@ export default function ProductPage() {
       </section>
 
       {/* Real Product Gallery */}
-      <section className="py-16 bg-[#F4FAFD] dark:bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
+      <section
+        ref={productGalleryRef}
+        className="relative bg-white dark:bg-[#050505]"
+      >
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-2">
             Product Gallery
           </h2>
-          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-10">
+          <p className="text-center text-[14px] text-gray-600 dark:text-gray-400 mb-4">
             Real screens from the suite, auto-playing for a quick preview.
           </p>
+        </div>
 
-          <div className="rounded-3xl border border-[#D5E8F0] bg-white p-3 sm:p-4 shadow-[0_20px_50px_rgba(0,40,60,0.12)]">
-            <div className="relative h-[240px] sm:h-[330px] md:h-[420px] overflow-hidden rounded-2xl bg-[#09273A]">
-              {productScreens.map((screen, index) => (
-                <motion.div
-                  key={screen.src}
-                  className="absolute inset-0"
-                  initial={false}
-                  animate={{
-                    opacity: activeScreenIndex === index ? 1 : 0,
-                    scale: activeScreenIndex === index ? 1 : 1.04,
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
-                  <img
-                    src={screen.src}
-                    alt={screen.title}
-                    className="w-full h-full object-contain bg-[#09273A]"
-                  />
-                  <div className="absolute bottom-4 left-4 rounded-full bg-black/45 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-sm">
-                    {screen.title}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden group">
+          {productScreens.map((screen, index) => (
+            <motion.div
+              key={screen.src}
+              className="absolute inset-0"
+              initial={false}
+              animate={{
+                opacity: activeScreenIndex === index ? 1 : 0,
+                scale: activeScreenIndex === index ? 1 : 1.04,
+              }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              <img
+                src={screen.src}
+                alt={screen.title}
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+          ))}
 
-            <div className="mt-4 flex justify-center gap-2">
-              {productScreens.map((screen, index) => (
-                <button
-                  key={screen.title}
-                  type="button"
-                  aria-label={`Go to ${screen.title}`}
-                  onClick={() => setActiveScreenIndex(index)}
-                  className={`h-2.5 rounded-full transition-all ${
-                    activeScreenIndex === index
-                      ? "w-8 bg-[#0070A0]"
-                      : "w-2.5 bg-[#A9C5D1] hover:bg-[#88B1C2]"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+          {/* Navigation Arrows */}
+          <button
+            onClick={handlePrevious}
+            className="absolute left-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
+            aria-label="Previous slide"
+          >
+            <svg
+              className="w-6 h-6 text-gray-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
+            aria-label="Next slide"
+          >
+            <svg
+              className="w-6 h-6 text-gray-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 py-4 flex justify-center gap-2">
+          {productScreens.map((screen, index) => (
+            <button
+              key={screen.title}
+              type="button"
+              aria-label={`Go to ${screen.title}`}
+              onClick={() => setActiveScreenIndex(index)}
+              className={`h-2.5 rounded-full transition-all ${
+                activeScreenIndex === index
+                  ? "w-8 bg-[#0070A0]"
+                  : "w-2.5 bg-[#A9C5D1] hover:bg-[#88B1C2]"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
       {/* Modules Section */}
       <section className="py-16 bg-white dark:bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Modules Included
           </h2>
@@ -417,7 +491,7 @@ export default function ProductPage() {
             {modules.map((module, index) => (
               <motion.div
                 key={index}
-                className="border border-[#F7F9FA] dark:border-gray-800/50 bg-[#F7F9FA] dark:bg-[#0f0f0f] rounded-xl p-4 hover:border-[#4a90a4] dark:hover:border-[#4a90a4] transition-colors"
+                className="border border-gray-200 dark:border-gray-800/50 bg-[#F7F9FA] dark:bg-[#0f0f0f] rounded-xl p-4 hover:border-[#4a90a4] dark:hover:border-[#4a90a4] transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
@@ -443,8 +517,8 @@ export default function ProductPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 bg-[#DCE1FF] dark:bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="py-16 bg-white dark:bg-[#050505]">
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-semibold text-center text-gray-900 dark:text-white mb-3">
             How It Works
           </h2>
@@ -452,7 +526,7 @@ export default function ProductPage() {
             Get started in minutes with our simple onboarding process.
           </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8 relative">
             {[
               {
                 step: "1",
@@ -492,6 +566,19 @@ export default function ProductPage() {
                 {/* Connecting Line between steps */}
                 {index < 3 && (
                   <div
+                    className="absolute top-6 left-1/2 h-0.5 md:hidden z-0 h-12 w-0.5"
+                    style={{
+                      background:
+                        "linear-gradient(to bottom, #00719f 0%, #f5f9fb 100%)",
+                      height: "3rem",
+                      width: "2px",
+                      left: "50%",
+                    }}
+                  ></div>
+                )}
+                {/* Horizontal line for md+ screens */}
+                {index < 3 && (
+                  <div
                     className="absolute top-6 left-1/2 h-0.5 hidden md:block z-0"
                     style={{
                       background:
@@ -511,8 +598,8 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 mb-12 bg-white dark:bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-16 bg-white dark:bg-[#050505]">
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">
             Simple, Transparent Pricing
           </h2>
@@ -520,10 +607,10 @@ export default function ProductPage() {
             Choose the plan that works best for your business.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             {/* Starter Plan */}
             <motion.div
-              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] border border-gray-200 dark:border-gray-800/50 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
@@ -573,7 +660,7 @@ export default function ProductPage() {
 
             {/* Growth Plan */}
             <motion.div
-              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F] dark:bg-[#0f0f0f]"
+              className="rounded-2xl -mt-6 p-6 relative bg-[#1F1F1F] dark:bg-white"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
@@ -582,12 +669,12 @@ export default function ProductPage() {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0070A0] dark:bg-[#0088d9] text-white text-xs font-medium px-3 py-1 rounded-full">
                 Most Popular
               </div>
-              <h3 className="font-bold text-xl text-white dark:text-white mb-1">Growth</h3>
-              <p className="text-[#9CA3AF] dark:text-gray-400 text-[10px] mb-4">
+              <h3 className="font-bold text-xl text-white dark:text-gray-900 mb-1">Growth</h3>
+              <p className="text-[#9CA3AF] dark:text-gray-600 text-[10px] mb-4">
                 For growing businesses with expanding needs
               </p>
               <div className="mb-6">
-                <span className="text-2xl font-bold text-white dark:text-white">
+                <span className="text-2xl font-bold text-white dark:text-gray-900">
                   Contact Us
                 </span>
                 {/* <span className="text-[#9CA3AF] text-sm"> /per month</span> */}
@@ -603,10 +690,10 @@ export default function ProductPage() {
                 ].map((feature, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 text-[12px] text-[#D1D5DB] dark:text-gray-400"
+                    className="flex items-center gap-2 text-[12px] text-[#D1D5DB] dark:text-gray-700"
                   >
                     <svg
-                      className="w-4 h-4 text-[#D1D5DB] dark:text-gray-400"
+                      className="w-4 h-4 text-[#D1D5DB] dark:text-gray-700"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -620,14 +707,14 @@ export default function ProductPage() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" className="block w-full bg-white dark:bg-gray-700 py-1.5 text-sm rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-600 text-center text-gray-900 dark:text-white">
+              <Link href="/contact" className="block w-full bg-white dark:bg-gray-900 py-1.5 text-sm rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-black text-center text-gray-900 dark:text-white border border-gray-200 dark:border-gray-800">
                 Most Popular
               </Link>
             </motion.div>
 
             {/* Enterprise Plan */}
             <motion.div
-              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-2xl p-6"
+              className="bg-[#F7F9FA] dark:bg-[#0f0f0f] border border-gray-200 dark:border-gray-800/50 rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}

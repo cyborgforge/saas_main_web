@@ -7,15 +7,15 @@ import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen dark:bg-[#050505]">
+    <div className="dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative py-20 md:py-32"
         style={{
-          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
+          background: "var(--product-hero-gradient)",
         }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
+        <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
           {/* Megaphone Icon - Left Side */}
           <div className="hidden md:block absolute left-20 top-8/12 -translate-y-1/2 w-48 h-48 pointer-events-none">
             <img
@@ -50,7 +50,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold text-white mb-6"
+              className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
               style={{ fontFamily: "var(--font-anton)" }}
             >
               About Fluxworks
@@ -62,12 +62,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-105 -mt-5 mx-auto text-left"
             >
-              <p className="text-gray-300 text-[12px] mb-6">
+              <p className="text-gray-600 dark:text-gray-300 text-[12px] mb-6">
                 {
                   "We're a team of passionate engineers, designers, and business experts dedicated to creating software that makes a difference. Our mission is to empower businesses of all sizes with enterprise-grade tools that are accessible, affordable, and easy to use."
                 }
               </p>
-              <p className="text-gray-300 text-[12px]">
+              <p className="text-gray-600 dark:text-gray-300 text-[12px]">
                 {
                   "Founded in 2019, we've grown from a small startup to a trusted partner for over 1000 businesses worldwide. But we're just getting started."
                 }
@@ -78,12 +78,11 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section with Images */}
-      <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
-        {/* Wave Top */}
+      {/* <section className="py-16 bg-[#dce1ff] dark:bg-[#050505] relative">
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
           <ResponsiveWave fill="#dce1ff" />
         </div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-12">
           <h2
             className="font-serif text-center text-4xl font-normal text-gray-900 dark:text-white mb-4"
             style={{ fontFamily: "var(--font-anton)" }}
@@ -97,7 +96,6 @@ export default function AboutPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Values List */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -238,7 +236,6 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Team Images Grid */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -269,11 +266,11 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values Grid Section */}
       <section className="py-16 bg-white dark:bg-[#050505]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 md:px-12">
           <h2 className="font-serif text-4xl font-normal text-center text-gray-900 dark:text-white mb-3">
             Our Values
           </h2>

@@ -11,19 +11,19 @@ export default function ContactPage() {
     <div className="min-h-screen dark:bg-[#050505]">
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden pt-24 md:pt-32 pb-20"
+        className="relative py-20 md:py-32"
         style={{
-          background: "linear-gradient(180deg, #000000 0%, #1a1a1a 100%)",
+          background: "var(--product-hero-gradient)",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 text-center">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 py-16 text-center">
           <h1
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
             style={{ fontFamily: "var(--font-anton)" }}
           >
             Get in Touch
           </h1>
-          <p className="text-gray-300 max-w-xl text-[12px] mx-auto px-6">
+          <p className="text-gray-600 dark:text-gray-300 max-w-xl text-[12px] mx-auto px-6">
             Have questions about our products? Want to schedule a demo? {"We'd"}{" "}
             love to hear from you. Fill out the form below and {"we'll"} get
             back to you within 24 hours.
@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <section className="py-16 bg-[#f5f9fa] dark:bg-[#050505]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Contact Information */}
             <motion.div
