@@ -639,7 +639,8 @@ export default function Home() {
       <section
         className="relative overflow-hidden"
         style={{
-          background: "var(--cta-shell-gradient)",
+          background:
+            "linear-gradient(180deg, #06181E 0%, #FFFFFF 100%)",
         }}
       >
         {/* Gradient Background - only covers CTA heading area */}
@@ -648,25 +649,23 @@ export default function Home() {
           <div
             className="relative py-16 md:py-20 px-4 sm:px-6 pb-12 md:pb-16 overflow-hidden"
             style={{
-              background: "var(--cta-card-gradient)",
+              background:
+                "linear-gradient(150deg, #3A7A8C 0%, #4A78A8 25%, #6B6EBC 50%, #9B6EB8 75%, #C490C8 100%)",
             }}
           >
             {/* Purple/pink glow in bottom-right */}
             <div
               className="absolute bottom-0 right-0 w-125 h-125 pointer-events-none"
               style={{
-                background: "var(--cta-glow-radial)",
+                background: "radial-gradient(circle at 70% 70%, #D4A0D8 0%, #B87AD4 30%, transparent 65%)",
                 opacity: 0.5,
               }}
             />
             {/* White gradient at the bottom to merge seamlessly with the footer */}
-            <div
-              className="absolute bottom-0 left-0 w-full h-32 pointer-events-none"
-              style={{ background: "var(--cta-bottom-fade)" }}
-            />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-white to-transparent pointer-events-none" />
 
             <div className="max-w-4xl md:ml-10 md:px-8 mx-auto relative z-10">
-              <h2 className="font-serif text-3xl md:text-5xl font-normal text-black dark:text-slate-100 mb-6 md:mb-8">
+              <h2 className="font-serif text-3xl md:text-5xl font-normal text-black mb-6 md:mb-8">
                 Ready to go? Start
                 <br />
                 Building together.

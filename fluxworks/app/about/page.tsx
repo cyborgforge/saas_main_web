@@ -7,12 +7,12 @@ import { ResponsiveWave } from "@/components/responsive-wave";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen dark:bg-[#04070d]">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section
         className="relative overflow-hidden pt-24 md:pt-32 pb-20"
         style={{
-          background: "var(--marketing-hero-gradient)",
+          background: "linear-gradient(180deg, #9CDBF5 0%, #B8E6F7 8.2%)",
         }}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 pt-10 relative">
@@ -78,10 +78,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section with Images */}
-      <section className="py-16 bg-[#dce1ff] dark:bg-[#070d18] relative transition-colors">
+      <section className="py-16 bg-[#dce1ff] relative">
         {/* Wave Top */}
         <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="var(--about-values-wave-fill)" />
+          <ResponsiveWave fill="#dce1ff" />
         </div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
           <h2
