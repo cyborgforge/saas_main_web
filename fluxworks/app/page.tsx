@@ -317,7 +317,7 @@ export default function Home() {
         style={{
           background: theme === "dark" 
             ? "#050505"
-            : "#F1EFE4"
+            : "#FFFFFF"
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">

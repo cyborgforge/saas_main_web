@@ -398,7 +398,7 @@ export default function ProductPage() {
           </p>
         </div>
 
-        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden group">
+        <div className="relative h-75 sm:h-100 md:h-125 overflow-hidden group">
           {productScreens.map((screen, index) => (
             <motion.div
               key={screen.src}
@@ -421,7 +421,7 @@ export default function ProductPage() {
           {/* Navigation Arrows */}
           <button
             onClick={handlePrevious}
-            className="absolute left-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
+            className="absolute left-20 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
             aria-label="Previous slide"
           >
             <svg
@@ -441,7 +441,7 @@ export default function ProductPage() {
 
           <button
             onClick={handleNext}
-            className="absolute right-20 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
+            className="absolute right-20 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-white rounded-full p-2 transition-all opacity-0 group-hover:opacity-100"
             aria-label="Next slide"
           >
             <svg
@@ -478,7 +478,7 @@ export default function ProductPage() {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 bg-[#F1EFE4] dark:bg-[#050505]">
+      <section className="py-16 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Modules Included
@@ -566,7 +566,7 @@ export default function ProductPage() {
                 {/* Connecting Line between steps */}
                 {index < 3 && (
                   <div
-                    className="absolute top-6 left-1/2 h-0.5 md:hidden z-0 h-12 w-0.5"
+                    className="absolute top-6 left-1/2 md:hidden z-0 h-12 w-0.5"
                     style={{
                       background:
                         "linear-gradient(to bottom, #00719f 0%, #f5f9fb 100%)",
@@ -598,7 +598,7 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-[#F1EFE4] dark:bg-[#050505]">
+      <section className="py-16 bg-white dark:bg-[#050505]">
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">
             Simple, Transparent Pricing
