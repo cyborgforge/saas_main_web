@@ -91,7 +91,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-white dark:text-white dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
+              className="text-[14px] font-normal px-5 py-2 rounded-full transition-all duration-200 text-black dark:text-white dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
               style={active ? activeGlass : {}}
             >
               {link.label}
@@ -124,7 +124,7 @@ export function SiteHeader() {
           href="/contact"
           className="inline-flex items-center justify-center rounded-full bg-white text-[13px] font-medium text-gray-900 px-6 py-2 hover:bg-gray-50 transition-colors"
         >
-          Buy now
+          Book a Demo
         </Link>
       </div>
     </div>
@@ -160,13 +160,33 @@ export function SiteHeader() {
             }}
           >
             {/* Logo — fixed width left */}
-            <Link href="/" className="flex items-center shrink-0 mr-auto">
+            <Link href="/" className="flex items-center shrink-0">
               <img
                 src={mounted && theme === "dark" ? "/logo1.png" : "/logo2.png"}
                 alt="Fluxworks"
                 className="h-8 w-auto object-contain"
               />
             </Link>
+
+            {/* Mobile Nav Links */}
+            <nav className="flex items-center gap-1 mx-2">
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`text-[12px] font-normal px-3 py-1.5 rounded-full transition-all duration-200 ${
+                      active
+                        ? "text-black dark:text-white bg-white/20 dark:bg-white/15"
+                        : "text-black dark:text-white hover:bg-white/10 dark:hover:bg-white/15"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
 
             {/* Theme Toggle Button */}
             {mounted && (
@@ -214,31 +234,12 @@ export function SiteHeader() {
                 boxShadow: "0 4px 24px rgba(0,0,0,0.06), inset 0 1.5px 0 rgba(255,255,255,0.4)",
               }}
             >
-              <nav className="flex flex-col gap-2">
-                {navLinks.map((link) => {
-                  const active = isActive(link.href);
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={`text-[14px] font-normal px-4 py-2 rounded-full transition-all duration-200 ${
-                        active
-                          ? "text-white bg-white/20 dark:bg-white/15"
-                          : "text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10 dark:hover:text-white"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
-              </nav>
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full mt-4 bg-white dark:bg-white text-[14px] font-medium text-gray-900 px-4 py-2 rounded-full hover:bg-gray-50 transition-colors text-center"
+                className="block w-full bg-white dark:bg-white text-[14px] font-medium text-gray-900 px-4 py-2 rounded-full hover:bg-gray-50 transition-colors text-center"
               >
-                Buy now
+                Book now
               </Link>
             </div>
           )}

@@ -165,7 +165,7 @@ export default function Home() {
           background:
             theme === "dark"
               ? "var(--product-hero-gradient)"
-              : "linear-gradient(180deg, #081826 0%, #0b2234 40%, #0f3350 72%, #12415f 100%)",
+              : "linear-gradient(180deg, #698f79 0%, #4a7e7c 30%, #2a6e7e 60%, #0e5e7f 100%)",
         }}
       >
         {/* Simple basic background glow designs correctly scaled to full section */}
@@ -216,7 +216,7 @@ export default function Home() {
                 </svg>
               </div>
 
-              <h1 className="text-[44px] sm:text-5xl lg:text-5xl xl:text-6xl -mt-2 md:mt-0 text-white leading-[1.05] tracking-tight relative z-10 drop-shadow-[0_10px_30px_rgba(0,0,0,0.25)]" style={{ fontFamily: "var(--font-anton)" }}>
+              <h1 className="text-[44px] sm:text-5xl lg:text-5xl xl:text-6xl -mt-2 md:mt-0 text-black dark:text-white leading-[1.05] tracking-tight relative z-10 drop-shadow-[0_10px_30px_rgba(0,0,0,0.25)]" style={{ fontFamily: "var(--font-anton)" }}>
                 We build scalable
                 <br />
                 software platforms
@@ -225,7 +225,7 @@ export default function Home() {
                 <br />
                 businesses
               </h1>
-              <p className="text-slate-200 md:hidden text-[15px] font-medium px-4 leading-relaxed max-w-[320px]">
+              <p className="text-gray-900 dark:text-slate-200 md:hidden text-[15px] font-medium px-4 leading-relaxed max-w-[320px]">
                 SaaS platforms for retail, operations, and customer workflows built to scale with your business.
               </p>
               <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4 w-full sm:w-auto px-6 sm:px-0">
@@ -312,7 +312,14 @@ export default function Home() {
       </section>
 
       {/* Services And Product Suite Section */}
-      <section className="bg-white dark:bg-[#050505] py-16 md:py-20">
+      <section 
+        className="py-16 md:py-20"
+        style={{
+          background: theme === "dark" 
+            ? "#050505"
+            : "#F1EFE4"
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
           <h2
             className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
@@ -335,7 +342,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{service.title}</h3>
-                        <p className="text-xs leading-relaxed text-gray-700 dark:text-gray-400">{service.description}</p>
+                        <p className="text-xs leading-relaxed text-gray-700 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{service.description}</p>
                       </div>
                     </div>
                   </li>
@@ -355,8 +362,8 @@ export default function Home() {
             Our Products
           </h2>
 
-          {/* First Row - 2 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1 mt-1">
+          {/* 3x3 Products Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {PRODUCT_SUITE_CARDS.map((suite, index) => {
               const SuiteIcon = suite.icon;
               const isComingSoon = suite.status.toLowerCase() === "soon";
@@ -368,8 +375,8 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.45, delay: 0.05 * index }}
-                  className="bg-[#A4C8FF] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-xl w-full max-w-125 mx-auto flex flex-col justify-between"
-                  style={{ padding: "32px 32px 24px 32px" }}
+                  className="bg-[#A4C8FF] dark:bg-[#0f0f0f] dark:border dark:border-gray-800/50 rounded-xl w-full h-full flex flex-col justify-between"
+                  style={{ padding: "24px" }}
                 >
                   <div className="flex gap-4">
                     <div className="flex flex-col" style={{ width: "65%" }}>

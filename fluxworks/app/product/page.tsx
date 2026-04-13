@@ -478,7 +478,7 @@ export default function ProductPage() {
       </section>
 
       {/* Modules Section */}
-      <section className="py-16 bg-white dark:bg-[#050505]">
+      <section className="py-16 bg-[#F1EFE4] dark:bg-[#050505]">
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-3">
             Modules Included
@@ -598,7 +598,7 @@ export default function ProductPage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-white dark:bg-[#050505]">
+      <section className="py-16 bg-[#F1EFE4] dark:bg-[#050505]">
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-1">
             Simple, Transparent Pricing
