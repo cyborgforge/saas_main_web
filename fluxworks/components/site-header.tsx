@@ -75,7 +75,7 @@ export function SiteHeader() {
       <Link href="/" className="flex items-center shrink-0">
         <div className="h-9 overflow-hidden flex items-center">
           <img
-            src={theme === "dark" ? "/logo1.png" : "/logo2.png"}
+            src={mounted && theme === "dark" ? "/logo1.png" : "/logo2.png"}
             alt="Fluxworks"
             className="h-16 w-auto object-contain"
             style={{ marginTop: "-8px", marginBottom: "-8px" }}
@@ -142,7 +142,7 @@ export function SiteHeader() {
         <div className="hidden md:block w-full">
           <div 
             className="w-full rounded-full shadow-lg" 
-            style={theme === "dark" ? { ...darkGlassStyle } : glassFallbackStyle}
+            style={mounted && theme === "dark" ? { ...darkGlassStyle } : glassFallbackStyle}
           >
             {DesktopNavContent}
           </div>
@@ -152,7 +152,7 @@ export function SiteHeader() {
         <div className="md:hidden w-full">
           <div
             className="flex items-center rounded-full px-3 py-2 shadow-lg"
-            style={theme === "dark" ? darkGlassStyle : {
+            style={mounted && theme === "dark" ? darkGlassStyle : {
               background: "rgba(255,255,255,0.08)",
               backdropFilter: "blur(28px) saturate(180%)",
               WebkitBackdropFilter: "blur(28px) saturate(180%)",
@@ -162,7 +162,7 @@ export function SiteHeader() {
             {/* Logo — fixed width left */}
             <Link href="/" className="flex items-center shrink-0 mr-auto">
               <img
-                src={theme === "dark" ? "/logo1.png" : "/logo2.png"}
+                src={mounted && theme === "dark" ? "/logo1.png" : "/logo2.png"}
                 alt="Fluxworks"
                 className="h-8 w-auto object-contain"
               />
@@ -207,7 +207,7 @@ export function SiteHeader() {
           {mobileMenuOpen && (
             <div
               className="mt-3 rounded-3xl px-4 py-4 shadow-lg"
-              style={theme === "dark" ? darkGlassStyle : {
+              style={mounted && theme === "dark" ? darkGlassStyle : {
                 background: "rgba(255,255,255,0.08)",
                 backdropFilter: "blur(28px) saturate(180%)",
                 WebkitBackdropFilter: "blur(28px) saturate(180%)",
