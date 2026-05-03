@@ -313,14 +313,16 @@ export default function Home() {
 
       {/* Services And Product Suite Section */}
       <section 
-        className="py-16 md:py-20"
+        className="relative py-16 md:py-20"
         style={{
           background: theme === "dark" 
             ? "#050505"
-            : "#FFFFFF"
+            : "linear-gradient(180deg, #0e5e7f 0%, #1a6e88 30%, #2a7e90 60%, #3a8e98 100%)"
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 space-y-8"> 
+          <div className="rounded-3xl border border-white/30 bg-white/85 backdrop-blur-sm p-6 md:p-10"
+          >
           <h2
             className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
             style={{ fontFamily: "var(--font-anton)" }}
