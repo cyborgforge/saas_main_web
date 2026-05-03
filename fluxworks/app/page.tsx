@@ -322,8 +322,7 @@ export default function Home() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 space-y-8"> 
-          <div className="rounded-3xl border border-white/30 bg-white/85 backdrop-blur-sm p-6 md:p-10"
-          >
+          <div className="rounded-3xl border border-white/30 bg-white/85 dark:bg-[#181818] backdrop-blur-sm p-6 md:p-10 ">
           <h2
             className="text-3xl md:text-4xl text-gray-900 dark:text-white mb-2"
             style={{ fontFamily: "var(--font-anton)" }}
@@ -359,9 +358,11 @@ export default function Home() {
       {/* Our Products Section */}
       {/* <section className="bg-[#06181E] dark:bg-[#050505] py-16 relative"> */}
         {/* <section className="relative w-full bg-[#06181E] py-16"> */}
-          <section className="relative w-screen left-1/2 -translate-x-1/2 bg-[#06181E] py-16">
+          <section className="relative w-screen left-1/2 -translate-x-1/2 bg-[#06181E] dark:bg-[#111111] py-16">
          <div className="absolute -top-12 left-0 w-full overflow-hidden leading-none">
-          <ResponsiveWave fill="#06181E" />
+          <ResponsiveWave 
+          fill={theme === "dark" ? "#111111" :  "#06181E"} 
+          />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2

@@ -10,12 +10,15 @@ export function SiteFooter() {
      
     {/* CTA Section */}
       <section
-        className="relative overflow-hidden dark:bg-[#050505]"
+        //className="relative overflow-hidden dark:bg-[#050505]"
         style={{
           background:
-            "linear-gradient(180deg, #06181E 0%, #FFFFFF 100%)",
+          theme === "dark"
+          ? "linear-gradient(180deg, #050505 0%, #222222 100%)"
+          :  "linear-gradient(180deg, #06181E 0%, #FFFFFF 100%)",
         }}
       >
+        {/* <section className="relative overflow-hidden bg-linear-to-b from-[#06181E] to-white dark:bg-[#050505]"> */}
         {/* Gradient Background - only covers CTA heading area */}
         {/* <div className="w-full relative overflow-hidden"> */}
         <div className="w-full md:w-[94%] md:mr-auto rounded-tr-[60px] md:rounded-tr-[100px] relative overflow-hidden">
@@ -73,7 +76,8 @@ export function SiteFooter() {
           </div>
 
           {/* Footer cols starts here */}
-          <footer className="bg-white py-12 md:py-16 px-6 md:px-20">
+      {/* <footer className="bg-white py-12 md:py-16 px-6 md:px-20"> */}
+      <footer className="bg-white dark:bg-[#0a0a0a] py-16 px-6 md:px-20 border-t border-gray-100 dark:border-gray-800 relative">
       <div className="max-w-4xl px-0 md:px-20 mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div>
